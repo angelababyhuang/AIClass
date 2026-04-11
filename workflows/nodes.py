@@ -1,19 +1,30 @@
 """
-工作流节点定义 — 知识库流水线的 5 个核心节点
+工作流节点定义 — 知识库流水线的 6 个核心节点
 
 每个节点是一个纯函数: State → dict（部分状态更新）
 LangGraph 会自动将返回值合并到全局 State 中。
 
 节点调用链:
-    collect → analyze → organize → review → (conditional) → save
-                                     ↑                         │
-                                     └── organize (retry) ←────┘ (如果审核未通过)
+    plan → collect → analyze → organize → review → (conditional) → save
+                                    ↑                                │
+                                    └── organize (retry) ←───────────┘ (如果审核未通过)
+
+【职责 vs 文件的映射说明（重要教学点）】
+- Planner 职责    → patterns/planner.py::planner_node  （只规划）
+- Collector 职责  → collect_node                      （只采集）
+- Analyzer 职责   → analyze_node                      （只分析单条）
+- Organizer 职责  → organize_node + _organize_fresh   （初次整理）
+- Reviser 职责    → organize_node + _organize_with_feedback (带反馈修正)
+                   ↑ Organizer 和 Reviser 是同一节点的两种模式
+- Reviewer 职责   → review_node                       （只评分，不改）
+- Saver 职责      → save_node                         （只持久化）
 """
 
 import json
 import os
 from datetime import datetime, timezone
 
+from patterns.planner import planner_node  # noqa: F401  # re-export for graph.py
 from workflows.model_client import accumulate_usage, chat, chat_json
 from workflows.state import KBState
 
@@ -26,11 +37,17 @@ def collect_node(state: KBState) -> dict:
 
     实际生产中会并行调用多个数据源（GitHub、HN、arXiv）。
     这里以 GitHub 为例，展示数据采集的标准模式。
+
+    读取 state["plan"]["per_source_limit"] 决定抓取条数（由 Planner 节点给出）。
     """
     import urllib.request
     import urllib.parse
 
     sources: list[dict] = []
+
+    # 读 Planner 策略，没有就用默认 10
+    plan = state.get("plan", {}) or {}
+    per_source_limit = int(plan.get("per_source_limit", 10))
 
     # --- GitHub Trending (通过 Search API 近似) ---
     github_token = os.getenv("GITHUB_TOKEN", "")
@@ -41,7 +58,7 @@ def collect_node(state: KBState) -> dict:
     # 搜索最近一周更新的、星标数高的 AI 相关仓库
     one_week_ago = (datetime.now(timezone.utc) - __import__('datetime').timedelta(days=7)).strftime("%Y-%m-%d")
     query = f"ai agent llm stars:>100 pushed:>{one_week_ago}"
-    url = f"https://api.github.com/search/repositories?q={urllib.parse.quote(query)}&sort=stars&per_page=10"
+    url = f"https://api.github.com/search/repositories?q={urllib.parse.quote(query)}&sort=stars&per_page={per_source_limit}"
 
     try:
         req = urllib.request.Request(url, headers=headers)
@@ -139,26 +156,31 @@ URL: {item.get('url', '')}
 
 
 # ---------------------------------------------------------------------------
-# 节点 3: 整理节点 — 格式化、去重、质量过滤
+# 节点 3: 整理节点 — 双模式：首次整理（Organizer） / 带反馈修正（Reviser）
 # ---------------------------------------------------------------------------
-def organize_node(state: KBState) -> dict:
-    """整理节点：将分析结果格式化为标准知识条目
+# 【教学重点：一个节点，两种职责】
+# organize_node 在代码里是一个节点，但承担两个逻辑职责:
+#   • 首次进入    → _organize_fresh()        (职责 = Organizer: 过滤+去重+格式化)
+#   • 带反馈回流  → _organize_with_feedback() (职责 = Reviser: 读反馈，改条目)
+# 这种"一节点两职责"是工程简化 —— 物理文件少，逻辑仍然清晰。
+# 在 PPT 里它们是两个独立的 Agent（Organizer / Reviser），在代码里用分支实现。
+# ---------------------------------------------------------------------------
+def _organize_fresh(analyses: list[dict], plan: dict) -> list[dict]:
+    """【Organizer 职责】首次整理：相关性过滤 + URL 去重 + 格式化
 
-    职责:
-    1. 过滤低相关性条目 (relevance_score < 0.6)
-    2. 按 URL 去重
-    3. 如果有审核反馈，根据反馈修正内容
-    4. 生成统一格式的 articles
+    Args:
+        analyses: 来自 analyze_node 的分析结果
+        plan: Planner 给出的策略，读取其中的 relevance_threshold
+
+    Returns:
+        articles: 格式化后的知识条目列表
     """
-    analyses = state["analyses"]
-    feedback = state.get("review_feedback", "")
-    iteration = state.get("iteration", 0)
-    tracker = state.get("cost_tracker", {})
+    threshold = float(plan.get("relevance_threshold", 0.6))
 
-    # 质量过滤: 相关性低于 0.6 的条目丢弃
-    qualified = [a for a in analyses if a.get("relevance_score", 0) >= 0.6]
+    # 步骤 1: 相关性过滤（阈值由 Planner 决定）
+    qualified = [a for a in analyses if a.get("relevance_score", 0) >= threshold]
 
-    # URL 去重
+    # 步骤 2: URL 去重
     seen_urls: set[str] = set()
     unique: list[dict] = []
     for item in qualified:
@@ -167,31 +189,10 @@ def organize_node(state: KBState) -> dict:
             seen_urls.add(url)
             unique.append(item)
 
-    # 如果有审核反馈（第2次以上迭代），用 LLM 修正
-    if feedback and iteration > 0:
-        prompt = f"""你是知识库编辑。以下是审核员的反馈，请据此改进这些知识条目。
-
-审核反馈:
-{feedback}
-
-当前条目 (JSON):
-{json.dumps(unique, ensure_ascii=False, indent=2)}
-
-请返回改进后的条目列表（JSON 数组），保持相同字段结构。"""
-
-        try:
-            improved, usage = chat_json(prompt)
-            tracker = accumulate_usage(tracker, usage)
-            if isinstance(improved, list):
-                unique = improved
-        except Exception as e:
-            print(f"[Organizer] 根据反馈修正失败: {e}，使用原始数据")
-
-    # 生成标准格式的知识条目
+    # 步骤 3: 生成标准格式的知识条目
     articles: list[dict] = []
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     for i, item in enumerate(unique):
-        slug = item.get("title", "unknown").lower().replace("/", "-").replace(" ", "-")[:50]
         articles.append({
             "id": f"{today}-{i:03d}",
             "title": item.get("title", ""),
@@ -204,8 +205,66 @@ def organize_node(state: KBState) -> dict:
             "category": item.get("category", "other"),
             "key_insight": item.get("key_insight", ""),
         })
+    return articles
 
-    print(f"[Organizer] 整理出 {len(articles)} 条知识条目 (迭代 {iteration})")
+
+def _organize_with_feedback(
+    articles: list[dict], feedback: str, tracker: dict
+) -> tuple[list[dict], dict]:
+    """【Reviser 职责】带反馈修正：读审核反馈，用 LLM 改条目
+
+    Args:
+        articles: 上一轮已整理的 articles（已格式化）
+        feedback: review_node 给出的具体改进建议
+        tracker: 成本追踪器
+
+    Returns:
+        (revised_articles, updated_tracker)
+    """
+    prompt = f"""你是知识库编辑。以下是审核员的反馈，请据此改进这些知识条目。
+
+审核反馈:
+{feedback}
+
+当前条目 (JSON):
+{json.dumps(articles, ensure_ascii=False, indent=2)}
+
+请返回改进后的条目列表（JSON 数组），保持相同字段结构。"""
+
+    try:
+        improved, usage = chat_json(prompt)
+        tracker = accumulate_usage(tracker, usage)
+        if isinstance(improved, list) and improved:
+            return improved, tracker
+    except Exception as e:
+        print(f"[Reviser] 根据反馈修正失败: {e}，沿用原 articles")
+
+    return articles, tracker
+
+
+def organize_node(state: KBState) -> dict:
+    """整理节点：根据是否有反馈，走 Organizer 或 Reviser 分支
+
+    首次进入（iteration=0，无 feedback）→ _organize_fresh()
+    带反馈回流（iteration>0，有 feedback）→ _organize_with_feedback()
+    """
+    analyses = state["analyses"]
+    feedback = state.get("review_feedback", "")
+    iteration = state.get("iteration", 0)
+    tracker = state.get("cost_tracker", {})
+    plan = state.get("plan", {}) or {}
+
+    if feedback and iteration > 0 and state.get("articles"):
+        # ---- Reviser 分支：读反馈，改已有 articles ----
+        articles, tracker = _organize_with_feedback(
+            state["articles"], feedback, tracker
+        )
+        print(f"[Reviser] 根据反馈修正 {len(articles)} 条条目 (迭代 {iteration})")
+    else:
+        # ---- Organizer 分支：首次从 analyses 整理 ----
+        articles = _organize_fresh(analyses, plan)
+        print(f"[Organizer] 整理出 {len(articles)} 条知识条目 (迭代 {iteration})")
+
     return {"articles": articles, "cost_tracker": tracker}
 
 
@@ -233,6 +292,8 @@ def review_node(state: KBState) -> dict:
     articles = state.get("articles", [])
     iteration = state.get("iteration", 0)
     tracker = state.get("cost_tracker", {})
+    plan = state.get("plan", {}) or {}
+    max_iter = int(plan.get("max_iterations", 3))
 
     if not articles:
         return {
@@ -277,12 +338,12 @@ def review_node(state: KBState) -> dict:
         feedback = result.get("feedback", "")
         score = result.get("overall_score", 0)
 
-        # 第 3 次迭代强制通过，避免无限循环
-        if iteration >= 2:
+        # 达到 Planner 设定的最大迭代次数时强制通过，避免无限循环
+        if iteration + 1 >= max_iter:
             passed = True
-            feedback += "\n[系统] 已达最大审核次数(3次)，强制通过。"
+            feedback += f"\n[系统] 已达最大审核次数({max_iter}次)，强制通过。"
 
-        print(f"[Reviewer] 审核得分: {score}, 通过: {passed} (迭代 {iteration + 1}/3)")
+        print(f"[Reviewer] 审核得分: {score}, 通过: {passed} (迭代 {iteration + 1}/{max_iter})")
 
     except Exception as e:
         # LLM 调用失败时直接通过，不阻塞流程

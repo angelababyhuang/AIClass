@@ -1,22 +1,24 @@
 """
 LangGraph 工作流图定义 — 知识库采集-分析-审核流水线
 
-【核心教学点: Review Loop（审核循环）】
+【核心教学点: Planner + Review Loop】
 
 工作流拓扑:
 
-    collect → analyze → organize → review ─→ save (通过)
-                           ↑                   │
-                           └───────────────────┘ (未通过，最多重试 3 次)
+    plan → collect → analyze → organize → review ─→ save (通过)
+                                   ↑                   │
+                                   └───────────────────┘ (未通过，按 plan.max_iterations 重试)
 
-审核循环通过 add_conditional_edges 实现：
-- review_passed == True  → 进入 save 节点
-- review_passed == False → 回到 organize 节点（带反馈修正）
-- iteration >= 3         → 强制进入 save（在 review_node 内处理）
+- plan 节点：Planner 模式，只规划不执行。输出 state["plan"]，下游节点据此行事
+- 审核循环通过 add_conditional_edges 实现：
+  - review_passed == True  → 进入 save 节点
+  - review_passed == False → 回到 organize 节点（带反馈修正，由 _organize_with_feedback 承担 Reviser 职责）
+  - iteration >= plan.max_iterations → 强制进入 save（在 review_node 内处理）
 """
 
 from langgraph.graph import END, StateGraph
 
+from patterns.planner import planner_node
 from workflows.nodes import (
     analyze_node,
     collect_node,
@@ -54,6 +56,7 @@ def build_graph() -> StateGraph:
     graph = StateGraph(KBState)
 
     # --- 2. 添加节点 ---
+    graph.add_node("plan", planner_node)
     graph.add_node("collect", collect_node)
     graph.add_node("analyze", analyze_node)
     graph.add_node("organize", organize_node)
@@ -61,7 +64,8 @@ def build_graph() -> StateGraph:
     graph.add_node("save", save_node)
 
     # --- 3. 添加边 ---
-    # 线性流: collect → analyze → organize → review
+    # 线性流: plan → collect → analyze → organize → review
+    graph.add_edge("plan", "collect")
     graph.add_edge("collect", "analyze")
     graph.add_edge("analyze", "organize")
     graph.add_edge("organize", "review")
@@ -82,7 +86,7 @@ def build_graph() -> StateGraph:
     graph.add_edge("save", END)
 
     # --- 4. 设置入口 ---
-    graph.set_entry_point("collect")
+    graph.set_entry_point("plan")
 
     return graph
 
@@ -99,6 +103,7 @@ if __name__ == "__main__":
 
     # 初始状态
     initial_state: KBState = {
+        "plan": {},
         "sources": [],
         "analyses": [],
         "articles": [],
@@ -108,6 +113,9 @@ if __name__ == "__main__":
         "cost_tracker": {},
     }
 
+    # 跟踪 plan 用于显示正确的 max_iter
+    current_plan: dict = {}
+
     # 流式执行，观察每个节点的输出
     for event in app.stream(initial_state):
         node_name = list(event.keys())[0]
@@ -115,6 +123,9 @@ if __name__ == "__main__":
 
         # 打印关键信息
         node_output = event[node_name]
+        if "plan" in node_output:
+            current_plan = node_output["plan"] or {}
+            print(f"  策略: {current_plan.get('strategy', '?')}")
         if "sources" in node_output:
             print(f"  采集数量: {len(node_output['sources'])}")
         if "analyses" in node_output:
@@ -122,8 +133,9 @@ if __name__ == "__main__":
         if "articles" in node_output:
             print(f"  文章数量: {len(node_output['articles'])}")
         if "review_passed" in node_output:
+            max_iter = current_plan.get("max_iterations", 3)
             print(f"  审核结果: {'通过' if node_output['review_passed'] else '未通过'}")
-            print(f"  迭代次数: {node_output.get('iteration', '?')}/3")
+            print(f"  迭代次数: {node_output.get('iteration', '?')}/{max_iter}")
         if "cost_tracker" in node_output:
             cost = node_output["cost_tracker"].get("total_cost_yuan", 0)
             print(f"  累计成本: ¥{cost}")

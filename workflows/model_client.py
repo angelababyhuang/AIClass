@@ -72,25 +72,54 @@ def chat_json(
     system: str = "你是一个专业的 AI 技术分析师。请用 JSON 格式回复。",
     **kwargs: Any,
 ) -> tuple[dict | list, dict]:
-    """调用 LLM 并解析 JSON 响应
+    """调用 LLM 并解析 JSON 响应（带容错）
+
+    容错策略:
+    1. 去掉 markdown 代码块包裹
+    2. 直接 json.loads
+    3. 失败则用正则匹配第一个 {...} 或 [...] 结构
+    4. 再失败才抛出
 
     Returns:
         (parsed_json, usage_dict)
 
     Raises:
-        json.JSONDecodeError: 当 LLM 返回非法 JSON 时
+        json.JSONDecodeError: 三种策略都失败时
     """
+    import re
+
     text, usage = chat(prompt, system=system, **kwargs)
 
-    # 尝试提取 JSON（处理 markdown 代码块包裹的情况）
+    # 策略 1: 去掉 markdown 代码块包裹
     cleaned = text.strip()
     if cleaned.startswith("```"):
-        # 去掉 ```json 和 ``` 包裹
         lines = cleaned.split("\n")
-        cleaned = "\n".join(lines[1:-1])
+        # 可能是 ```json 或 ``` 开头
+        start = 1
+        end = len(lines)
+        for i in range(len(lines) - 1, 0, -1):
+            if lines[i].strip().startswith("```"):
+                end = i
+                break
+        cleaned = "\n".join(lines[start:end])
 
-    parsed = json.loads(cleaned)
-    return parsed, usage
+    # 策略 2: 直接解析
+    try:
+        return json.loads(cleaned), usage
+    except json.JSONDecodeError:
+        pass
+
+    # 策略 3: 正则提取第一个完整 JSON 结构（处理 "Extra data" / 前后缀文本）
+    for pattern in (r"\{[\s\S]*\}", r"\[[\s\S]*\]"):
+        match = re.search(pattern, cleaned)
+        if match:
+            try:
+                return json.loads(match.group()), usage
+            except json.JSONDecodeError:
+                continue
+
+    # 三种都失败 —— 抛原始异常
+    return json.loads(cleaned), usage
 
 
 def accumulate_usage(tracker: dict, new_usage: dict) -> dict:
