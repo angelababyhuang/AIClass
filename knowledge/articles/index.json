@@ -58,5 +58,65 @@
     "title": "mem0ai/mem0",
     "category": "agent",
     "relevance_score": 0.85
+  },
+  {
+    "id": "2026-04-21-000",
+    "title": "langgenius/dify",
+    "category": "agent",
+    "relevance_score": 0.9
+  },
+  {
+    "id": "2026-04-21-001",
+    "title": "langchain-ai/langchain",
+    "category": "framework",
+    "relevance_score": 0.95
+  },
+  {
+    "id": "2026-04-21-002",
+    "title": "NousResearch/hermes-agent",
+    "category": "agent",
+    "relevance_score": 0.85
+  },
+  {
+    "id": "2026-04-21-003",
+    "title": "Shubhamsaboo/awesome-llm-apps",
+    "category": "llm",
+    "relevance_score": 0.9
+  },
+  {
+    "id": "2026-04-21-004",
+    "title": "browser-use/browser-use",
+    "category": "agent",
+    "relevance_score": 0.85
+  },
+  {
+    "id": "2026-04-28-000",
+    "title": "langgenius/dify",
+    "category": "framework",
+    "relevance_score": 0.9
+  },
+  {
+    "id": "2026-04-28-001",
+    "title": "langchain-ai/langchain",
+    "category": "framework",
+    "relevance_score": 0.95
+  },
+  {
+    "id": "2026-04-28-002",
+    "title": "NousResearch/hermes-agent",
+    "category": "agent",
+    "relevance_score": 0.85
+  },
+  {
+    "id": "2026-04-28-003",
+    "title": "Shubhamsaboo/awesome-llm-apps",
+    "category": "agent",
+    "relevance_score": 0.9
+  },
+  {
+    "id": "2026-04-28-004",
+    "title": "browser-use/browser-use",
+    "category": "tool",
+    "relevance_score": 0.85
   }
 ]
