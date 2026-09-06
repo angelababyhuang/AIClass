@@ -59,6 +59,8 @@ def chat(
     )
 
     text = response.choices[0].message.content or ""
+    if "</think>" in text:
+        text = text.split("</think>", 1)[1].strip()
     usage = {
         "prompt_tokens": response.usage.prompt_tokens if response.usage else 0,
         "completion_tokens": response.usage.completion_tokens if response.usage else 0,

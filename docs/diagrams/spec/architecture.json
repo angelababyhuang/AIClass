@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "AI 知识库 V3 — 系统架构",
+    "output": "docs/diagrams/architecture.html",
+    "quality_profile": "showcase",
+    "views": [
+      {
+        "id": "pipeline-core",
+        "label": "主流水线",
+        "focus": ["cli", "engine", "kbstore"],
+        "note": "运行入口驱动 LangGraph 引擎，organize 节点把成品写入知识库存储。"
+      },
+      {
+        "id": "llm-path",
+        "label": "LLM 调用链",
+        "focus": ["engine", "modelclient", "minimax", "costguard"],
+        "note": "所有节点经 model_client 统一网关调用 MiniMax M3，token 用量进入成本守卫。"
+      },
+      {
+        "id": "patterns",
+        "label": "设计模式与加固",
+        "focus": ["router", "supervisor", "secguard", "costguard"],
+        "note": "Router 与 Supervisor 两种协作范式共享同一 LLM 网关，tests/ 加固层独立接入。"
+      }
+    ]
+  },
+  "components": [
+    { "id": "cli", "type": "frontend", "label": "运行入口", "sublabel": "CLI · GitHub Actions 定时", "pos": [40, 140], "size": [130, 60] },
+    { "id": "engine", "type": "backend", "label": "LangGraph 编排引擎", "sublabel": "graph.py · 7 节点 + 条件边", "pos": [260, 110], "size": [170, 110] },
+    { "id": "ghapi", "type": "external", "label": "GitHub API", "sublabel": "Search API v3", "pos": [560, 120], "size": [150, 70] },
+    { "id": "modelclient", "type": "backend", "label": "LLM 统一网关", "sublabel": "model_client.py · chat/chat_json", "pos": [560, 300], "size": [160, 80] },
+    { "id": "minimax", "type": "external", "label": "MiniMax M3", "sublabel": "api.minimaxi.com/v1", "pos": [850, 300], "size": [160, 70] },
+    { "id": "router", "type": "backend", "label": "Router 模式", "sublabel": "patterns/router.py · 意图路由", "pos": [540, 470], "size": [140, 60] },
+    { "id": "supervisor", "type": "backend", "label": "Supervisor 模式", "sublabel": "patterns/supervisor.py · 主管调度", "pos": [560, 570], "size": [150, 60] },
+    { "id": "kbstore", "type": "database", "label": "知识库存储", "sublabel": "knowledge/ · articles + index + pending", "pos": [270, 540], "size": [170, 80] },
+    { "id": "costguard", "type": "security", "label": "成本守卫", "sublabel": "cost_guard.py · 熔断", "pos": [850, 470], "size": [130, 60] },
+    { "id": "secguard", "type": "security", "label": "安全防护", "sublabel": "security.py · 防注入/PII", "pos": [850, 570], "size": [130, 60] }
+  ],
+  "boundaries": [
+    { "kind": "region", "label": "v3-multi-agent · Python 运行时", "wraps": ["cli", "engine", "router", "supervisor", "modelclient", "kbstore", "costguard", "secguard"], "pad": 22 },
+    { "kind": "security-group", "label": "tests/ 生产加固层", "wraps": ["costguard", "secguard"], "pad": 14 }
+  ],
+  "connections": [
+    { "id": "cli-engine", "from": "cli", "to": "engine", "label": "app.stream()", "variant": "emphasis", "fromSide": "right", "toSide": "left", "labelAt": [215, 170] },
+    { "id": "engine-ghapi", "from": "engine", "to": "ghapi", "label": "Search API 采集", "fromSide": "right", "toSide": "left", "labelAt": [495, 128] },
+    { "id": "engine-kbstore", "from": "engine", "to": "kbstore", "label": "organize 写盘", "variant": "emphasis", "fromSide": "bottom", "toSide": "top" },
+    { "id": "router-modelclient", "from": "router", "to": "modelclient", "label": "chat / chat_json", "fromSide": "top", "toSide": "bottom", "labelAt": [575, 440] },
+    { "id": "supervisor-modelclient", "from": "supervisor", "to": "modelclient", "label": "工人 LLM 调用", "fromSide": "left", "toSide": "left", "via": [[480, 600], [480, 340]] },
+    { "id": "modelclient-minimax", "from": "modelclient", "to": "minimax", "label": "OpenAI 兼容 /v1", "variant": "security", "fromSide": "right", "toSide": "left", "labelAt": [785, 312] },
+    { "id": "modelclient-costguard", "from": "modelclient", "to": "costguard", "label": "token 用量累计", "variant": "dashed", "fromSide": "bottom", "toSide": "top", "via": [[640, 445], [915, 445]], "labelAt": [798, 462] },
+    { "id": "secguard-router", "from": "secguard", "to": "router", "label": "sanitize 输入清洗", "variant": "dashed", "fromSide": "left", "toSide": "right", "via": [[730, 600], [730, 500]], "labelAt": [790, 578] }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "编排核心",
+      "items": [
+        "LangGraph StateGraph 串联 7 个节点，KBState 单向数据流",
+        "review 之后三路条件边：organize / revise 循环 / human_flag",
+        "Reviser 与 Reviewer 是独立 Agent，避免自评利益冲突"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "外部依赖",
+      "items": [
+        "MiniMax M3 经 OpenAI 兼容网关调用（api.minimaxi.com/v1）",
+        "GitHub Search API v3 供 collector 按计划量抓取",
+        "LLM_API_KEY 与 GITHUB_TOKEN 均从 .env 注入"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "生产加固",
+      "items": [
+        "cost_guard 提供追踪—预警—熔断三级成本防护",
+        "security.py 覆盖防注入 / PII / 限流 / 审计四类风险",
+        "human_flag 写 pending_review/，不污染主知识库"
+      ]
+    }
+  ]
+}

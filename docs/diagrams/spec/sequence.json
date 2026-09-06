@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "AI 知识库 V3 — 一次完整运行时序",
+    "output": "docs/diagrams/sequence.html",
+    "quality_profile": "showcase",
+    "viewBox": [900, 820],
+    "views": [
+      {
+        "id": "collect-chain",
+        "label": "规划与采集",
+        "focus": ["runner", "graph", "collector", "github"],
+        "note": "Planner 产出策略后，collector 按 per_source_limit 抓取仓库元数据。"
+      },
+      {
+        "id": "llm-chain",
+        "label": "LLM 分析链",
+        "focus": ["analyzer", "llm", "graph"],
+        "note": "逐条分析调用 chat_json，token 用量进入 cost_tracker。"
+      },
+      {
+        "id": "gate-and-save",
+        "label": "门控与入库",
+        "focus": ["graph", "llm", "organizer", "runner"],
+        "note": "审核-修订循环后，成品写入 knowledge/articles 并返回索引。"
+      }
+    ]
+  },
+  "participants": [
+    { "id": "runner", "type": "frontend", "label": "CLI 运行器", "sublabel": "workflows.graph" },
+    { "id": "graph", "type": "backend", "label": "LangGraph", "sublabel": "StateGraph · KBState" },
+    { "id": "collector", "type": "cloud", "label": "Collector", "sublabel": "节点②" },
+    { "id": "github", "type": "external", "label": "GitHub API", "sublabel": "Search v3" },
+    { "id": "analyzer", "type": "backend", "label": "Analyzer", "sublabel": "节点③" },
+    { "id": "llm", "type": "external", "label": "MiniMax M3", "sublabel": "OpenAI 兼容" },
+    { "id": "organizer", "type": "database", "label": "Organizer", "sublabel": "节点⑥ + 磁盘" }
+  ],
+  "segments": [
+    { "from": 160, "to": 330, "label": "规划与采集" },
+    { "from": 350, "to": 560, "label": "LLM 分析与审核循环" },
+    { "from": 580, "to": 740, "label": "入库与返回" }
+  ],
+  "messages": [
+    { "id": "invoke", "from": "runner", "to": "graph", "y": 190, "label": "app.stream(initial_state)", "variant": "emphasis" },
+    { "id": "plan-node", "from": "graph", "to": "collector", "y": 235, "label": "plan.per_source_limit", "note": "Planner ① 三档策略" },
+    { "id": "gh-search", "from": "collector", "to": "github", "y": 280, "label": "GET /search/repositories" },
+    { "id": "gh-items", "from": "github", "to": "collector", "y": 318, "label": "items[] 元数据", "variant": "return" },
+    { "id": "analyze-loop", "from": "graph", "to": "analyzer", "y": 370, "label": "sources[] 逐条", "note": "失败条目跳过，不中断" },
+    { "id": "llm-analyze", "from": "analyzer", "to": "llm", "y": 415, "label": "chat_json 分析 prompt", "variant": "emphasis" },
+    { "id": "llm-analysis", "from": "llm", "to": "analyzer", "y": 453, "label": "summary/tags/score", "variant": "return" },
+    { "id": "llm-review", "from": "graph", "to": "llm", "y": 505, "label": "chat_json 评分（Reviewer ④）", "note": "代码重算加权总分" },
+    { "id": "llm-scores", "from": "llm", "to": "graph", "y": 543, "label": "scores + feedback", "variant": "return" },
+    { "id": "llm-revise", "from": "graph", "to": "llm", "y": 590, "label": "chat_json 修订（Reviser ⑤）", "variant": "dashed", "note": "仅未通过时触发" },
+    { "id": "llm-revised", "from": "llm", "to": "graph", "y": 625, "label": "修订 analyses[]", "variant": "return" },
+    { "id": "organize-write", "from": "graph", "to": "organizer", "y": 672, "label": "通过 · 过滤去重写盘", "variant": "emphasis", "note": "同时更新 index.json（幂等追加）" },
+    { "id": "stream-back", "from": "graph", "to": "runner", "y": 725, "label": "articles + cost_tracker", "variant": "return" }
+  ],
+  "activations": [
+    { "participant": "graph", "from": 185, "to": 755, "type": "backend" },
+    { "participant": "collector", "from": 230, "to": 325, "type": "cloud" },
+    { "participant": "github", "from": 275, "to": 323, "type": "external" },
+    { "participant": "analyzer", "from": 365, "to": 460, "type": "backend" },
+    { "participant": "llm", "from": 410, "to": 630, "type": "external" },
+    { "participant": "organizer", "from": 667, "to": 712, "type": "database" }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "主调用链",
+      "items": [
+        "一次 stream() 驱动 7 节点顺序执行，KBState 逐节点累积",
+        "GitHub 采集不消耗 token，LLM 调用集中在分析/审核/修订",
+        "所有 LLM 交互经 model_client 统一收口并累计 usage"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "审核循环",
+      "items": [
+        "Reviewer 评分温度 0.1，加权总分由代码计算",
+        "虚线消息表示条件触发：仅 fail 分支进入 Reviser",
+        "iteration 达到 plan.max_iterations 后不再循环"
+      ]
+    },
+    {
+      "dot": "orange",
+      "title": "出口与可观测",
+      "items": [
+        "organizer 幂等写盘：重复运行不产生重复条目",
+        "cost_tracker 随最终状态返回，供 CostGuard 复核",
+        "LLM 失败时审核自动通过，保存已有结果不阻塞"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "diagram_type": "lifecycle",
+  "meta": {
+    "title": "AI 知识库 V3 — 知识条目生命周期",
+    "output": "docs/diagrams/lifecycle.html",
+    "quality_profile": "showcase",
+    "viewBox": [980, 660],
+    "views": [
+      {
+        "id": "happy-path",
+        "label": "正常路径",
+        "focus": ["collected", "analyzed", "reviewing", "saved"],
+        "note": "采集 → 分析 → 审核通过 → 入库，一条主轨到终点。"
+      },
+      {
+        "id": "review-loop",
+        "label": "修订循环",
+        "focus": ["reviewing", "revising"],
+        "note": "未通过时进入修订，改完回到审核，iteration 递增。"
+      },
+      {
+        "id": "exits",
+        "label": "等待与降级",
+        "focus": ["pending", "failed"],
+        "note": "超迭代进待人工区；LLM 失败留占位条目不阻塞流程。"
+      }
+    ]
+  },
+  "lanes": [
+    { "id": "main", "label": "主流程" },
+    { "id": "loop", "label": "修订循环" },
+    { "id": "waits", "label": "等待与降级" }
+  ],
+  "states": [
+    { "id": "collected", "type": "start", "label": "已采集", "sublabel": "sources[] 原始字段", "lane": "main", "col": 0, "step": "01" },
+    { "id": "analyzed", "type": "active", "label": "已分析", "sublabel": "+摘要/标签/评分", "lane": "main", "col": 1, "step": "02" },
+    { "id": "reviewing", "type": "decision", "label": "审核中", "sublabel": "5 维加权 ≥ 7.0", "lane": "main", "col": 2, "step": "03" },
+    { "id": "saved", "type": "success", "label": "已入库", "sublabel": "articles/ + index", "lane": "main", "col": 4, "step": "05" },
+    { "id": "revising", "type": "active", "label": "修订中", "sublabel": "按弱项反馈定向改", "lane": "loop", "col": 2, "step": "04" },
+    { "id": "pending", "type": "waiting", "label": "待人工", "sublabel": "pending_review/", "lane": "waits", "col": 1 },
+    { "id": "failed", "type": "failure", "label": "分析失败", "sublabel": "category=error 占位", "lane": "waits", "col": 0 }
+  ],
+  "transitions": [
+    { "id": "collect-analyze", "from": "collected", "to": "analyzed", "label": "逐条 LLM 增强", "labelAt": [171, 205] },
+    { "id": "analyze-review", "from": "analyzed", "to": "reviewing", "label": "进入门控", "labelAt": [325, 205] },
+    { "id": "review-save", "from": "reviewing", "to": "saved", "label": "加权 ≥ 7.0", "variant": "emphasis", "fromSide": "right", "toSide": "left", "labelAt": [556, 116] },
+    { "id": "review-revise", "from": "reviewing", "to": "revising", "label": "未通过", "variant": "security", "fromSide": "bottom", "toSide": "top", "via": [[402, 210], [710, 210]], "labelAt": [570, 194] },
+    { "id": "revise-review", "from": "revising", "to": "reviewing", "label": "修订重审", "variant": "emphasis", "fromSide": "right", "toSide": "top", "via": [[800, 307], [800, 100], [402, 100]], "labelAt": [600, 84] },
+    { "id": "review-pending", "from": "reviewing", "to": "pending", "label": "超 max_iter", "variant": "security", "fromSide": "bottom", "toSide": "top", "labelAt": [493, 197] },
+    { "id": "analyze-fail", "from": "analyzed", "to": "failed", "label": "LLM 失败", "variant": "dashed", "fromSide": "bottom", "toSide": "left", "via": [[248, 307]], "labelAt": [285, 240] }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "主生命周期",
+      "items": [
+        "五个有序阶段：采集 → 分析 → 审核 → （修订） → 入库",
+        "saved 是正常终点，只有过门控的数据才进主库",
+        "主轨由一条水平 rail 承载，读图一目了然"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "可恢复循环",
+      "items": [
+        "审核未通过进入修订，改完回到审核而非重跑全流程",
+        "iteration 计数上限来自 Planner 策略（1-3 次）",
+        "循环只影响 analyses，不回退已采集的 sources"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "等待与降级",
+      "items": [
+        "待人工是非终态：pending_review 等人做采纳或丢弃决定",
+        "分析失败留下 relevance 0 的占位条目，流程继续",
+        "占位与待审数据都不进入 articles/ 主库"
+      ]
+    }
+  ]
+}

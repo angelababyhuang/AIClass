@@ -1,0 +1,33 @@
+{
+  "id": "deploy-openclaw",
+  "name": "deploy-openclaw",
+  "title": "部署 AI 知识库 V3 到 Mac mini OpenClaw",
+  "description": "总任务：将 v3-multi-agent 部署到 192.168.124.4 (MacMiniM2-2) 的 OpenClaw，新建独立 kb3 agent + 新飞书机器人（方案A），与现有 main agent 完全隔离",
+  "status": "planning",
+  "dev_type": null,
+  "scope": null,
+  "package": null,
+  "priority": "P0",
+  "creator": "wangyao",
+  "assignee": "wangyao",
+  "createdAt": "2026-09-06",
+  "completedAt": null,
+  "branch": null,
+  "base_branch": "main",
+  "worktree_path": null,
+  "commit": null,
+  "pr_url": null,
+  "subtasks": [],
+  "children": [
+    "09-06-remote-python",
+    "09-06-sync-code",
+    "09-06-remote-venv",
+    "09-06-openclaw-agent",
+    "09-06-feishu-bind",
+    "09-06-e2e-verify"
+  ],
+  "parent": null,
+  "relatedFiles": [],
+  "notes": "",
+  "meta": {}
+}

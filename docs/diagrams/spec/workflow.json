@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "AI 知识库 V3 — LangGraph 工作流",
+    "output": "docs/diagrams/workflow.html",
+    "quality_profile": "showcase",
+    "viewBox": [760, 940],
+    "views": [
+      {
+        "id": "main-run",
+        "label": "主流程",
+        "focus": ["planner", "collector", "analyzer", "reviewer", "organizer"],
+        "note": "规划驱动的单向流水线，organize 是正常终点。"
+      },
+      {
+        "id": "review-loop",
+        "label": "审核循环",
+        "focus": ["reviewer", "reviser"],
+        "note": "未通过时按反馈定向修改，再回到 Reviewer 重审。"
+      },
+      {
+        "id": "exception-exit",
+        "label": "异常出口",
+        "focus": ["reviewer", "humanflag"],
+        "note": "超过 max_iterations 仍不通过，标记人工介入并隔离存档。"
+      }
+    ]
+  },
+  "lanes": [
+    { "id": "plan", "label": "规划" },
+    { "id": "pipeline", "label": "采集与分析" },
+    { "id": "review", "label": "审核循环" },
+    { "id": "exits", "label": "入库" },
+    { "id": "manual", "label": "人工介入", "variant": "exception" }
+  ],
+  "phases": [
+    { "id": "planning", "label": "规划", "fromCol": 0, "toCol": 0 },
+    { "id": "collecting", "label": "采集", "fromCol": 1, "toCol": 1 },
+    { "id": "gating", "label": "分析与门控", "fromCol": 2, "toCol": 3, "variant": "emphasis" },
+    { "id": "landing", "label": "入库与兜底", "fromCol": 4, "toCol": 5, "variant": "dashed" }
+  ],
+  "groups": [
+    { "id": "review_loop", "label": "Review Loop", "lane": "review", "fromCol": 1, "toCol": 3, "variant": "emphasis" }
+  ],
+  "mainPath": ["planner", "collector", "analyzer", "reviewer", "organizer"],
+  "nodes": [
+    { "id": "planner", "lane": "plan", "col": 0, "type": "backend", "label": "Planner", "sublabel": "三档策略", "tag": "01" },
+    { "id": "collector", "lane": "pipeline", "col": 1, "type": "cloud", "label": "Collector", "sublabel": "GitHub 采集", "tag": "02" },
+    { "id": "reviser", "lane": "review", "col": 1, "type": "backend", "label": "Reviser", "sublabel": "定向修改", "tag": "05" },
+    { "id": "analyzer", "lane": "pipeline", "col": 3, "type": "backend", "label": "Analyzer", "sublabel": "逐条 LLM", "tag": "03" },
+    { "id": "reviewer", "lane": "review", "col": 3, "type": "security", "label": "Reviewer", "sublabel": "5 维加权", "tag": "04" },
+    { "id": "organizer", "lane": "exits", "col": 4, "type": "database", "label": "Organizer", "sublabel": "去重写盘", "tag": "06" },
+    { "id": "humanflag", "lane": "manual", "col": 5, "type": "security", "label": "HumanFlag", "sublabel": "隔离存档", "tag": "07" }
+  ],
+  "edges": [
+    { "id": "plan-collect", "from": "planner", "to": "collector", "label": "per_source_limit", "variant": "emphasis", "route": "drop", "fromSide": "bottom", "toSide": "top", "labelAt": [154, 170] },
+    { "id": "collect-analyze", "from": "collector", "to": "analyzer", "label": "sources[]", "fromSide": "right", "toSide": "left" },
+    { "id": "analyze-review", "from": "analyzer", "to": "reviewer", "label": "analyses[]", "route": "drop", "fromSide": "bottom", "toSide": "top", "labelAt": [452, 300] },
+    { "id": "review-organize", "from": "reviewer", "to": "organizer", "label": "pass ≥ 7.0", "variant": "emphasis", "route": "drop", "fromSide": "bottom", "toSide": "top", "labelAt": [497, 440] },
+    { "id": "review-revise", "from": "reviewer", "to": "reviser", "label": "fail · feedback", "variant": "security", "role": "error", "fromSide": "left", "toSide": "right" },
+    { "id": "revise-review", "from": "reviser", "to": "reviewer", "label": "重审 · iteration+1", "variant": "dashed", "role": "return", "route": "bottom-channel", "fromSide": "bottom", "toSide": "bottom" },
+    { "id": "review-humanflag", "from": "reviewer", "to": "humanflag", "label": "超 max_iterations", "variant": "security", "role": "error", "fromSide": "right", "toSide": "top", "via": [[625, 367]], "labelAt": [560, 390] }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "一条主路径",
+      "items": [
+        "plan → collect → analyze → review → organize 单向流动",
+        "每个节点只写自己负责的 KBState 字段，职责隔离",
+        "Planner 三档策略驱动下游的采集量、阈值与迭代上限"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "质量门控",
+      "items": [
+        "5 维加权总分由代码重算，不信任 LLM 算术",
+        "加权总分 ≥ 7.0 才放行进入 organize",
+        "Reviewer 只评估不修改，评分温度 0.1 保证一致性"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "双终点兜底",
+      "items": [
+        "未通过时 Reviser 按弱项反馈定向修改，回到 Reviewer 重审",
+        "iteration 超过 plan.max_iterations 强制离场，防止无限循环",
+        "HumanFlag 写 pending_review/，与主知识库物理隔离"
+      ]
+    }
+  ]
+}

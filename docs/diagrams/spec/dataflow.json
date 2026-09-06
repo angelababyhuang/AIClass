@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "diagram_type": "dataflow",
+  "meta": {
+    "title": "AI 知识库 V3 — 数据流与血缘",
+    "output": "docs/diagrams/dataflow.html",
+    "quality_profile": "showcase",
+    "viewBox": [1080, 800],
+    "views": [
+      {
+        "id": "ingest-path",
+        "label": "采集到增强",
+        "focus": ["ghs", "src", "ana"],
+        "note": "仓库元数据进入内存态 sources，再被 LLM 逐条增强。"
+      },
+      {
+        "id": "persist-path",
+        "label": "持久化",
+        "focus": ["ana", "art", "idx", "pend"],
+        "note": "通过审核的数据写主库与索引，超限数据隔离到待审区。"
+      },
+      {
+        "id": "consume-path",
+        "label": "消费",
+        "focus": ["idx", "consumer", "human"],
+        "note": "Router 检索走索引，人工审核决定待审数据的去向。"
+      }
+    ]
+  },
+  "stages": [
+    { "label": "采集源" },
+    { "label": "内存态" },
+    { "label": "LLM 增强" },
+    { "label": "持久化" },
+    { "label": "消费" }
+  ],
+  "nodes": [
+    { "id": "ghs", "type": "external", "label": "GitHub Trending", "sublabel": "search/repositories", "stage": 0, "row": 0, "tag": "每周活跃" },
+    { "id": "src", "type": "messagebus", "label": "sources[]", "sublabel": "KBState 内存", "stage": 1, "row": 0, "tag": "原始字段" },
+    { "id": "ana", "type": "backend", "label": "analyses[]", "sublabel": "+摘要/标签/评分", "stage": 2, "row": 0, "tag": "结构化增强" },
+    { "id": "art", "type": "database", "label": "articles/*.json", "sublabel": "knowledge/articles", "stage": 3, "row": 0, "tag": "主知识库" },
+    { "id": "idx", "type": "database", "label": "index.json", "sublabel": "检索索引", "stage": 3, "row": 2, "tag": "幂等追加" },
+    { "id": "pend", "type": "security", "label": "pending_review/", "sublabel": "隔离待审区", "stage": 3, "row": 4, "tag": "人工介入" },
+    { "id": "consumer", "type": "backend", "label": "Router 检索", "sublabel": "knowledge_query", "stage": 4, "row": 0, "tag": "关键词+LLM" },
+    { "id": "human", "type": "external", "label": "人工审核", "sublabel": "采纳或丢弃", "stage": 4, "row": 4, "tag": "终端判断" }
+  ],
+  "flows": [
+    { "id": "ghs-src", "from": "ghs", "to": "src", "label": "repo 元数据", "classification": "title/url/stars", "variant": "emphasis", "fromSide": "right", "toSide": "left" },
+    { "id": "src-ana", "from": "src", "to": "ana", "label": "逐条 LLM 增强", "classification": "MiniMax M3", "variant": "emphasis", "fromSide": "right", "toSide": "left" },
+    { "id": "ana-art", "from": "ana", "to": "art", "label": "≥阈值 + URL 去重", "classification": "organize 写盘", "variant": "emphasis", "fromSide": "right", "toSide": "left" },
+    { "id": "art-idx", "from": "art", "to": "idx", "label": "追加索引", "classification": "按 id 去重", "variant": "default", "fromSide": "bottom", "toSide": "top" },
+    { "id": "ana-pend", "from": "ana", "to": "pend", "label": "超迭代未通过", "classification": "human_flag", "variant": "security", "fromSide": "bottom", "toSide": "left", "via": [[530, 240], [620, 240], [620, 613]] },
+    { "id": "idx-consumer", "from": "idx", "to": "consumer", "label": "索引检索", "classification": "read-only", "variant": "dashed", "fromSide": "right", "toSide": "left" },
+    { "id": "pend-human", "from": "pend", "to": "human", "label": "待审数据", "classification": "人工判定", "variant": "dashed", "fromSide": "right", "toSide": "left" }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "主数据路径",
+      "items": [
+        "GitHub 元数据 → sources → analyses → articles 单向血缘",
+        "只有 organize 之后数据才落盘，此前全部在内存态",
+        "写盘以 URL 去重、索引以 id 幂等追加"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "隔离边界",
+      "items": [
+        "超迭代数据进 pending_review/，不污染主知识库",
+        "主库条目必须通过 5 维加权门控",
+        "人工审核是待审数据的唯一出口"
+      ]
+    },
+    {
+      "dot": "orange",
+      "title": "消费端",
+      "items": [
+        "Router 的 knowledge_query 处理器读 index.json",
+        "关键词优先，无命中时 LLM 辅助检索",
+        "索引是唯一检索入口，保证消费端轻量"
+      ]
+    }
+  ]
+}
