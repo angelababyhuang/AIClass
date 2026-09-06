@@ -32,6 +32,7 @@ def chat(
     model: str | None = None,
     temperature: float = 0.3,
     max_tokens: int = 2000,
+    json_mode: bool = False,
 ) -> tuple[str, dict]:
     """调用 LLM 并返回 (回复文本, token用量信息)
 
@@ -41,12 +42,17 @@ def chat(
         model: 模型名，默认从环境变量读取
         temperature: 采样温度
         max_tokens: 最大输出 token 数
+        json_mode: 启用 response_format=json_object，由服务端保证 JSON 合法性
 
     Returns:
         (response_text, usage_dict) 其中 usage_dict 包含 prompt_tokens, completion_tokens
     """
     client = get_client()
     model_name = model or os.getenv("LLM_MODEL", "deepseek-chat")
+
+    kwargs: dict[str, Any] = {}
+    if json_mode:
+        kwargs["response_format"] = {"type": "json_object"}
 
     response = client.chat.completions.create(
         model=model_name,
@@ -56,6 +62,7 @@ def chat(
         ],
         temperature=temperature,
         max_tokens=max_tokens,
+        **kwargs,
     )
 
     text = response.choices[0].message.content or ""
@@ -76,7 +83,7 @@ def chat_json(
 ) -> tuple[dict | list, dict]:
     """调用 LLM 并解析 JSON 响应（带容错）
 
-    容错策略:
+    优先启用 json_object 模式让服务端保证 JSON 合法，再做三级客户端容错:
     1. 去掉 markdown 代码块包裹
     2. 直接 json.loads
     3. 失败则用正则匹配第一个 {...} 或 [...] 结构
@@ -90,7 +97,7 @@ def chat_json(
     """
     import re
 
-    text, usage = chat(prompt, system=system, **kwargs)
+    text, usage = chat(prompt, system=system, json_mode=True, **kwargs)
 
     # 策略 1: 去掉 markdown 代码块包裹
     cleaned = text.strip()

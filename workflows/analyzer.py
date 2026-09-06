@@ -52,6 +52,10 @@ URL: {item.get('url', '')}
             result, usage = chat_json(prompt)
             tracker = accumulate_usage(tracker, usage)
 
+            # MiniMax 偶尔把 JSON 包成数组返回，归一化为单个 dict
+            if isinstance(result, list):
+                result = result[0] if result and isinstance(result[0], dict) else {}
+
             analyses.append({
                 **item,
                 "summary": result.get("summary", ""),

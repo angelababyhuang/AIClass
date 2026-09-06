@@ -91,8 +91,13 @@ def review_node(state: KBState) -> dict:
             prompt,
             system="你是严格但公正的知识库质量审核员。给出具体、可操作的反馈。",
             temperature=0.1,  # 低温度保证评分一致性
+            max_tokens=4000,  # M3 思考 token 占用多，2000 易截断 JSON
         )
         tracker = accumulate_usage(tracker, usage)
+
+        # MiniMax 偶尔把 JSON 包成数组返回，归一化为单个 dict
+        if isinstance(result, list):
+            result = result[0] if result and isinstance(result[0], dict) else {}
 
         # 【关键】用代码重算加权总分，不信任模型算术
         scores = result.get("scores", {})
