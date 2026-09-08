@@ -22,8 +22,11 @@ from dataclasses import dataclass
 from typing import Any
 
 import aiohttp
+from dotenv import load_dotenv
 
 from distribution.formatter import generate_daily_digest
+
+load_dotenv()
 
 TELEGRAM_API_BASE = "https://api.telegram.org"
 TELEGRAM_MESSAGE_LIMIT = 4096
