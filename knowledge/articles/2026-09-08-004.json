@@ -1,0 +1,19 @@
+{
+  "id": "2026-09-08-004",
+  "title": "DietrichGebert/ponytail",
+  "source": "github",
+  "url": "https://github.com/DietrichGebert/ponytail",
+  "collected_at": "2026-09-08T22:48:07.491666+00:00",
+  "summary": "ponytail 是一个面向 AI 编码 Agent 的中间层工具，核心理念是让 AI 以'最懒的高级工程师'姿态编码——优先复用现有代码、避免不必要的新增实现。从描述与 JS 实现来看，它更可能是一个系统提示/指令包装层（middleware），而非独立的 MCP 工具或独立 Agent 框架；具体形式（prompt 模板、CLI 包装还是 Agent 拦截器）需结合源码确认。它通过约束 Agent 的输出风格来抑制 AI 生成冗余代码的倾向，适用于代码库整洁度敏感的中大型项目。",
+  "tags": [
+    "Agent",
+    "代码生成",
+    "提示工程",
+    "代码质量",
+    "最小化编码",
+    "中间件"
+  ],
+  "relevance_score": 0.68,
+  "category": "agent",
+  "key_insight": "定位独特——不是新框架，而是面向现有编码 Agent 的'行为约束中间件'；价值在于把'代码最小化'这一工程哲学显式注入到 Agent 工作流中，局限在于效果高度依赖底层 Agent 对提示的遵循度。"
+}

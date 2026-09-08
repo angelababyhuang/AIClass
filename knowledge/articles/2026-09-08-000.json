@@ -1,0 +1,19 @@
+{
+  "id": "2026-09-08-000",
+  "title": "NousResearch/hermes-agent",
+  "source": "github",
+  "url": "https://github.com/NousResearch/hermes-agent",
+  "collected_at": "2026-09-08T22:48:07.491605+00:00",
+  "summary": "NousResearch 推出的开源 Agent 框架，核心理念源自口号 'The agent that grows with you'。框架基于其自研 Hermes 系列语言模型构建，支持任务规划、工具调用与多步推理。关于'自适应学习与持续进化'的具体技术机制，原文描述较为模糊，未明确说明是否涉及在线学习、权重微调或 RLHF/DPO 等训练侧更新；当前可观察的能力主要依赖提示工程、上下文记忆与工具编排实现，模型权重侧的成长路径尚不清晰。",
+  "tags": [
+    "Agent",
+    "NousResearch",
+    "Hermes",
+    "记忆系统",
+    "提示工程",
+    "开源框架"
+  ],
+  "relevance_score": 0.82,
+  "category": "agent",
+  "key_insight": "将 Hermes 系列 LLM 封装为个人助手型 Agent，'成长性'当前主要落在记忆与上下文层面，而非模型权重更新；适合轻量级个人场景，但长期演化机制透明度不足，社区验证尚浅。"
+}

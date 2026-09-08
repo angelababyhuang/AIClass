@@ -1,0 +1,20 @@
+{
+  "id": "2026-09-08-003",
+  "title": "Shubhamsaboo/awesome-llm-apps",
+  "source": "github",
+  "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+  "collected_at": "2026-09-08T22:48:07.491660+00:00",
+  "summary": "Shubhamsaboo/awesome-llm-apps 是一个由社区维护的精选 LLM 应用资源集合，收录了 100+ 端到端可运行项目，覆盖 AI Agents、Agent Skills、RAG 与多模态应用等方向。结构上按应用场景（而非按底层框架）分类，每个子目录附 README 说明与运行指引。与通用 awesome 列表（如 awesome-llm）相比，本项目更强调'可直接跑通的应用'而非论文或工具索引；与 LangChain Templates 相比，覆盖面更广但每个项目的代码质量与维护状态参差不齐，无统一评审流程。",
+  "tags": [
+    "LLM应用",
+    "Agent",
+    "RAG",
+    "开源项目",
+    "精选合集",
+    "学习资源",
+    "示例代码"
+  ],
+  "relevance_score": 0.88,
+  "category": "resource",
+  "key_insight": "作为面向开发者的'LLM 应用样板间'，提供了从入门到进阶的完整参考生态；适合用于快速调研实现方案或学习新框架用法，但因缺乏统一质量门槛，直接用于生产时需自行评估代码健壮性与依赖安全性。"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "2026-09-08-005",
+  "title": "browser-use/browser-use",
+  "source": "github",
+  "url": "https://github.com/browser-use/browser-use",
+  "collected_at": "2026-09-08T22:48:07.491671+00:00",
+  "summary": "browser-use 是面向 AI Agent 的浏览器自动化开源库，基于 Playwright/Puppeteer 等底层引擎，将网页元素的语义信息（DOM、a11y tree）转化为 LLM 可理解的观察空间，使 Agent 能够完成点击、表单填写、数据提取等交互操作。区别于传统 RPA（如 Selenium 脚本、UiBot），它将控制流交给 LLM 决策而非硬编码流程，适合开放域网页任务；局限在于对反爬措施、登录态管理与动态渲染的鲁棒性仍依赖底层浏览器能力。",
+  "tags": [
+    "Agent",
+    "浏览器自动化",
+    "网页爬虫",
+    "LLM工具",
+    "RPA",
+    "开源框架",
+    "Playwright"
+  ],
+  "relevance_score": 0.92,
+  "category": "agent",
+  "key_insight": "通过 DOM/可访问性树抽取与 LLM 控制循环的结合，提供了比传统脚本化 RPA 更灵活的网页交互能力；适合开放域任务自动化，但生产场景需配合反爬与会话管理策略。"
+}

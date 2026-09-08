@@ -1,0 +1,20 @@
+{
+  "id": "2026-09-08-008",
+  "title": "OpenHands/OpenHands",
+  "source": "github",
+  "url": "https://github.com/OpenHands/OpenHands",
+  "collected_at": "2026-09-08T22:48:07.491686+00:00",
+  "summary": "OpenHands（原 OpenDevin）是面向软件工程任务的开源自主开发 Agent 平台，核心能力包括代码编写、文件操作、命令行执行、网页浏览与多 Agent 协作。架构上采用沙箱执行环境隔离代码运行，通过事件流驱动 Agent 主循环，并提供 REST/WebSocket 接口便于第三方集成。定位上与 Devin（Cognition AI 闭源商业产品）形成开源对照；与 Aider、Cline 等编码助手相比，OpenHands 更强调'端到端任务执行'而非行内补全，适合 Issue 解决、跨文件重构等长链路任务。局限在于沙箱资源消耗大，且对真实生产环境（私有 Git、CI 集成）的适配仍需额外配置。",
+  "tags": [
+    "Agent",
+    "自动化开发",
+    "开源框架",
+    "代码生成",
+    "LLM应用",
+    "Devin替代",
+    "沙箱执行"
+  ],
+  "relevance_score": 0.95,
+  "category": "agent",
+  "key_insight": "作为 Devin 的主要开源对照，提供了从 Issue 解析到 PR 提交的端到端 Agent 能力；适用场景包括原型开发、Bug 自动化修复与跨文件重构，但生产化落地需自行补齐权限、审计与企业 CI/CD 集成。"
+}

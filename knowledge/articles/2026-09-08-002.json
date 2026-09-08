@@ -1,0 +1,22 @@
+{
+  "id": "2026-09-08-002",
+  "title": "langchain-ai/langchain",
+  "source": "github",
+  "url": "https://github.com/langchain-ai/langchain",
+  "collected_at": "2026-09-08T22:48:07.491654+00:00",
+  "summary": "LangChain 已从早期的 LLM 链式调用库演进为完整的 Agent 工程平台，模块化组件包括 Chain、Agent、Tool、Retriever、Memory 等。v0.3 起官方对包结构进行了拆分重组（langchain-core / langchain-community / langchain-text-splitters 等），明确了核心接口与集成的边界，降低了依赖膨胀问题。与 LangGraph 的关系上：LangChain 提供高层抽象（LCEL、AgentExecutor），LangGraph 则是底层基于状态图的有状态编排框架，用于构建循环、人机协同、复杂多智能体等 LCEL 难以表达的工作流。生态上配套 LangSmith（可观测性）与 LangServe（部署）。",
+  "tags": [
+    "LLM框架",
+    "Agent",
+    "RAG",
+    "工具调用",
+    "工作流编排",
+    "LangGraph",
+    "多智能体",
+    "Python",
+    "TypeScript"
+  ],
+  "relevance_score": 0.95,
+  "category": "framework",
+  "key_insight": "通过 LCEL 提供高层声明式抽象，通过 LangGraph 暴露底层状态机控制，二者形成'高层易用 + 底层可控'的双层架构；局限在于历史 API 变动频繁、抽象层较重，迁移成本不容忽视。"
+}
