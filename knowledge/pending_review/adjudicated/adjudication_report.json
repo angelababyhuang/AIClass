@@ -1,0 +1,28 @@
+{
+  "adjudicated_at": "2026-09-08T22:52:36.019053+00:00",
+  "files": [
+    "pending-2026-04-11-143959.json",
+    "pending-2026-04-28-093450.json",
+    "pending-2026-09-06-133823.json",
+    "pending-2026-09-06-221726.json",
+    "pending-2026-09-08-073652.json",
+    "pending-2026-09-08-073856.json",
+    "pending-2026-09-08-224239.json"
+  ],
+  "superseded": [
+    "langgenius/dify",
+    "langchain-ai/langchain",
+    "NousResearch/hermes-agent",
+    "Shubhamsaboo/awesome-llm-apps",
+    "browser-use/browser-use",
+    "DietrichGebert/ponytail",
+    "earendil-works/pi",
+    "infiniflow/ragflow",
+    "OpenHands/OpenHands",
+    "bytedance/deer-flow"
+  ],
+  "promoted": [],
+  "still_pending": [
+    "test"
+  ]
+}
