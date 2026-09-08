@@ -58,7 +58,12 @@ def review_node(state: KBState) -> dict:
         }
 
     # 只审核前 5 条，控制 token 消耗 + 避免长上下文降低审核质量
-    sample = analyses[:5]
+    # 投影掉 stars/language 等采集元数据：审核员的世界知识有过期风险，
+    # 看到"与常识不符"的 star 数会误判数据造假（实测：数据是对的，模型记的是旧值）
+    sample = [
+        {k: v for k, v in a.items() if k not in ("stars", "language")}
+        for a in analyses[:5]
+    ]
 
     prompt = f"""你是知识库质量审核员。请审核以下分析结果：
 
@@ -83,6 +88,11 @@ def review_node(state: KBState) -> dict:
     "feedback": "具体的改进建议（指出弱项）",
     "weak_dimensions": ["technical_depth", "originality"]
 }}
+
+【评分纪律】
+- 数据中的 url / collected_at 等元字段采集自 GitHub API，是客观数据；
+  不得以"数据可疑、与常识不符"为由扣分——你的知识可能滞后于现实
+- 只依据上述 5 个维度评分，不要引入维度之外的标准（如 star 数合理性）
 
 当前是第 {iteration + 1} 次审核。"""
 
