@@ -37,6 +37,9 @@ v3-multi-agent/
 │   ├── graph.py                       #   工作流图 + 条件边 (Review Loop)
 │   └── model_client.py                #   LLM 调用客户端
 │
+├── distribution/                      # 【V3 新增】多渠道分发层（纯格式化，无网络）
+│   └── formatter.py                   #   Markdown / Telegram MarkdownV2 / 飞书卡片 / 日报
+│
 ├── patterns/                          # 【V3 新增】Agent 设计模式
 │   ├── router.py                      #   Router 模式 — 意图路由
 │   └── supervisor.py                  #   Supervisor 模式 — 主管调度
