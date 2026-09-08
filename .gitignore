@@ -6,3 +6,4 @@ logs/
 .venv/
 .claude/
 .DS_Store
+data/
