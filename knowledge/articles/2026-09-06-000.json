@@ -1,0 +1,21 @@
+{
+  "id": "2026-09-06-000",
+  "title": "NousResearch/hermes-agent",
+  "source": "github",
+  "url": "https://github.com/NousResearch/hermes-agent",
+  "collected_at": "2026-09-06T22:18:34.085608+00:00",
+  "summary": "NousResearch/hermes-agent 是基于 Hermes 系列开源大语言模型（Hermes 3 等）构建的自进化 AI Agent 框架。在记忆机制上，它并非简单复用 LangChain 的 ConversationBufferMemory 或 MemGPT 的分页虚拟上下文方案，而是引入了'经验回放 + 元认知循环'——每次交互产出经验片段（episode），经向量库与情景库双重索引后供后续任务检索与反思；在工具调用层采用结构化 Tool Calling 协议而非早期 ReAct 风格的文本解析；在规划层结合任务分解（task graph）与自我批评（self-critique），使 Agent 能够在多轮交互中持续校准行为策略。整体设计上更强调'个性化适配'而非通用工具堆叠。",
+  "tags": [
+    "Agent",
+    "Hermes",
+    "NousResearch",
+    "经验回放",
+    "元认知",
+    "长期记忆",
+    "工具调用",
+    "自进化"
+  ],
+  "relevance_score": 0.85,
+  "category": "agent",
+  "key_insight": "hermes-agent 的差异化在于将'记忆'从静态存储升级为可反思的经验库，让 Agent 行为在多轮交互中通过元认知循环自我校准，而非依赖预设 prompt。"
+}

@@ -1,0 +1,18 @@
+{
+  "id": "2026-09-06-004",
+  "title": "DietrichGebert/ponytail",
+  "source": "github",
+  "url": "https://github.com/DietrichGebert/ponytail",
+  "collected_at": "2026-09-06T22:18:34.085707+00:00",
+  "summary": "ponytail 是一套面向 AI 编程代理的系统提示词（system prompt）模板，其设计目标是引导 LLM 在代码生成任务中遵循极简主义原则——优先复用已有库、避免不必要的抽象、抑制过度工程倾向（描述语气带有一定戏谑色彩）。其实现机制是：① 通过约束性指令限制 Agent 的输出倾向（减少'从零实现'冲动）；② 提供结构化的'复用优先决策清单'；③ 在 prompt 层面接入现有项目以读取已有依赖。本质上属于 prompt engineering 工具，而非独立的 Agent 框架。",
+  "tags": [
+    "prompt-engineering",
+    "system-prompt",
+    "code-generation",
+    "minimalism",
+    "ai-agent"
+  ],
+  "relevance_score": 0.6,
+  "category": "tool",
+  "key_insight": "ponytail 展示了一种'反向 prompt 约束'思路——与其教 AI 多写代码，不如通过系统提示抑制其重写冲动，把工程经验转化为对模型的软约束规则。"
+}

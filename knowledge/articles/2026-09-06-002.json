@@ -1,0 +1,21 @@
+{
+  "id": "2026-09-06-002",
+  "title": "langchain-ai/langchain",
+  "source": "github",
+  "url": "https://github.com/langchain-ai/langchain",
+  "collected_at": "2026-09-06T22:18:34.085688+00:00",
+  "summary": "LangChain 是 LLM 应用领域最早成熟的事实标准框架，已从最初的链式调用库演进为完整的 Agent 工程平台。核心抽象包括：Models I/O（统一的 ChatModel/Embedding 接口）、Prompts（模板与选择器）、Chains（顺序/路由组合）、Agents（基于 ReAct 或 Tool Calling 的决策循环）、Memory（Buffer/Window/Summary/Vector 等多种记忆策略）、Retrieval（Document Loader→Text Splitter→Retriever→Reranker 的标准管道）。关键技术里程碑是 LangChain Expression Language (LCEL)，以 | 操作符实现声明式组合，支持流式输出与异步原语。生态侧 LangSmith 提供 tracing、evaluation、dataset 管理等可观测性能力，LangServe 实现一键 REST 部署。",
+  "tags": [
+    "Agent框架",
+    "LLM编排",
+    "LCEL",
+    "Chain",
+    "Memory",
+    "RAG",
+    "Tool Calling",
+    "LangSmith"
+  ],
+  "relevance_score": 0.95,
+  "category": "framework",
+  "key_insight": "LangChain 奠定了 Agent 工程的'组件化范式'——通过 Models、Chains、Agents、Memory、Retrieval 等正交抽象解耦能力供给与业务逻辑，其衍生的 LCEL 声明式语法已成为业界编排约定。"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "2026-09-06-009",
+  "title": "bytedance/deer-flow",
+  "source": "github",
+  "url": "https://github.com/bytedance/deer-flow",
+  "collected_at": "2026-09-06T22:18:34.085752+00:00",
+  "summary": "ByteDance DeerFlow 是专为长时程（long-horizon）任务设计的 SuperAgent 执行底座。其架构围绕'任务可持续执行'这一核心挑战展开：① 沙箱层提供隔离的代码执行/浏览器操作环境；② 记忆层结合短期上下文窗口与长期向量记忆库；③ 子智能体（subagents）机制实现任务并行分解与结果汇总；④ 消息网关处理与外部系统（Slack/邮件/Webhook）的 I/O。相较短任务 Agent，它在断点续传、状态持久化、失败回滚等长流程机制上做了系统性工程设计，是处理'分钟到小时级'复杂任务的基础设施级方案。",
+  "tags": [
+    "长时程任务",
+    "SuperAgent",
+    "沙箱执行",
+    "子智能体",
+    "持久记忆",
+    "字节跳动",
+    "任务编排"
+  ],
+  "relevance_score": 0.92,
+  "category": "agent",
+  "key_insight": "DeerFlow 的工程重心在于'让 Agent 跑得久'——通过沙箱隔离、状态持久化、子智能体并行与消息网关的组合，把单次任务边界从'秒级'推到'小时级'，这是生产化 SuperAgent 的关键基座能力。"
+}

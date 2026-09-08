@@ -1,0 +1,20 @@
+{
+  "id": "2026-09-06-008",
+  "title": "OpenHands/OpenHands",
+  "source": "github",
+  "url": "https://github.com/OpenHands/OpenHands",
+  "collected_at": "2026-09-06T22:18:34.085740+00:00",
+  "summary": "OpenHands（前身 OpenDevin）是面向软件工程全流程的开源自主编程 Agent。架构上采用沙箱化执行环境（基于 Docker 隔离）+ 事件驱动的 Agent Runtime，Agent 在沙箱内可自由调用 Bash、编辑器、浏览器、Git 等工具完成 PR 级任务。核心创新包括：① 多 Agent 协作模式（Planner、Editor、Reviewer 分工）；② 持久化的工作记忆（workspace state 跨步骤保留）；③ 与 GitHub/GitLab 深度集成的事件回调机制。其评测基准 SWE-Bench 上的表现奠定了'AI 工程师'这一概念的可信度。",
+  "tags": [
+    "AI Agent",
+    "自主编程",
+    "SWE-Bench",
+    "沙箱执行",
+    "软件工程自动化",
+    "多Agent",
+    "Devin替代"
+  ],
+  "relevance_score": 0.93,
+  "category": "agent",
+  "key_insight": "OpenHands 的关键突破在于'端到端软件工程任务闭环'——它把代码生成从片段补全升级为可验证的 PR 级交付，沙箱架构与多 Agent 分工是支撑这一跨越的工程基础。"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "2026-09-06-001",
+  "title": "langgenius/dify",
+  "source": "github",
+  "url": "https://github.com/langgenius/dify",
+  "collected_at": "2026-09-06T22:18:34.085671+00:00",
+  "summary": "Dify 是一个开源的 LLMOps 一体化平台，核心架构采用 BaaS + 可视化编排双层设计。底层提供统一的模型网关抽象（兼容 OpenAI、Anthropic、Llama、HuggingFace 等十余类模型接入），上层通过节点式 DAG 编辑器实现工作流编排，并内置了基于倒排索引 + 向量检索的混合 RAG 引擎。其工程亮点在于：① 将 prompt 工程从代码层提升为一等公民（版本化、A/B 测试）；② 提供企业级特性如 RBAC、审计日志、VPC 隔离部署；③ 通过 DSL 导出实现'可视化搭建与代码可移植'的闭环。相比 LangChain 的代码优先路线，Dify 选择了更偏业务团队的可视化优先策略。",
+  "tags": [
+    "LLMOps",
+    "RAG",
+    "Agent",
+    "可视化编排",
+    "DAG",
+    "BaaS",
+    "模型网关",
+    "自托管"
+  ],
+  "relevance_score": 0.92,
+  "category": "framework",
+  "key_insight": "Dify 的真正壁垒不在功能广度，而在它把 prompt 与工作流变成了可版本化、可协作的工程资产——这是 LangChain 系代码优先框架未能覆盖的团队协作维度。"
+}

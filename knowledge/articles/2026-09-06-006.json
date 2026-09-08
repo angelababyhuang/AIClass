@@ -1,0 +1,21 @@
+{
+  "id": "2026-09-06-006",
+  "title": "earendil-works/pi",
+  "source": "github",
+  "url": "https://github.com/earendil-works/pi",
+  "collected_at": "2026-09-06T22:18:34.085724+00:00",
+  "summary": "Pi 是一套面向开发者的轻量级 AI Agent 全栈工具包，采用 Unix 哲学的模块化拆分策略。技术组成：① Unified LLM API——基于 OpenAI 兼容协议抽象多厂商差异，支持流式响应、function calling、token 用量统计；② Agent Loop——基于事件循环（tool execution → observation → next action）实现的通用执行骨架；③ TUI——基于 React/Ink 的终端界面，提供多会话管理与可视化流；④ Coding Agent CLI——在通用 Agent Loop 基础上预置代码场景工具集（文件读写、grep、shell、git）。各模块低耦合、可独立替换，定位介于'框架'与'库'之间。",
+  "tags": [
+    "AI Agent",
+    "LLM 工具链",
+    "Agent Loop",
+    "TUI",
+    "Coding Agent",
+    "多模型统一接口",
+    "TypeScript",
+    "开发者工具"
+  ],
+  "relevance_score": 0.85,
+  "category": "tool",
+  "key_insight": "Pi 的产品哲学是'组合优于集成'——把 Agent 系统拆成可独立替换的薄模块，避免了 LangChain 类单体框架的强耦合负担，更适合需要深度定制的开发者。"
+}

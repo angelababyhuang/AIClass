@@ -1,0 +1,20 @@
+{
+  "id": "2026-09-06-003",
+  "title": "Shubhamsaboo/awesome-llm-apps",
+  "source": "github",
+  "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+  "collected_at": "2026-09-06T22:18:34.085699+00:00",
+  "summary": "该仓库是 LLM 应用领域高质量实战案例的精选集合，覆盖 100+ 开源项目，按场景划分为 AI Agent、多 Agent 协作、RAG 应用、智能体技能（Agent Skills）等子类别。每个案例都附有完整的代码实现、依赖说明与运行指引，主流模型（GPT-4、Claude 3、Gemini、Llama 3）与框架（LangChain、LlamaIndex、CrewAI、AutoGen）的组合方式均有覆盖。相较一般 awesome-list，它更像一份'可运行的技术雷达'，能直接反映当前 LLM 应用架构的主流范式与新兴模式。",
+  "tags": [
+    "awesome-list",
+    "AI Agent",
+    "RAG",
+    "多智能体",
+    "应用案例",
+    "LLM应用",
+    "开源项目"
+  ],
+  "relevance_score": 0.93,
+  "category": "resource",
+  "key_insight": "不同于静态知识汇编，这是一个'可运行的 LLM 应用样本库'——每个案例都代表一种已验证的架构组合，对追踪 Agent 与 RAG 技术的演化方向具有风向标价值。"
+}

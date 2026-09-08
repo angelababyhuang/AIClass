@@ -1,0 +1,19 @@
+{
+  "id": "2026-09-06-005",
+  "title": "browser-use/browser-use",
+  "source": "github",
+  "url": "https://github.com/browser-use/browser-use",
+  "collected_at": "2026-09-06T22:18:34.085716+00:00",
+  "summary": "browser-use 是面向 AI Agent 的浏览器自动化框架，核心解决'DOM 结构化 → LLM 可理解表示'的转换难题。技术上采用 Playwright 作为底层浏览器驱动，通过自研的 DOM 蒸馏算法（保留可交互元素的语义信息、剔除噪声节点）将网页状态压缩为带编号的 element 列表，让 LLM 能以'决策 element index + 自然语言指令'的方式驱动操作。其架构包含：① 元素指纹系统（每个交互元素生成稳定 selector）；② 多步任务规划器（基于历史 action 序列进行重规划）；③ 视觉-文本混合观测通道（截图 + DOM 蒸馏联合输入）。相较传统 RPA 工具，它更适合非结构化、动态变化的真实网站场景。",
+  "tags": [
+    "AI Agent",
+    "浏览器自动化",
+    "Playwright",
+    "DOM蒸馏",
+    "网页交互",
+    "工具调用"
+  ],
+  "relevance_score": 0.9,
+  "category": "tool",
+  "key_insight": "browser-use 的核心贡献在于把'非结构化的网页 DOM'压缩为 LLM 可决策的紧凑元素集合，这种'表示层工程'是 Agent 与真实 Web 交互的关键瓶颈解决方案。"
+}
