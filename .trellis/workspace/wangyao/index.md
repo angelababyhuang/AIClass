@@ -8,8 +8,8 @@
 
 <!-- @@@auto:current-status -->
 - **Active File**: `journal-1.md`
-- **Total Sessions**: 1
-- **Last Active**: 2026-09-07
+- **Total Sessions**: 2
+- **Last Active**: 2026-09-09
 <!-- @@@/auto:current-status -->
 
 ---
@@ -19,7 +19,7 @@
 <!-- @@@auto:active-documents -->
 | File | Lines | Status |
 |------|-------|--------|
-| `journal-1.md` | ~43 | Active |
+| `journal-1.md` | ~85 | Active |
 <!-- @@@/auto:active-documents -->
 
 ---
@@ -29,6 +29,7 @@
 <!-- @@@auto:session-history -->
 | # | Date | Title | Commits | Branch |
 |---|------|-------|---------|--------|
+| 2 | 2026-09-09 | 第14-15节 + 生产化加固：分发层/定时管线/Reviewer修复/三步分时 | `70e8ae1`, `08a3c54`, `cae2462`, `3c2a05b`, `c817928`, `92263a9`, `dceb3e0`, `97fa503`, `412a5bc`, `4a13bbb` | `main` |
 | 1 | 2026-09-07 | 部署 V3 到 Mac mini OpenClaw + M3 JSON 加固 | `232ca8c`, `dee9f77`, `46e198d`, `7a9123b` | `main` |
 <!-- @@@/auto:session-history -->
 
