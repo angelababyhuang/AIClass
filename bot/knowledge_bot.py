@@ -155,6 +155,9 @@ class KnowledgeSearchEngine:
     ) -> list[dict[str, Any]]:
         """搜索知识库条目。
 
+        同一标题多次采集只保留最优一条（命中分 > relevance_score >
+        采集时间更新），避免跨日期重复刷屏。
+
         Args:
             keyword: 关键词（标题/标签/摘要加权匹配）。
             tags: 标签过滤（条目需包含任一标签）。
@@ -162,10 +165,10 @@ class KnowledgeSearchEngine:
             limit: 最多返回条数。
 
         Returns:
-            按（命中分, relevance_score）降序的条目列表。
+            按（命中分, relevance_score）降序的去重条目列表。
         """
         kw = keyword.strip().lower()
-        results: list[tuple[int, float, dict[str, Any]]] = []
+        candidates: list[tuple[int, float, str, dict[str, Any]]] = []
         for article in self._load_articles():
             if date_from and not str(article.get("collected_at", "")) >= date_from:
                 continue
@@ -177,11 +180,26 @@ class KnowledgeSearchEngine:
             match = self._match_score(article, kw)
             if kw and match == 0:
                 continue
-            results.append(
-                (match, float(article.get("relevance_score", 0.0)), article)
+            candidates.append(
+                (
+                    match,
+                    float(article.get("relevance_score", 0.0)),
+                    str(article.get("collected_at", "")),
+                    article,
+                )
             )
-        results.sort(key=lambda x: (x[0], x[1]), reverse=True)
-        return [a for _, _, a in results[:limit]]
+
+        best_by_title: dict[str, tuple[int, float, str, dict[str, Any]]] = {}
+        for cand in candidates:
+            title = cand[3].get("title", "")
+            prev = best_by_title.get(title)
+            if prev is None or (cand[0], cand[1], cand[2]) > (prev[0], prev[1], prev[2]):
+                best_by_title[title] = cand
+
+        ranked = sorted(
+            best_by_title.values(), key=lambda x: (x[0], x[1]), reverse=True
+        )
+        return [c[3] for c in ranked[:limit]]
 
 
 class SubscriptionManager:

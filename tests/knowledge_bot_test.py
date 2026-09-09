@@ -37,6 +37,8 @@ def kb_dir(tmp_path):
     _make_article(tmp_path / "a-001.json", "agent-framework-core", ["llm"], "一个框架", 0.7)
     _make_article(tmp_path / "a-002.json", "cool-tool", ["agent"], "agent 智能体教程", 0.9)
     _make_article(tmp_path / "a-003.json", "rag-engine", ["rag"], "检索增强", 0.85, collected="2026-09-09")
+    # 同标题不同日期的重复采集（旧且低分）——应被去重掉
+    _make_article(tmp_path / "a-004.json", "rag-engine", ["rag"], "检索增强旧版", 0.6, collected="2026-09-01")
     return tmp_path
 
 
@@ -86,6 +88,19 @@ class TestSearchEngine:
         engine = KnowledgeSearchEngine(kb_dir)
         results = engine.search(limit=2)
         assert results[0]["relevance_score"] >= results[1]["relevance_score"]
+
+    def test_title_dedup_keeps_best(self, kb_dir):
+        engine = KnowledgeSearchEngine(kb_dir)
+        results = engine.search(keyword="rag")
+        titles = [r["title"] for r in results]
+        assert titles.count("rag-engine") == 1, "同标题应去重"
+        assert results[0]["relevance_score"] == 0.85, "应保留高分新版本"
+        assert "旧版" not in results[0]["summary"]
+
+    def test_title_dedup_in_browse(self, kb_dir):
+        engine = KnowledgeSearchEngine(kb_dir)
+        titles = [r["title"] for r in engine.search(limit=10)]
+        assert len(titles) == len(set(titles)), "浏览模式同样不应有重复标题"
 
 
 class TestPermissions:
