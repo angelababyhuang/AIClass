@@ -159,7 +159,8 @@ class TestFeishuPublisher:
         assert "19021" in (r.error or "")
 
     @pytest.mark.asyncio
-    async def test_missing_env(self):
+    async def test_missing_env(self, monkeypatch):
+        monkeypatch.delenv("FEISHU_WEBHOOK_URL", raising=False)
         p = FeishuPublisher(webhook_url=None)
         r = await p.send_message({"msg_type": "text"})
         assert not r.success
@@ -205,7 +206,9 @@ class TestPublishDailyDigest:
         assert "2026\\-04\\-11" in telegram_bodies[0]["text"]  # MarkdownV2 转义后的日期
 
     @pytest.mark.asyncio
-    async def test_unconfigured_channels_fail_gracefully(self, kb_dir):
+    async def test_unconfigured_channels_fail_gracefully(self, kb_dir, monkeypatch):
+        for var in ("TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID", "FEISHU_WEBHOOK_URL"):
+            monkeypatch.delenv(var, raising=False)
         results = await publish_daily_digest(knowledge_dir=kb_dir, date="2026-04-11")
         assert len(results) == 2
         assert all(not r.success for r in results)

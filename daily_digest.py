@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import argparse
 import asyncio
+import json
 import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -26,6 +27,7 @@ from distribution.publisher import publish_daily_digest
 
 ROOT = Path(__file__).resolve().parent
 MARKER_PATH = ROOT / "logs" / "last_digest_date"
+PUSH_LOG_PATH = ROOT / "logs" / f"push_{datetime.now(timezone.utc).year}.jsonl"
 
 BANNER = (
     "==================================================\n"
@@ -91,6 +93,25 @@ def main() -> int:
             print(f"  ✅ {r.channel}{extra}")
         else:
             print(f"  ❌ {r.channel}: {r.error}")
+
+    # 结构化推送日志（jsonl，每渠道一行，跨日审计用）
+    PUSH_LOG_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with PUSH_LOG_PATH.open("a", encoding="utf-8") as f:
+        for r in results:
+            f.write(
+                json.dumps(
+                    {
+                        "ts": datetime.now(timezone.utc).isoformat(),
+                        "date": date,
+                        "channel": r.channel,
+                        "success": r.success,
+                        "message_id": r.message_id,
+                        "error": r.error,
+                    },
+                    ensure_ascii=False,
+                )
+                + "\n"
+            )
 
     if ok_count:
         MARKER_PATH.parent.mkdir(parents=True, exist_ok=True)

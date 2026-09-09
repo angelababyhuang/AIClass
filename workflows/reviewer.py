@@ -111,6 +111,10 @@ def review_node(state: KBState) -> dict:
 
         # 【关键】用代码重算加权总分，不信任模型算术
         scores = result.get("scores", {})
+        if not isinstance(scores, dict) or not scores:
+            # 返回缺 scores（如截断/包裹异常）→ 视为审核产出无效，
+            # 走优雅降级：自动通过，不把好条目误杀成 0 分
+            raise ValueError(f"审核返回缺少 scores 字段: {list(result.keys())}")
         weighted_total = sum(
             scores.get(dim, 0) * w for dim, w in REVIEWER_WEIGHTS.items()
         )

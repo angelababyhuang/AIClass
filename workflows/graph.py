@@ -21,7 +21,7 @@ LangGraph 工作流图定义 — V3 知识库：6 节点 + HumanFlag 终点
 from langgraph.graph import END, StateGraph
 
 from workflows.analyzer import analyze_node
-from workflows.collector import collect_node
+from workflows.collector import collect_node, load_raw_node
 from workflows.human_flag import human_flag_node
 from workflows.organizer import organize_node
 from workflows.planner import planner_node
@@ -52,16 +52,57 @@ def route_after_review(state: KBState) -> str:
         return "revise"
 
 
-def build_graph() -> StateGraph:
-    """构建知识库工作流图
+def build_graph(mode: str = "full") -> StateGraph:
+    """构建知识库工作流图。
+
+    Args:
+        mode: 运行模式——
+            "full"    完整流水线（默认，教学拓扑不变）
+            "collect" 仅采集：plan → collect → END（写 knowledge/raw/）
+            "analyze" 仅分析：plan → load_raw → analyze → review ⇄ revise
+                      → organize / human_flag（从 raw/ 读，不调 GitHub API）
 
     Returns:
-        编译后的 LangGraph 应用，可通过 app.invoke() 或 app.stream() 执行
+        编译前的 StateGraph，可调用 .compile() 执行。
     """
     graph = StateGraph(KBState)
-
-    # --- 注册 6 + 1 个节点 ---
     graph.add_node("plan", planner_node)
+
+    if mode == "collect":
+        # 三步分时的第一阶段：只采集，产物落 raw/ 缓冲
+        graph.add_node("collect", collect_node)
+        graph.add_edge("plan", "collect")
+        graph.add_edge("collect", END)
+        graph.set_entry_point("plan")
+        return graph
+
+    if mode == "analyze":
+        # 三步分时的第二阶段：从 raw/ 缓冲读入，跑分析→审核→入库
+        graph.add_node("load_raw", load_raw_node)
+        graph.add_node("analyze", analyze_node)
+        graph.add_node("review", review_node)
+        graph.add_node("revise", revise_node)
+        graph.add_node("organize", organize_node)
+        graph.add_node("human_flag", human_flag_node)
+        graph.add_edge("plan", "load_raw")
+        graph.add_edge("load_raw", "analyze")
+        graph.add_edge("analyze", "review")
+        graph.add_conditional_edges(
+            "review",
+            route_after_review,
+            {
+                "organize": "organize",
+                "revise": "revise",
+                "human_flag": "human_flag",
+            },
+        )
+        graph.add_edge("revise", "review")
+        graph.add_edge("organize", END)
+        graph.add_edge("human_flag", END)
+        graph.set_entry_point("plan")
+        return graph
+
+    # --- full：注册其余 6 个节点 ---
     graph.add_node("collect", collect_node)
     graph.add_node("analyze", analyze_node)
     graph.add_node("review", review_node)
@@ -98,15 +139,28 @@ def build_graph() -> StateGraph:
     return graph
 
 
-# --- 编译图，暴露 app 供外部调用 ---
+# --- 编译图，暴露 app 供外部调用（默认 full 模式） ---
 app = build_graph().compile()
 
 
 # --- 便捷运行入口 ---
 if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser(description="AI 知识库 V3 — LangGraph 工作流")
+    parser.add_argument(
+        "--mode",
+        choices=["full", "collect", "analyze"],
+        default="full",
+        help="full=完整流水线 | collect=仅采集(写 raw/) | analyze=从 raw/ 分析入库",
+    )
+    args = parser.parse_args()
+
     print("=" * 60)
-    print("AI 知识库 V3 — LangGraph 工作流启动")
+    print(f"AI 知识库 V3 — LangGraph 工作流启动（mode={args.mode}）")
     print("=" * 60)
+
+    runner = build_graph(args.mode).compile()
 
     initial_state: KBState = {
         "plan": {},
@@ -122,7 +176,7 @@ if __name__ == "__main__":
 
     current_plan: dict = {}
 
-    for event in app.stream(initial_state):
+    for event in runner.stream(initial_state):
         node_name = list(event.keys())[0]
         print(f"\n--- [{node_name}] 完成 ---")
 
