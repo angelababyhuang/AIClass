@@ -181,6 +181,8 @@ if __name__ == "__main__":
         print(f"\n--- [{node_name}] 完成 ---")
 
         node_output = event[node_name]
+        if not isinstance(node_output, dict):
+            continue
         if "plan" in node_output:
             current_plan = node_output["plan"] or {}
             print(f"  策略: {current_plan.get('strategy', '?')}")
