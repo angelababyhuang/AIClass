@@ -1,0 +1,18 @@
+{
+  "id": "2026-09-10-004",
+  "title": "DietrichGebert/ponytail",
+  "source": "github",
+  "url": "https://github.com/DietrichGebert/ponytail",
+  "collected_at": "2026-09-10T00:00:05.051540+00:00",
+  "summary": "Ponytail 是一个面向 AI 编程 Agent 的提示词/行为规则项目，核心理念是'最优秀的代码就是从未写过的代码'。它引导 AI Agent 模仿资深懒人开发者的思维方式：避免不必要的实现、优先复用现有方案、在不确定时主动提问而非盲目编码。该项目以幽默讽刺的方式倡导极简主义编码哲学。",
+  "tags": [
+    "AI Agent",
+    "提示词工程",
+    "极简主义",
+    "代码生成",
+    "Cursor规则"
+  ],
+  "relevance_score": 0.6,
+  "category": "agent",
+  "key_insight": "好的 AI 编码 Agent 不在于能写多少代码，而在于懂得何时不写代码——极简主义是高级工程实践的体现。"
+}

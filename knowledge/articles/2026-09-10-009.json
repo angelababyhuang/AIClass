@@ -1,0 +1,21 @@
+{
+  "id": "2026-09-10-009",
+  "title": "unslothai/unsloth",
+  "source": "github",
+  "url": "https://github.com/unslothai/unsloth",
+  "collected_at": "2026-09-10T00:00:05.051555+00:00",
+  "summary": "Unsloth 是一个开源的本地化大语言模型与扩散模型训练/推理框架，提供本地 UI 界面，支持 GGUF、MLX 等多种模型格式，覆盖 Qwen3、DeepSeek、Gemma、FLUX 等主流模型。其核心优势在于通过优化 GPU 内核和内存管理，显著提升 LLM 微调速度（最高可达 2-5 倍）并大幅降低显存占用，使消费级 GPU 也能高效完成大模型训练，是本地部署和定制化模型训练的热门工具。",
+  "tags": [
+    "LLM微调",
+    "本地部署",
+    "扩散模型",
+    "GGUF",
+    "MLX",
+    "显存优化",
+    "开源框架",
+    "模型训练"
+  ],
+  "relevance_score": 0.85,
+  "category": "framework",
+  "key_insight": "Unsloth 通过深度优化 CUDA 内核和量化策略，让消费级硬件也能高效微调主流大模型，显著降低了 LLM 定制化训练门槛。"
+}
