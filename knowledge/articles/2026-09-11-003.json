@@ -1,0 +1,18 @@
+{
+  "id": "2026-09-11-003",
+  "title": "Shubhamsaboo/awesome-llm-apps",
+  "source": "github",
+  "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+  "collected_at": "2026-09-11T00:00:09.557766+00:00",
+  "summary": "Shubhamsaboo/awesome-llm-apps 是一个精选的开源项目集合，收录 100+ 基于 LLM 的 AI Agent、Agent Skills 与 RAG 应用示例，覆盖多模态、多智能体协作、知识库问答等多种场景，是入门与进阶 LLM 应用开发的实战参考库。",
+  "tags": [
+    "AI Agents",
+    "RAG",
+    "应用示例",
+    "精选合集",
+    "学习资源"
+  ],
+  "relevance_score": 0.9,
+  "category": "agent",
+  "key_insight": "从收录项目的技术栈分布可观察到三大主流 Agent 架构趋势：(1) ReAct + Function-calling 仍是单 Agent 编排的事实范式；(2) RAG 项目从基础向量检索普遍演进到混合检索（BM25 + 向量）+ 重排序 + 引用溯源；(3) 多 Agent 协作（CrewAI/AutoGen/AgentVerse 风格）成为复杂长链路任务的主流解法。该仓库可视为这些架构演进的活体档案。"
+}

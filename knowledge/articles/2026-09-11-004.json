@@ -1,0 +1,18 @@
+{
+  "id": "2026-09-11-004",
+  "title": "DietrichGebert/ponytail",
+  "source": "github",
+  "url": "https://github.com/DietrichGebert/ponytail",
+  "collected_at": "2026-09-11T00:00:09.557775+00:00",
+  "summary": "ponytail 是面向 AI 编程代理的极简主义系统提示工具集，通过结构化指令约束 AI 像资深工程师一样'偷懒'。其核心约束包括：(1) 写任何新代码前必须先搜索仓库已有实现以优先复用；(2) 禁止为单次使用场景创建抽象层；(3) 拒绝重写功能正常运行的代码（YAGNI 原则）。该工具通常作为 system prompt 或 CLAUDE.md/AGENTS.md 注入到 Cursor、Claude Code 等 AI 编程 Agent 中运行，对抗 LLM 训练数据中'过度工程化'的系统性偏见。",
+  "tags": [
+    "AI Agent",
+    "代码生成",
+    "极简开发",
+    "系统提示",
+    "Prompt Engineering"
+  ],
+  "relevance_score": 0.72,
+  "category": "tool",
+  "key_insight": "ponytail 的本质是'约束即生产力'——通过预设的反过度工程指令（搜索优先、禁止预抽象、拒绝无意义重构），用最小 prompt 工程对抗 LLM 训练语料中过度设计的偏见，是 system prompt 工程在 AI 编程场景的轻量化范式，体现了'提示词约束比模型能力更可解释可控'的工程思路。"
+}

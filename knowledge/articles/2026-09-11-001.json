@@ -1,0 +1,18 @@
+{
+  "id": "2026-09-11-001",
+  "title": "langgenius/dify",
+  "source": "github",
+  "url": "https://github.com/langgenius/dify",
+  "collected_at": "2026-09-11T00:00:09.557743+00:00",
+  "summary": "Dify 是开源的大语言模型应用开发平台，核心是基于 DAG（有向无环图）的工作流引擎，通过可视化节点编排支持 Agentic 工作流与 RAG 管道构建。节点类型涵盖 LLM 调用、知识检索、代码执行、条件分支、HTTP 请求、Agent 节点等，支持节点间变量传递、全局变量与会话变量机制；集成 OpenAI、Claude、Llama 等百余种模型及工具插件，可部署于云端、VPC 或自托管环境，帮助团队从原型快速走向生产。",
+  "tags": [
+    "LLM应用平台",
+    "DAG工作流",
+    "RAG",
+    "低代码",
+    "多模型集成"
+  ],
+  "relevance_score": 0.95,
+  "category": "framework",
+  "key_insight": "Dify 的差异化定位在于'低代码 + DAG 显式编排'——相比 LangChain 的代码优先范式（面向开发者、抽象灵活但学习曲线高）和 Flowise 的轻量可视化（偏个人/中小团队），Dify 在企业级多租户、RBAC、私有化部署上更重，更适合中大型团队的协作化 AI 应用生产。代价是灵活性受限于其节点抽象体系。"
+}

@@ -1,0 +1,18 @@
+{
+  "id": "2026-09-11-000",
+  "title": "NousResearch/hermes-agent",
+  "source": "github",
+  "url": "https://github.com/NousResearch/hermes-agent",
+  "collected_at": "2026-09-11T00:00:09.557672+00:00",
+  "summary": "NousResearch/hermes-agent 是 Nous Research 开源的 AI Agent 项目，定位为'与你共同成长的智能体'。基于 Hermes 系列（Hermes 2/3 等）开源微调模型构建，其'成长'机制并非模型权重更新，而是依赖上下文记忆积累与用户交互反馈——Agent 在多轮对话中维护持久上下文，将用户偏好、历史交互和领域知识沉淀到 prompt 上下文中实现 in-context learning，本质上是上下文工程而非持续训练。这是 Nous Research 在'Hermes 模型家族 + Agent 应用层'路线上的轻量化延伸。",
+  "tags": [
+    "agent",
+    "NousResearch",
+    "Hermes",
+    "in-context learning",
+    "开源框架"
+  ],
+  "relevance_score": 0.78,
+  "category": "agent",
+  "key_insight": "在 Nous Research 的'Hermes 模型家族 + Agent 应用层'路线中，hermes-agent 代表了轻量化路径——其'成长'本质上是上下文工程的艺术（in-context learning + 持久记忆管理），而非模型再训练；这与需要 fine-tuning 或 RLHF 的自适应方案形成对比，也规避了持续训练带来的灾难性遗忘与算力成本问题。"
+}
