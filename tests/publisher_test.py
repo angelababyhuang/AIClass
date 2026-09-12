@@ -9,6 +9,7 @@ import pytest
 import pytest_asyncio
 from aiohttp import web
 
+import distribution.publisher as publisher_module
 from distribution.publisher import (
     BasePublisher,
     FeishuPublisher,
@@ -30,6 +31,10 @@ SAMPLE_ARTICLE = {
     "category": "framework",
     "key_insight": "一体化平台",
 }
+
+
+async def _fast_sleep(seconds: float) -> None:
+    """测试用：把重试等待打桩为立即返回。"""
 
 
 @pytest_asyncio.fixture
@@ -55,11 +60,22 @@ async def fake_api():
         received.append(("feishu-fail", await request.json()))
         return web.json_response({"code": 19021, "msg": "sign match fail"})
 
+    async def feishu_flaky(request: web.Request) -> web.Response:
+        """前两次返回 11232 限频，第三次成功。"""
+        received.append(("feishu-flaky", await request.json()))
+        state = request.app["flaky_state"]
+        state["count"] += 1
+        if state["count"] <= 2:
+            return web.json_response({"code": 11232, "msg": "frequency limited"})
+        return web.json_response({"code": 0, "msg": "success"})
+
     app = web.Application()
+    app["flaky_state"] = {"count": 0}
     app.router.add_post("/tg/bot{T}/sendMessage", telegram_ok)
     app.router.add_post("/tgfail/bot{T}/sendMessage", telegram_fail)
     app.router.add_post("/fs", feishu_ok)
     app.router.add_post("/fsfail", feishu_fail)
+    app.router.add_post("/fsflaky", feishu_flaky)
 
     runner = web.AppRunner(app)
     await runner.setup()
@@ -165,6 +181,38 @@ class TestFeishuPublisher:
         r = await p.send_message({"msg_type": "text"})
         assert not r.success
         assert "FEISHU_WEBHOOK_URL" in (r.error or "")
+
+    @pytest.mark.asyncio
+    async def test_retry_on_rate_limit_then_success(self, fake_api, monkeypatch):
+        """11232 限频 → 等 20s 重试 → 第三次成功（等待时间打桩为 0）。"""
+        base, received = fake_api
+        monkeypatch.setattr(publisher_module.asyncio, "sleep", _fast_sleep)
+        p = FeishuPublisher(webhook_url=f"{base}/fsflaky")
+        r = await p._send_with_retry({"msg_type": "text"})
+        assert r.success, r.error
+        flaky_calls = [b for ch, b in received if ch == "feishu-flaky"]
+        assert len(flaky_calls) == 3, "应有 3 次尝试（2 次限频 + 1 次成功）"
+
+    @pytest.mark.asyncio
+    async def test_digest_paces_cards(self, fake_api, monkeypatch):
+        """多卡片 digest 应在卡间节流（sleep 被调用）。"""
+        base, received = fake_api
+        sleeps: list[float] = []
+
+        async def record_sleep(seconds):
+            sleeps.append(seconds)
+
+        monkeypatch.setattr(publisher_module.asyncio, "sleep", record_sleep)
+        digest = {
+            "feishu": [
+                {"msg_type": "interactive", "card": {"i": i}} for i in range(4)
+            ]
+        }
+        p = FeishuPublisher(webhook_url=f"{base}/fs")
+        r = await p.send_digest(digest)
+        assert r.success
+        assert len(sleeps) == 3, "4 张卡应有 3 次卡间节流"
+        assert all(s == publisher_module.FEISHU_CARD_INTERVAL_SECONDS for s in sleeps)
 
 
 # ---------------------------------------------------------------------------

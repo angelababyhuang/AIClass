@@ -31,6 +31,8 @@ load_dotenv()
 TELEGRAM_API_BASE = "https://api.telegram.org"
 TELEGRAM_MESSAGE_LIMIT = 4096
 DEFAULT_TIMEOUT_SECONDS = 30.0
+FEISHU_CARD_INTERVAL_SECONDS = 1.5
+FEISHU_RETRY_WAIT = {11232: 20.0, 19006: 5.0}
 
 
 async def _read_json(resp: aiohttp.ClientResponse) -> dict[str, Any]:
@@ -263,10 +265,38 @@ class FeishuPublisher(BasePublisher):
             }
             return await self.send_message(placeholder)
 
-        results = [
-            await self.send_message(card) for card in digest["feishu"]
-        ]
+        results = []
+        for i, card in enumerate(digest["feishu"]):
+            # 节流：卡片间留间隔，避免触发飞书平台聚合限频（11232/19006）
+            if i:
+                await asyncio.sleep(FEISHU_CARD_INTERVAL_SECONDS)
+            results.append(await self._send_with_retry(card))
         return self._aggregate(results)
+
+    async def _send_with_retry(
+        self, payload: dict[str, Any], attempts: int = 3
+    ) -> PublishResult:
+        """带智能退避的单卡发送：11232 等 20s、19006 等 5s 后重试。
+
+        Args:
+            payload: 卡片消息体。
+            attempts: 剩余尝试次数。
+
+        Returns:
+            最终的 PublishResult。
+        """
+        result = await self.send_message(payload)
+        if result.success or attempts <= 1:
+            return result
+        wait = 0.0
+        for code, delay in FEISHU_RETRY_WAIT.items():
+            if result.error and f"{code}" in result.error:
+                wait = delay
+                break
+        if not wait:
+            return result
+        await asyncio.sleep(wait)
+        return await self._send_with_retry(payload, attempts - 1)
 
 
 async def publish_daily_digest(
