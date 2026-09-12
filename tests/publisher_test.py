@@ -226,6 +226,7 @@ class TestPublishDailyDigest:
             article = {
                 **SAMPLE_ARTICLE,
                 "id": f"2026-04-11-{i:03d}",
+                "title": f"demo/repo-{i}",
                 "relevance_score": score,
             }
             (tmp_path / f"2026-04-11-{i:03d}.json").write_text(

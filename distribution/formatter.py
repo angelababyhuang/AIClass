@@ -204,7 +204,13 @@ def generate_daily_digest(
     date: str | None = None,
     top_n: int = 5,
 ) -> dict[str, Any] | str:
-    """生成当日知识简报（按相关性取 Top N）。
+    """生成当日知识简报（增量模式：只推首次出现的条目）。
+
+    GitHub 热门榜每天返回高度重合的仓库，直接推当日 Top 会天天复读
+    旧闻。因此这里做两级去重：
+        1. 跨天增量：标题在该日期之前的任何条目中出现过 → 视为旧闻跳过
+        2. 当日同标题：只保留 relevance_score 最高的一条
+    过滤后没有新条目时返回占位消息（仍应推送，告知"今天没有新内容"）。
 
     Args:
         knowledge_dir: 知识条目目录，默认 "knowledge/articles"（相对 CWD）。
@@ -214,25 +220,53 @@ def generate_daily_digest(
 
     Returns:
         dict 形如 {"markdown": str, "telegram": str, "feishu": list[dict]}；
-        当日无文章时返回字符串 "📭 {date} 暂无新增知识条目"。
+        当日无文章或全部为旧闻时，返回字符串 "📭 {date} 暂无新增知识条目"。
     """
     if date is None:
         date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
     articles_dir = Path(knowledge_dir)
-    articles: list[dict[str, Any]] = []
-    for path in sorted(articles_dir.glob(f"{date}-*.json")):
-        with open(path, encoding="utf-8") as f:
-            articles.append(json.load(f))
 
-    if not articles:
+    # 1. 收集历史已见标题（文件名日期早于目标日期的全部条目；
+    #    文件名 {date}-NNN 是 Organizer 的权威分桶，比 collected_at 可靠）
+    seen_titles: set[str] = set()
+    for path in articles_dir.glob("*-*.json"):
+        if path.name == "index.json" or path.stem[:10] >= date:
+            continue
+        try:
+            item = json.loads(path.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            continue
+        if isinstance(item, dict):
+            seen_titles.add(str(item.get("title", "")))
+
+    # 2. 当日条目：跨天过滤 + 同标题保留最高分
+    today_paths = sorted(articles_dir.glob(f"{date}-*.json"))
+    if not today_paths:
         return f"📭 {date} 暂无新增知识条目"
+
+    best_by_title: dict[str, dict[str, Any]] = {}
+    for path in today_paths:
+        with open(path, encoding="utf-8") as f:
+            item = json.load(f)
+        title = str(item.get("title", ""))
+        if title in seen_titles:
+            continue
+        prev = best_by_title.get(title)
+        if prev is None or float(item.get("relevance_score", 0)) > float(
+            prev.get("relevance_score", 0)
+        ):
+            best_by_title[title] = item
+
+    articles = list(best_by_title.values())
+    if not articles:
+        return f"📭 {date} 暂无新增知识条目（今日采集均为已收录过的旧闻）"
 
     articles.sort(key=lambda a: float(a.get("relevance_score", 0.0)), reverse=True)
     top = articles[:top_n]
 
-    header_md = f"# 📚 {date} 知识日报（Top {len(top)}）"
-    header_tg = f"*{_escape_telegram(f'{date} 知识日报（Top {len(top)}）')}*"
+    header_md = f"# 📚 {date} 知识日报（Top {len(top)} · 仅新增）"
+    header_tg = f"*{_escape_telegram(f'{date} 知识日报（Top {len(top)} · 仅新增）')}*"
 
     return {
         "markdown": "\n\n".join([header_md] + [json_to_markdown(a) for a in top]),

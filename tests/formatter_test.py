@@ -99,13 +99,19 @@ class TestGenerateDailyDigest:
     @pytest.fixture
     def kb_dir(self, tmp_path):
         for i, score in enumerate([0.9, 0.5, 0.75, 0.65]):
-            article = {**SAMPLE, "id": f"2026-04-11-{i:03d}", "relevance_score": score}
+            article = {
+                **SAMPLE,
+                "id": f"2026-04-11-{i:03d}",
+                "title": f"repo-{i}",
+                "relevance_score": score,
+            }
             (tmp_path / f"2026-04-11-{i:03d}.json").write_text(
                 json.dumps(article, ensure_ascii=False), encoding="utf-8"
             )
-        # 不同日期 + index.json 不应被计入
+        # 不同日期的独立标题（不构成 4/11 的历史重复）+ index.json 不应被计入
         (tmp_path / "2026-04-10-000.json").write_text(
-            json.dumps({**SAMPLE, "id": "2026-04-10-000"}, ensure_ascii=False),
+            json.dumps({**SAMPLE, "id": "2026-04-10-000", "title": "old-repo"},
+                       ensure_ascii=False),
             encoding="utf-8",
         )
         (tmp_path / "index.json").write_text("[]", encoding="utf-8")
@@ -140,3 +146,38 @@ class TestGenerateDailyDigest:
         )
         result = generate_daily_digest(knowledge_dir=tmp_path)
         assert isinstance(result, dict)
+
+    def test_incremental_filters_seen_titles(self, kb_dir):
+        """历史日期出现过的标题 → 当日同标题条目被过滤，只推新条目。"""
+        (kb_dir / "2026-04-10-001.json").write_text(
+            json.dumps({**SAMPLE, "id": "2026-04-10-001", "title": "repo-0"},
+                       ensure_ascii=False),
+            encoding="utf-8",
+        )
+        digest = generate_daily_digest(knowledge_dir=kb_dir, date="2026-04-11")
+        md = digest["markdown"]
+        assert "repo-0" not in md, "旧闻不应出现"
+        assert "repo-1" in md and "repo-2" in md
+
+    def test_all_duplicates_returns_placeholder(self, kb_dir):
+        """当日条目全部在历史出现过 → 返回'没有新内容'占位消息。"""
+        for i in range(4):
+            (kb_dir / f"2026-04-10-{i + 10:03d}.json").write_text(
+                json.dumps({**SAMPLE, "id": f"2026-04-10-{i + 10:03d}",
+                            "title": f"repo-{i}"}, ensure_ascii=False),
+                encoding="utf-8",
+            )
+        result = generate_daily_digest(knowledge_dir=kb_dir, date="2026-04-11")
+        assert isinstance(result, str) and "暂无新增" in result and "旧闻" in result
+
+    def test_same_day_title_dedup_keeps_highest(self, kb_dir):
+        """当日同标题多条 → 只保留分数最高的一条。"""
+        (kb_dir / "2026-04-11-009.json").write_text(
+            json.dumps({**SAMPLE, "id": "2026-04-11-009", "title": "repo-0",
+                        "relevance_score": 0.99}, ensure_ascii=False),
+            encoding="utf-8",
+        )
+        digest = generate_daily_digest(knowledge_dir=kb_dir, date="2026-04-11", top_n=10)
+        md = digest["markdown"]
+        assert md.count("## repo-0") == 1
+        assert "0.99" in md, "应保留高分版本"
