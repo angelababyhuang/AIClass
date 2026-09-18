@@ -1,0 +1,22 @@
+{
+  "id": "2026-09-18-005",
+  "title": "earendil-works/pi",
+  "source": "github",
+  "url": "https://github.com/earendil-works/pi",
+  "collected_at": "2026-09-18T00:00:08.146123+00:00",
+  "summary": "earendil-works/pi 是一个面向开发者的 AI Agent 工具包，提供统一的大语言模型 API 抽象、Agent 循环执行框架（agent loop）、终端用户界面（TUI）以及编码代理命令行工具。其核心设计是将 LLM 调用的'请求-响应'模式封装为可循环调用的 Agent 模式，通过统一 API 层屏蔽不同模型供应商的协议差异，让开发者能够以单一接口对接多种模型，快速构建具备自主循环能力的 AI Agent，特别适用于辅助编程和自动化编码场景。",
+  "tags": [
+    "AI Agent",
+    "LLM",
+    "CLI工具",
+    "编码助手",
+    "终端UI",
+    "统一API",
+    "Agent循环",
+    "开发者工具",
+    "Agent框架"
+  ],
+  "relevance_score": 0.92,
+  "category": "agent",
+  "key_insight": "pi 的差异化在于把'Agent 循环'（observe-think-act 循环）作为一等公民显式建模而非隐藏在框架内部，配合统一 API 抽象，使得自定义代理行为的扩展点清晰可见，更接近 Unix 哲学下'小工具可组合'的工程美学。"
+}

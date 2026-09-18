@@ -1,0 +1,21 @@
+{
+  "id": "2026-09-18-004",
+  "title": "Shubhamsaboo/awesome-llm-apps",
+  "source": "github",
+  "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+  "collected_at": "2026-09-18T00:00:08.146113+00:00",
+  "summary": "Shubhamsaboo/awesome-llm-apps 是一个精选的开源项目集合，提供了 100+ 基于大语言模型的应用示例，涵盖 AI Agents、Agent Skills 和检索增强生成（RAG）等主流方向。项目免费开源，包含丰富的代码示例和实战教程。其分类体系按'Agent 类型 × 技术栈 × 行业场景'三维切分（如 RAG 客服代理、代码审查 Agent、多模态研究助手等），代表性项目覆盖了从 LangChain 链式调用到 CrewAI 多代理协作的不同技术路线，适合开发者快速学习和构建 LLM 应用。",
+  "tags": [
+    "LLM",
+    "AI Agent",
+    "RAG",
+    "开源项目",
+    "awesome-list",
+    "应用示例",
+    "大语言模型",
+    "多代理协作"
+  ],
+  "relevance_score": 0.88,
+  "category": "tool",
+  "key_insight": "该项目本质是趋势晴雨表：通过同一仓库内并存的不同技术选型（单 Agent vs 多 Agent、向量检索 vs 混合检索、本地模型 vs API 模型），直观呈现 LLM 应用开发的演进轨迹；其分类密度本身就是一份比白皮书更具时效性的'社区技术雷达图'。"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "2026-09-18-006",
+  "title": "JuliusBrussee/caveman",
+  "source": "github",
+  "url": "https://github.com/JuliusBrussee/caveman",
+  "collected_at": "2026-09-18T00:00:08.146132+00:00",
+  "summary": "caveman 是一个面向 AI 编程代理（如 Claude Code）的轻量级 Skill/Proxy 工具，通过将指令简化为'穴居人式'的简短句式（如'fix bad. make good.'），在不影响代码生成质量的前提下削减约 65% 的 token 消耗。它支持中英文等多语言版本，可作为 CLI 包装层（caveman run claude）拦截并压缩 prompt，从而显著降低 API 调用成本。",
+  "tags": [
+    "token优化",
+    "prompt压缩",
+    "成本削减",
+    "AI编程代理",
+    "CLI工具",
+    "Claude",
+    "prompt-proxy"
+  ],
+  "relevance_score": 0.78,
+  "category": "tool",
+  "key_insight": "大语言模型对语法完整性远不如人类敏感，极简化的'穴居人语言'即可驱动代码生成，从而系统性降低推理 token 开销约 65%；该项目揭示了一个反直觉的经济学事实——在 LLM 场景中，'表达精炼'的边际收益远高于'语义精确'，prompt 压缩正在成为独立的产品类别。"
+}

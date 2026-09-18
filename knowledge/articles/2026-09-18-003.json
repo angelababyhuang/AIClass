@@ -1,0 +1,19 @@
+{
+  "id": "2026-09-18-003",
+  "title": "DietrichGebert/ponytail",
+  "source": "github",
+  "url": "https://github.com/DietrichGebert/ponytail",
+  "collected_at": "2026-09-18T00:00:08.146104+00:00",
+  "summary": "ponytail 是一个面向 AI 编码代理的系统提示/指令集项目，核心理念是让 AI 像资深程序员一样'偷懒'——主张'最好的代码就是从未写过的代码'。它通过预设 prompt 引导 LLM 代理遵循最小化原则编写代码：避免不必要的抽象、不写无意义的注释、不添加'以防万一'的代码，鼓励删除冗余逻辑而非新增功能，是 prompt engineering 领域的幽默化实践。",
+  "tags": [
+    "prompt-engineering",
+    "ai-agent",
+    "code-generation",
+    "minimalism",
+    "system-prompt",
+    "llm"
+  ],
+  "relevance_score": 0.55,
+  "category": "agent",
+  "key_insight": "ponytail 折射出 prompt engineering 从'指令式'（告诉模型做什么）向'约束式'（告诉模型不做什么）的范式转变：通过反向约束与角色锚定（最懒的资深开发者）激活模型对'代码过度工程化'的内建审美判断，是对系统提示词'负空间设计'的一次戏谑但有效的实验。"
+}

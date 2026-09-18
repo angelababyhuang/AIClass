@@ -1,0 +1,23 @@
+{
+  "id": "2026-09-18-002",
+  "title": "langchain-ai/langchain",
+  "source": "github",
+  "url": "https://github.com/langchain-ai/langchain",
+  "collected_at": "2026-09-18T00:00:08.146094+00:00",
+  "summary": "LangChain 是面向 LLM 应用与智能体工程化的开源平台，提供模型封装、提示模板、记忆管理、链式调用（Chains）、检索增强生成（RAG）、智能体（Agents）及工具集成等模块化组件，支持与多种 LLM 提供商和向量数据库无缝对接。在抽象层级上经历了显著演进：从早期基于类继承的 Chain/Agent API，逐步迁移到以 LCEL（LangChain Expression Language）为核心的声明式组合语法，通过 `|` 操作符实现 Runnable 的可组合性，统一了同步/异步/批处理/流式四种执行模式，是 LLM 应用编排从'命令式拼装'走向'声明式管道'的代表性演进。",
+  "tags": [
+    "LLM",
+    "Agent",
+    "RAG",
+    "Framework",
+    "LangChain",
+    "Python",
+    "LCEL",
+    "Prompt Engineering",
+    "Vector Database",
+    "工具链"
+  ],
+  "relevance_score": 0.98,
+  "category": "framework",
+  "key_insight": "LangChain 的核心竞争力在于以 LCEL 统一了 LLM 调用的执行模型（同步/异步/批/流），将工程化痛点（重试、回调、追踪、并发）下沉到 Runnable 协议层；但其抽象边界也在社区争议中持续调整——从 v0.1 的'什么都做'到当前聚焦 Agent Engineering，反映了框架在'广度优先'与'深度收敛'之间的反复权衡。"
+}

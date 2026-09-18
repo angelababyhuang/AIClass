@@ -1,0 +1,23 @@
+{
+  "id": "2026-09-18-009",
+  "title": "bytedance/deer-flow",
+  "source": "github",
+  "url": "https://github.com/bytedance/deer-flow",
+  "collected_at": "2026-09-18T00:00:08.146160+00:00",
+  "summary": "字节跳动开源的长周期超级智能体（SuperAgent）编排框架，能够自主完成研究、编码、创作等多类型复杂任务。该框架在架构上围绕'长上下文保持'与'任务分解-委派'两大核心挑战设计：通过沙箱（Sandbox）实现安全代码执行，借助分层记忆（Memory）模块区分短期上下文与长期知识沉淀，集成工具（Tools）、技能（Skills）扩展能力边界，并利用子智能体（Subagents）和消息网关（Message Gateway）实现多智能体协作与通信，专门应对从分钟级到小时级的长链路任务执行场景，与短周期的单 Agent 框架形成代际差异。",
+  "tags": [
+    "Agent",
+    "Long-horizon",
+    "SuperAgent",
+    "Multi-agent",
+    "Sandbox",
+    "Open Source",
+    "ByteDance",
+    "代码执行",
+    "任务编排",
+    "分层记忆"
+  ],
+  "relevance_score": 0.9,
+  "category": "agent",
+  "key_insight": "Deer-Flow 将研究、编码、创作统一到'长周期 SuperAgent'范式下，核心创新在于分层记忆（短期上下文 vs 长期知识）与子智能体消息网关的解耦设计，把'小时级任务'从工程难题转化为可编排的资源调度问题，反映了大厂从'单 Agent 演示'走向'多 Agent 工业化'的落地思路。"
+}
