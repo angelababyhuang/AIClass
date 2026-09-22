@@ -1,0 +1,20 @@
+{
+  "id": "2026-09-22-009",
+  "title": "unslothai/unsloth",
+  "source": "github",
+  "url": "https://github.com/unslothai/unsloth",
+  "collected_at": "2026-09-22T00:00:08.556996+00:00",
+  "summary": "Unsloth 是一个开源的大语言模型微调与本地部署框架，旨在让用户能够高效地在本地环境中运行和训练各类主流模型。项目支持多种模型格式与架构（GGUF、MLX 等）及主流开源 LLM，同时兼容扩散模型，通过深度优化显存与计算效率，Unsloth 大幅降低了本地训练与推理的硬件门槛。需要说明的是，Unsloth 本身并非 Agent 框架，而是 Agent 所依赖的底层模型训练/推理工具链。",
+  "tags": [
+    "LLM微调",
+    "本地部署",
+    "扩散模型",
+    "GGUF",
+    "MLX",
+    "模型训练",
+    "开源框架"
+  ],
+  "relevance_score": 0.72,
+  "category": "tool",
+  "key_insight": "Unsloth 通过深度优化显存与计算效率，让消费级硬件也能高效微调和部署主流大语言模型与扩散模型，是 Agent 底层模型供给侧的关键工具；与 Agent 框架（LangChain / Dify）属不同技术层级——若目标是为 Agent 提供定制化底模，Unsloth 是当前性价比最高的本地微调方案；若目标是构建 Agent 应用本体，则应优先选择 LangChain / Dify / Pi。"
+}

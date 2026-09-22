@@ -1,0 +1,22 @@
+{
+  "id": "2026-09-22-008",
+  "title": "bytedance/deer-flow",
+  "source": "github",
+  "url": "https://github.com/bytedance/deer-flow",
+  "collected_at": "2026-09-22T00:00:08.556989+00:00",
+  "summary": "Deer Flow（Deep Exploration and Efficient Research Flow）是字节跳动开源的长时域超级智能体（SuperAgent）框架，专注于深度研究、编码和内容创作等复杂任务。它通过集成代码沙箱、长期记忆、外部工具、技能模块、子智能体（SubAgent）协作和消息网关等组件，将任务分解并编排执行，能够处理从分钟级到小时级的不同复杂度任务，是字节在 AI Agent 领域的代表性开源项目。",
+  "tags": [
+    "agent",
+    "superagent",
+    "long-horizon",
+    "sandbox",
+    "subagent",
+    "memory",
+    "framework",
+    "bytedance",
+    "open-source"
+  ],
+  "relevance_score": 0.9,
+  "category": "agent",
+  "key_insight": "Deer Flow 是字节开源的长时域 SuperAgent 编排框架，通过沙箱、子智能体、记忆和工具的模块化组合实现分钟到小时级别的自主任务执行；与 OpenHands 偏'软件工程'不同，Deer Flow 更聚焦研究、内容创作等'长链路信息任务'，定位介于通用 Agent 框架与垂直研究助手之间，适合需要长时间、多步骤信息整合的场景。"
+}

@@ -1,0 +1,23 @@
+{
+  "id": "2026-09-22-002",
+  "title": "langchain-ai/langchain",
+  "source": "github",
+  "url": "https://github.com/langchain-ai/langchain",
+  "collected_at": "2026-09-22T00:00:08.556933+00:00",
+  "summary": "LangChain 是由 LangChain AI 团队维护的开源大语言模型应用开发框架，长期作为 Agent 工程领域的事实标准库。框架核心提供 Chains、Agents、Tools、Memory、Retrievers 等模块化抽象，支持与 OpenAI、Anthropic、本地模型等数百种 LLM 及外部工具集成，并配套 LangSmith（观测/调试）与 LangServe（服务化部署）形成完整工程闭环。官方近期将自身定位升级为'The agent engineering platform'，重心从单一 Python/JS SDK 转向覆盖 Agent 全生命周期的平台化方案。与 Dify 的'可视化低代码'路线不同，LangChain 坚持代码优先、可组合的编程范式，灵活性更高但学习曲线也更陡。",
+  "tags": [
+    "LLM框架",
+    "Agent SDK",
+    "工具链",
+    "Memory",
+    "RAG",
+    "Chain",
+    "LangChain",
+    "Python",
+    "TypeScript",
+    "开源框架"
+  ],
+  "relevance_score": 0.95,
+  "category": "framework",
+  "key_insight": "LangChain 是 Agent 工程化的事实标准，凭借 Chain / Agent / Tool / Memory 等模块化抽象构建了 LLM 生态中最丰富的集成；但其'高度可组合'设计也带来抽象层过多、API 频繁变动等争议。技术选型建议：快速搭建可视化工作流选 Dify，构建可定制生产 Agent 选 LangChain，专注检索增强可叠加 LlamaIndex，作为轻量 CLI Agent 可选 Pi。"
+}

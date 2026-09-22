@@ -1,0 +1,19 @@
+{
+  "id": "2026-09-22-005",
+  "title": "JuliusBrussee/caveman",
+  "source": "github",
+  "url": "https://github.com/JuliusBrussee/caveman",
+  "collected_at": "2026-09-22T00:00:08.556963+00:00",
+  "summary": "caveman 是一个面向编程 Agent（编码代理）的轻量级代理工具，通过将自然语言指令简化为'穴居人式'极简表达（如 'me want fix bug'），可削减约 65% 的 Token 消耗。它作为 Agent 与 LLM 之间的中间代理层，在不牺牲语义理解的前提下大幅降低 API 调用成本，适合预算敏感的高频编码 Agent 场景。",
+  "tags": [
+    "token优化",
+    "prompt工程",
+    "coding-agent",
+    "成本削减",
+    "代理层",
+    "LLM效率"
+  ],
+  "relevance_score": 0.72,
+  "category": "tool",
+  "key_insight": "'穴居人语言'代理层能在编码 Agent 场景下削减约 65% Token 成本，实现极简且可嵌入现有工具链；但其局限性同样明显——压缩表达依赖 LLM 自身对极简句式的鲁棒性，对推理能力较弱的小模型反而可能降低任务成功率，且风格化 prompt 增加了 prompt 维护成本。技术选型上，更适合单模型、单场景的高频编码流水线，而非通用 Agent 平台。"
+}

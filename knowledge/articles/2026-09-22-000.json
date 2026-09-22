@@ -1,0 +1,18 @@
+{
+  "id": "2026-09-22-000",
+  "title": "NousResearch/hermes-agent",
+  "source": "github",
+  "url": "https://github.com/NousResearch/hermes-agent",
+  "collected_at": "2026-09-22T00:00:08.556860+00:00",
+  "summary": "NousResearch/hermes-agent 是由 AI 研究机构 Nous Research 开源的 Agent 项目，仓库标语为'与你共同成长的智能体'，基于其自研 Hermes 系列大语言模型构建。该项目在 GitHub 上关注度较高（Stars 247k+），在 Agent 领域具备一定代表性。由于描述信息较为简短，其'共同成长'的具体技术机制（在线学习 / 记忆累积 / 反馈微调）暂无法从公开描述中确认。",
+  "tags": [
+    "agent",
+    "llm",
+    "hermes",
+    "Nous Research",
+    "智能体框架"
+  ],
+  "relevance_score": 0.78,
+  "category": "agent",
+  "key_insight": "仓库标语'与你共同成长的智能体'暗示了自适应 Agent 的设计理念，但仅凭 description 难以判断其'成长'机制具体如何实现；与 OpenHands、Pi 等工程化 Agent 不同，hermes-agent 带有更明显的研究属性，更适合作为 Agent 行为模式的参考样本，而非追求工程成熟度的生产底座。技术选型上，若需可观测、可调试的生产 Agent，建议优先考虑 LangChain 或 OpenHands。"
+}

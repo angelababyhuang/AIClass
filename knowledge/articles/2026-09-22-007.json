@@ -1,0 +1,20 @@
+{
+  "id": "2026-09-22-007",
+  "title": "OpenHands/OpenHands",
+  "source": "github",
+  "url": "https://github.com/OpenHands/OpenHands",
+  "collected_at": "2026-09-22T00:00:08.556980+00:00",
+  "summary": "OpenHands（原名 OpenDevin）是一个开源的 AI 驱动软件开发智能体平台，能让 AI Agent 执行代码编辑、命令行操作、网页浏览等多样化开发任务。它支持多种 LLM 后端，可与人类协作完成软件工程工作，并提供沙箱化的执行环境。",
+  "tags": [
+    "AI Agent",
+    "代码生成",
+    "自动化开发",
+    "开源框架",
+    "LLM编排",
+    "软件工程",
+    "沙箱执行"
+  ],
+  "relevance_score": 0.92,
+  "category": "agent",
+  "key_insight": "OpenHands 的核心壁垒在于'沙箱化的多步执行环境'与对真实软件工程工作流（命令行、浏览器、文件编辑、PR 提交）的覆盖深度；与 Pi 这类 CLI 编码助手相比，OpenHands 更偏全栈软件工程 Agent，适合 PR 自动化、Issue 修复等长链路任务；但部署与运维复杂度较高，对个人开发者或本地轻量使用不如 Pi / caveman 友好。"
+}
