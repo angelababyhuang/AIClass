@@ -1,0 +1,22 @@
+{
+  "id": "2026-09-23-008",
+  "title": "bytedance/deer-flow",
+  "source": "github",
+  "url": "https://github.com/bytedance/deer-flow",
+  "collected_at": "2026-09-23T00:00:08.826832+00:00",
+  "summary": "DeerFlow 是字节跳动开源的长程（Long-Horizon）SuperAgent 编排框架，专注于处理分钟到小时级的复杂任务。其架构由六大组件构成：Sandbox（隔离沙箱执行环境）、Memory（分层长期/短期记忆）、Tools（工具调用与扩展接口）、Skills（可复用的能力模块）、Subagents（子智能体动态委派）、LLM Gateway（统一模型路由与多 Provider 接入）。框架强调任务分解、计划-执行-反思循环与多 Agent 协作，适合深度研究、复杂代码工程、长文档生成等需要持续推理与多步操作的场景，是字节内部 Agent 工程实践的对外开源版本。",
+  "tags": [
+    "AI Agent",
+    "Long-Horizon",
+    "SubAgent",
+    "字节跳动",
+    "SuperAgent",
+    "工具调用",
+    "LLM网关",
+    "开源框架",
+    "沙箱执行"
+  ],
+  "relevance_score": 0.9,
+  "category": "agent",
+  "key_insight": "DeerFlow 的差异化在于'长程任务'工程化——通过 Sandboxes（隔离执行）+ Subagents（动态委派）+ Memory（分层记忆）+ Skills（可复用模块）的全栈架构，将分钟到小时级任务的规划、反思与子任务并行化做成了可编排框架，与 LangGraph 的状态机路线相比更偏 Agent 集群协作。"
+}

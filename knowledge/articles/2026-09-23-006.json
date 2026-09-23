@@ -1,0 +1,22 @@
+{
+  "id": "2026-09-23-006",
+  "title": "infiniflow/ragflow",
+  "source": "github",
+  "url": "https://github.com/infiniflow/ragflow",
+  "collected_at": "2026-09-23T00:00:08.826815+00:00",
+  "summary": "RAGFlow 是 infiniflow 开源的企业级 RAG 引擎，核心能力围绕深度文档理解与高质量上下文供给：基于 OCR + Layout Analysis 解析复杂 PDF/Word/表格，通过模板化分块（Template-based Chunking）解决传统按长度切分导致的语义断裂问题，并内置 GraphRAG、知识图谱与多路召回（向量/全文/重排融合）提升检索精度。其 Agent 层支持基于检索结果的工具调用与多步推理，形成 'Deep Document → Precise Retrieval → Agentic Reasoning' 的完整链路，是当前开源 RAG 领域文档解析最深、检索质量最接近商业方案的引擎之一。",
+  "tags": [
+    "RAG",
+    "检索增强生成",
+    "Agent",
+    "LLM",
+    "开源框架",
+    "知识库",
+    "深度文档理解",
+    "GraphRAG",
+    "模板化分块"
+  ],
+  "relevance_score": 0.95,
+  "category": "rag",
+  "key_insight": "RAGFlow 以深度文档解析（OCR + Layout）与模板化分块为核心差异化能力，将 RAG 的'输入侧'质量（而非仅检索侧）作为主攻方向，结合 GraphRAG 与 Agent 推理形成完整上下文层，在企业复杂文档（合同、论文、表格）问答场景中显著优于通用向量检索方案。"
+}

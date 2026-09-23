@@ -1,0 +1,21 @@
+{
+  "id": "2026-09-23-000",
+  "title": "NousResearch/hermes-agent",
+  "source": "github",
+  "url": "https://github.com/NousResearch/hermes-agent",
+  "collected_at": "2026-09-23T00:00:08.826708+00:00",
+  "summary": "NousResearch/hermes-agent 是由开源大模型机构 Nous Research 推出的自适应 Agent 系统，与其 Hermes 系列开源模型深度协同。该项目定位为'随用户成长'的智能体，强调长期记忆与个性化能力，能够在交互过程中持续学习用户偏好与工作模式。凭借 Nous Research 在 Hermes 模型（Hermes 2/3 系列）上的深厚积累，hermes-agent 在开放权重模型驱动的 Agent 场景中具有天然优势，是少数同时具备模型层与 Agent 层完整栈的开源项目。",
+  "tags": [
+    "AI Agent",
+    "Hermes",
+    "NousResearch",
+    "LLM",
+    "自适应智能体",
+    "开源框架",
+    "长期记忆",
+    "开放权重模型"
+  ],
+  "relevance_score": 0.88,
+  "category": "agent",
+  "key_insight": "hermes-agent 罕见地将自有开源大模型栈（Hermes 系列）与 Agent 运行时统一发布，实现模型层与智能体层的端到端可控；其'grow with you'的设计核心在于用户偏好与工作流的持续记忆与对齐，区别于多数依赖商业模型 API 的 Agent 框架。"
+}

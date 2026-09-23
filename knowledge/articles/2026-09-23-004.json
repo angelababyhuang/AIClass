@@ -1,0 +1,21 @@
+{
+  "id": "2026-09-23-004",
+  "title": "earendil-works/pi",
+  "source": "github",
+  "url": "https://github.com/earendil-works/pi",
+  "collected_at": "2026-09-23T00:00:08.826796+00:00",
+  "summary": "earendil-works/pi 是一个面向终端的 AI Agent 工具包，由四层组件构成：统一 LLM API 层（Provider 抽象，支持 OpenAI/Anthropic/本地模型自动切换）、Agent Loop 引擎（ReAct 循环与工具调用调度）、TUI 终端界面（基于 Ink 的交互式对话）与 Coding Agent CLI（支持文件读写、Shell 执行、代码编辑的完整工具集）。整体以单一可执行文件分发，无外部依赖，适合 SSH 远程开发、容器环境或本地无 IDE 场景，将 AI 编程助手能力压缩到终端工作流。",
+  "tags": [
+    "AI Agent",
+    "LLM",
+    "CLI工具",
+    "TUI",
+    "编程助手",
+    "工具包",
+    "Provider抽象",
+    "终端优先"
+  ],
+  "relevance_score": 0.86,
+  "category": "agent",
+  "key_insight": "pi 通过 Provider 抽象 + Agent Loop + TUI/CLI 的极简四层架构，将 AI 编程助手能力完全下沉到终端环境，单二进制零依赖运行；与 Aider、Cline 等 GUI/IDE 插件路线形成鲜明对比，主打 SSH/容器/无 IDE 的极客向场景。"
+}

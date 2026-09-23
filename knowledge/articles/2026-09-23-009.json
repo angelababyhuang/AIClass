@@ -1,0 +1,23 @@
+{
+  "id": "2026-09-23-009",
+  "title": "unslothai/unsloth",
+  "source": "github",
+  "url": "https://github.com/unslothai/unsloth",
+  "collected_at": "2026-09-23T00:00:08.826840+00:00",
+  "summary": "Unsloth 是一个专注于 LLM 与扩散模型高效训练/推理的开源框架，核心技术是通过手写 Triton/CUDA 内核替换 HuggingFace 训练循环中的瓶颈算子，实现 2-5 倍训练加速与 ~40% 显存节省，同时原生集成 LoRA/QLoRA、4-bit/8-bit 量化与 GGUF/MLX 导出。配套提供本地 UI（Unsloth Studio）与一键微调脚本，兼容 Qwen、DeepSeek、MiniMax、Gemma、Llama 等主流模型及 FLUX 等扩散模型，把消费级 GPU（如单张 RTX 4090）变成可微调 70B 级别模型的可行平台。",
+  "tags": [
+    "LLM",
+    "模型微调",
+    "推理优化",
+    "扩散模型",
+    "本地部署",
+    "GGUF",
+    "MLX",
+    "Triton内核",
+    "LoRA",
+    "开源框架"
+  ],
+  "relevance_score": 0.95,
+  "category": "framework",
+  "key_insight": "Unsloth 通过手写 Triton/CUDA 内核直接替换训练瓶颈算子，实现 2-5 倍训练加速与近半显存节省，并原生打通 LoRA → GGUF/MLX 导出闭环，是当前消费级硬件微调 7B–70B 模型最成熟的效率基础设施，区别于依赖集群或专用硬件的同类方案。"
+}

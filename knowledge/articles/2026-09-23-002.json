@@ -1,0 +1,22 @@
+{
+  "id": "2026-09-23-002",
+  "title": "langchain-ai/langchain",
+  "source": "github",
+  "url": "https://github.com/langchain-ai/langchain",
+  "collected_at": "2026-09-23T00:00:08.826777+00:00",
+  "summary": "LangChain 是当前最具影响力的开源 LLM 应用开发框架，由 langchain-ai 维护，提供从链式调用（Chain）、Agent 推理循环、记忆系统、检索增强（RAG）到 LangGraph 状态图编排的完整能力栈。其核心抽象 LCEL（LangChain Expression Language）通过 Runnable 接口统一了同步/异步/批处理/流式调用语义，使组合式 AI 工作流具备工业级可观测性。LangSmith 提供 tracing、评测与监控闭环，LangServe 负责服务化部署，形成'开发-调试-部署'一体化平台。生态上拥有数千种 Integrations（模型、向量库、文档加载器、工具），事实上成为 LLM 工程领域的基础设施标准。",
+  "tags": [
+    "Agent",
+    "RAG",
+    "LLM",
+    "LCEL",
+    "LangGraph",
+    "LangSmith",
+    "开源框架",
+    "状态图编排",
+    "工程平台"
+  ],
+  "relevance_score": 0.98,
+  "category": "framework",
+  "key_insight": "LangChain 凭借 LCEL 的 Runnable 抽象与 LangGraph 的状态机编排，构建了从原型到生产的工程化闭环，已成为事实上的 LLM 工程标准；与 Dify 的可视化低代码路线相比，LangChain 坚持代码优先（Code-first），更适合需要深度定制与复杂编排逻辑的工程团队。"
+}

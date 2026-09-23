@@ -1,0 +1,23 @@
+{
+  "id": "2026-09-23-003",
+  "title": "Shubhamsaboo/awesome-llm-apps",
+  "source": "github",
+  "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+  "collected_at": "2026-09-23T00:00:08.826787+00:00",
+  "summary": "awesome-llm-apps 是一个由 Shubhamsaboo 维护的精选 LLM 应用案例合集，涵盖 100+ 开源 AI Agents、Agent Skills 与 RAG 应用。其代表性项目包括：AI 数据分析师（自动 SQL 生成与可视化）、AI 金融分析师（实时行情与研报）、AI 医疗助手（结合多模态与知识库）、Deep Research Agent（多步推理与网页检索）、本地 RAG 聊天机器人（LlamaIndex/LangChain 双实现）、多 Agent 协作框架（角色分工与消息总线）等，覆盖 OpenAI、Anthropic、Gemini 及开源模型全栈，并提供 Streamlit/Gradio 前端模板，是学习 LLM 应用工程化最快的参考实现库。",
+  "tags": [
+    "LLM",
+    "AI Agent",
+    "RAG",
+    "Open Source",
+    "Awesome List",
+    "多智能体",
+    "检索增强生成",
+    "应用案例",
+    "Streamlit",
+    "Deep Research"
+  ],
+  "relevance_score": 0.88,
+  "category": "tool",
+  "key_insight": "该项目聚合了 100+ 可直接运行的 LLM 应用模板（含 AI 数据分析师、金融/医疗垂类 Agent、Deep Research、多 Agent 协作等），并按模型栈与场景双维度组织，是从 Demo 到 PoC 最实用的开箱即用参考库，区别于纯论文式 Awesome List。"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "2026-09-23-007",
+  "title": "OpenHands/OpenHands",
+  "source": "github",
+  "url": "https://github.com/OpenHands/OpenHands",
+  "collected_at": "2026-09-23T00:00:08.826823+00:00",
+  "summary": "OpenHands（原 OpenDevin）是一个面向软件工程任务的自主 AI Agent 平台。其核心架构是 Runtime Sandbox（基于 Docker 的隔离执行环境）+ Agent Core（事件驱动的工具调度循环）+ Multi-Model Backend（支持 Claude/GPT/Llama 等任意 LLM 作为策略模型）。Agent 可执行 Shell、文件编辑、浏览器操作、Git 工作流等完整开发任务，并通过事件总线与 Web UI/CLI 双向交互；提供 Evaluation Harness 用于 SWE-Bench 等基准测试，是当前开源 AI 软件工程 Agent 中评估体系最完整、贡献者最活跃的项目。",
+  "tags": [
+    "AI Agent",
+    "代码生成",
+    "自主编程",
+    "开源框架",
+    "软件工程",
+    "LLM应用",
+    "Devin替代",
+    "Runtime Sandbox",
+    "SWE-Bench"
+  ],
+  "relevance_score": 0.93,
+  "category": "agent",
+  "key_insight": "OpenHands 采用 Runtime Sandbox + 事件总线架构，将 LLM 封装为具备完整开发环境操作能力的自主 Agent，并以 SWE-Bench 等标准化评估驱动迭代，是开源领域少数在'真实软件工程任务'而非演示 Demo 上验证有效性的标杆项目。"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "2026-09-23-001",
+  "title": "langgenius/dify",
+  "source": "github",
+  "url": "https://github.com/langgenius/dify",
+  "collected_at": "2026-09-23T00:00:08.826763+00:00",
+  "summary": "Dify 是一个开源的大语言模型应用开发平台，采用前后端分离架构（TypeScript + Python），核心是可视化 DAG 编排引擎——通过节点式工作流编辑器将 Prompt、知识检索、工具调用、条件分支、变量传递等能力组合为可执行的 Pipeline。平台内置模型网关（Model Gateway）统一接入数百种 LLM，提供 RAG 引擎（分块、Embedding、重排）、插件系统（Tools/Plugins marketplace）与 Agent 节点（ReAct/Function Calling），支持云端 SaaS、VPC 私有化与本地自托管三种部署形态，覆盖从原型验证到企业落地的全生命周期。",
+  "tags": [
+    "Agent",
+    "RAG",
+    "LLM",
+    "DAG工作流",
+    "低代码平台",
+    "模型网关",
+    "插件系统",
+    "开源框架",
+    "企业级AI"
+  ],
+  "relevance_score": 0.96,
+  "category": "framework",
+  "key_insight": "Dify 的差异化在于将可视化 DAG 编排引擎、模型网关、插件市场三者解耦耦合——DAG 解决流程编排，模型网关屏蔽厂商差异，插件市场构建生态闭环，相较 LangChain 的代码优先与 n8n 的通用自动化，定位更聚焦于 LLM 原生场景的生产化落地。"
+}
