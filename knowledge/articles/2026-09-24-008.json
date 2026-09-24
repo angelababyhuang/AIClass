@@ -1,0 +1,21 @@
+{
+  "id": "2026-09-24-008",
+  "title": "bytedance/deer-flow",
+  "source": "github",
+  "url": "https://github.com/bytedance/deer-flow",
+  "collected_at": "2026-09-24T00:00:09.124338+00:00",
+  "summary": "bytedance/deer-flow 是字节跳动开源的长时程（Long-horizon）超级智能体（SuperAgent）编排框架，能够自主完成研究、编码与创作等复杂任务。该框架通过沙箱（sandbox）、记忆（memory）、工具（tools）、技能（skills）、子智能体（subagents）和消息网关（message gateway）等核心模块的协同，支撑从分钟级到小时级的多层次任务执行，是面向复杂多步任务的智能体基础设施。",
+  "tags": [
+    "SuperAgent",
+    "Multi-Agent",
+    "Long-Horizon Task",
+    "Agent Framework",
+    "字节跳动",
+    "开源",
+    "Sandbox",
+    "Subagent"
+  ],
+  "relevance_score": 0.92,
+  "category": "agent",
+  "key_insight": "字节跳动开源的长时程超级智能体编排框架，通过子智能体、沙箱、记忆和工具的模块化协同，解决分钟到小时级的复杂多步任务自动化难题。"
+}
