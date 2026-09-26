@@ -1,0 +1,19 @@
+{
+  "id": "2026-09-26-005",
+  "title": "JuliusBrussee/caveman",
+  "source": "github",
+  "url": "https://github.com/JuliusBrussee/caveman",
+  "collected_at": "2026-09-26T00:00:08.634753+00:00",
+  "summary": "caveman 是一个面向 AI 编程代理（如 Claude Code）的轻量级代理/技能工具，核心思路是用极简语言（类似原始人交流方式）与 LLM 交互以减少 token 消耗。它通过将冗长的自然语言指令替换为简短直白的关键词，宣称可削减约 65% 的 token 使用量，从而降低 API 调用成本并提升响应速度。该项目以 Skill/Middleware 形式接入现有编码代理，无需修改底层模型。",
+  "tags": [
+    "token优化",
+    "成本削减",
+    "编程代理",
+    "Claude Code",
+    "提示工程",
+    "中间件"
+  ],
+  "relevance_score": 0.72,
+  "category": "tool",
+  "key_insight": "通过极简化指令语言（caveman speak）作为代理层，在不修改模型的前提下可降低约 65% token 消耗，本质是一种面向 LLM 编码代理的提示压缩中间件。"
+}
