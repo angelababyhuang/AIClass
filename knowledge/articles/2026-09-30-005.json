@@ -1,0 +1,20 @@
+{
+  "id": "2026-09-30-005",
+  "title": "earendil-works/pi",
+  "source": "github",
+  "url": "https://github.com/earendil-works/pi",
+  "collected_at": "2026-09-30T00:00:09.407225+00:00",
+  "summary": "earendil-works/pi 是面向开发者的轻量级 AI Agent 工具包，核心架构包含四层：1) 统一的 LLM API 抽象层（屏蔽多模型差异）；2) Agent Loop 执行框架（消息循环 + 工具调度 + 上下文压缩）；4) 终端交互界面（TUI）；4) 面向编码场景的 CLI 编程代理（具备文件读写与 shell 执行能力）。与 LangChain 类重量级框架相比，pi 定位为'少抽象、高可控'的极简 Agent 工具链，适合需要快速搭建本地交互式 AI 编程代理的场景。",
+  "tags": [
+    "AI Agent",
+    "LLM",
+    "Coding Agent",
+    "CLI",
+    "TUI",
+    "toolkit",
+    "typescript"
+  ],
+  "relevance_score": 0.82,
+  "category": "agent",
+  "key_insight": "pi 代表了与 LangChain 类重量级框架相反的'极简工具链'路线：以统一 LLM 抽象 + Agent Loop + 本地 TUI/CLI 的一体化设计，牺牲部分灵活性换取开发者的直接控制感和低依赖部署。"
+}

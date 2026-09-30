@@ -1,0 +1,22 @@
+{
+  "id": "2026-09-30-009",
+  "title": "unclecode/crawl4ai",
+  "source": "github",
+  "url": "https://github.com/unclecode/crawl4ai",
+  "collected_at": "2026-09-30T00:00:09.407283+00:00",
+  "summary": "crawl4ai 是专为 LLM 与 AI Agent 设计的开源网页爬虫框架，核心能力包括：智能内容提取（基于 DOM 启发式 + 可选 LLM 抽取，输出 LLM 就绪的 Markdown / JSON）、浏览器自动化（Playwright 内核，支持 JS 渲染与反爬对抗）、并发与缓存（异步任务队列 + 本地缓存层）、双部署模式（本地自部署 + Crawl4AI Cloud 一键托管）。与 Firecrawl 相比，crawl4ai 更轻量、开源友好且支持本地深度定制；与 Jina Reader 相比，功能更接近全功能爬虫而非单页 Reader。是 RAG 与 Agent 数据采集层中开源可自托管的主流选项。",
+  "tags": [
+    "web-crawler",
+    "data-extraction",
+    "LLM",
+    "Markdown",
+    "RAG",
+    "AI Agent",
+    "data-preprocessing",
+    "playwright",
+    "open-source"
+  ],
+  "relevance_score": 0.88,
+  "category": "tool",
+  "key_insight": "crawl4ai 在'Firecrawl 的全功能'与'Jina Reader 的轻量'之间找到了开源可自托管的中间路线：保留浏览器自动化与智能抽取能力，同时支持本地深度定制，是 RAG 数据采集层的开源首选。"
+}

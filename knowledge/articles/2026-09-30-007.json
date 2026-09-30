@@ -1,0 +1,21 @@
+{
+  "id": "2026-09-30-007",
+  "title": "infiniflow/ragflow",
+  "source": "github",
+  "url": "https://github.com/infiniflow/ragflow",
+  "collected_at": "2026-09-30T00:00:09.407242+00:00",
+  "summary": "RAGFlow 是面向企业场景的开源 RAG 引擎，核心能力包括：深度文档解析（OCR + 表格抽取 + 版式还原）、模板化分块（按文档类型与语义边界智能切分）、多路召回（向量 + 全文 + 结构化过滤的混合检索）、可视化工作流编排（拖拽式 Pipeline）以及与 Agent 的深度融合（检索结果可作为 Agent 工具调用）。技术上区别于 LangChain 类通用框架（无可视化、无文档解析内置）与 Dify 类应用平台（无 Agent 深度编排），RAGFlow 聚焦在'高质量非结构化数据 → 高精度上下文'这一垂直链路。是企业知识库、复杂 PDF/合同问答等场景的主力开源方案。",
+  "tags": [
+    "RAG",
+    "Agent",
+    "open-source-framework",
+    "knowledge-base",
+    "LLM-augmentation",
+    "retrieval-augmented-generation",
+    "context-engineering",
+    "document-parsing"
+  ],
+  "relevance_score": 0.92,
+  "category": "rag",
+  "key_insight": "RAGFlow 在'深度文档解析 + 模板化分块 + 多路召回 + Agent 融合'四个垂直能力上的纵深，使其在企业非结构化数据问答场景中相对通用框架具备显著精度优势，代表了 RAG 引擎从'通用召回'向'场景化深度解析'的演进方向。"
+}

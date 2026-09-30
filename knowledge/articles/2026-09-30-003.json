@@ -1,0 +1,24 @@
+{
+  "id": "2026-09-30-003",
+  "title": "langchain-ai/langchain",
+  "source": "github",
+  "url": "https://github.com/langchain-ai/langchain",
+  "collected_at": "2026-09-30T00:00:09.407201+00:00",
+  "summary": "LangChain 已从链式调用库演进为完整的智能体工程平台，核心模块包括 Chains、RAG、Memory、Tools、Agents，跨 Python 与 TypeScript 双语言实现。关键技术演进节点：1) LCEL（LangChain Expression Language）——基于 Runnable 接口的声明式组合语法，原生支持流式输出、异步执行与自动追踪，是替代 legacy Chain 类的现代写法；2) LangGraph——基于有向图的状态机编排框架，支持循环、人机回环与持久化检查点，专门面向复杂多步骤 Agent 工作流；3) LangServe——将 Chain/Agent 部署为 REST API 的运行时。生态上还提供 LangSmith 用于可观测性与评测。当前已支持 OpenAI、Anthropic、Google、本地模型等数十家模型提供商的统一接口抽象。",
+  "tags": [
+    "llm",
+    "agent",
+    "rag",
+    "framework",
+    "open-source",
+    "langgraph",
+    "LCEL",
+    "python",
+    "typescript",
+    "prompt-engineering",
+    "orchestration"
+  ],
+  "relevance_score": 0.95,
+  "category": "framework",
+  "key_insight": "LangChain 的演进路径揭示了 LLM 框架从'链式调用库 → LCEL 声明式组合 → LangGraph 状态机编排'的三阶段范式升级，其核心价值在于以模块化抽象（Runnable + LCEL + LangGraph）覆盖从简单链式推理到复杂持久化 Agent 的全链路工程需求。"
+}

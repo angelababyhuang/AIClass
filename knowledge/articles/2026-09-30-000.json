@@ -1,0 +1,20 @@
+{
+  "id": "2026-09-30-000",
+  "title": "NousResearch/hermes-agent",
+  "source": "github",
+  "url": "https://github.com/NousResearch/hermes-agent",
+  "collected_at": "2026-09-30T00:00:09.407126+00:00",
+  "summary": "NousResearch/hermes-agent 是 Nous Research 推出的智能体框架，深度绑定其 Hermes 系列开源大模型生态。其差异化定位为'持续自适应'Agent：核心机制围绕用户画像与偏好长期记忆库、增量式技能习得、反馈驱动的策略调优以及 Hermes 模型本地化推理调度展开。与 AutoGPT（目标驱动的单任务分解型 Agent，强调任务闭环）侧重不同，Hermes-Agent 主打长期人机交互中的个性化进化；与 Letta（原 memGPT，同样以记忆管理见长的 Agent 框架）相比，其壁垒在于 Nous 自研 Hermes 模型与 Agent 行为层的深度耦合，而非通用的记忆系统。适合需要长期跟踪用户习惯、构建'越用越懂你'型个性化助手的场景。",
+  "tags": [
+    "Nous Research",
+    "Hermes",
+    "AI Agent",
+    "adaptive-learning",
+    "long-term-memory",
+    "open-source-framework",
+    "agent-orchestration"
+  ],
+  "relevance_score": 0.85,
+  "category": "agent",
+  "key_insight": "Hermes-Agent 代表着 Agent 范式从'单次任务执行器'向'持续学习伙伴'的演进路线；相较 AutoGPT（任务驱动）和 Letta（通用记忆框架），其差异化壁垒是 Nous 自研模型层与 Agent 行为层的紧耦合设计。"
+}

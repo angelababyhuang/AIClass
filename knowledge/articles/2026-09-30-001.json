@@ -1,0 +1,21 @@
+{
+  "id": "2026-09-30-001",
+  "title": "firecrawl/firecrawl",
+  "source": "github",
+  "url": "https://github.com/firecrawl/firecrawl",
+  "collected_at": "2026-09-30T00:00:09.407176+00:00",
+  "summary": "Firecrawl 是面向 AI Agent 的网页数据 API，提供搜索、爬取与结构化提取一体化能力。其工程实现关键点包括：基于 headless 浏览器集群的 JS 渲染（含动态 SPA 支持）、反爬绕过策略（代理池 + 浏览器指纹伪装）、并发任务队列（批量爬取 / 深度抓取）、LLM 友好的结构化输出（Markdown / JSON / 自定义 schema），并对外暴露 REST API 供 Agent 调用。横向对比：相比 Jina Reader（轻量单页 Reader，无反爬与队列能力），Firecrawl 更适合大规模站点爬取；相比 Browserless（通用浏览器自动化基础设施），Firecrawl 在'页面 → 结构化数据'的语义转换层做了更多封装。是 RAG 与 Agent 接入实时网络数据的事实标准中间件之一。",
+  "tags": [
+    "web-scraping",
+    "ai-agent",
+    "rag",
+    "data-extraction",
+    "api",
+    "crawler",
+    "headless-browser",
+    "markdown-conversion"
+  ],
+  "relevance_score": 0.85,
+  "category": "tool",
+  "key_insight": "Firecrawl 把'反爬工程 + 浏览器渲染 + 结构化语义提取 + 并发队列'封装为统一 API，填补了 Jina Reader（轻量）与 Browserless（底层）之间的工程化空白，是 Agent 接入实时网络数据的关键基础设施。"
+}

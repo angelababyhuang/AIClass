@@ -1,0 +1,22 @@
+{
+  "id": "2026-09-30-002",
+  "title": "langgenius/dify",
+  "source": "github",
+  "url": "https://github.com/langgenius/dify",
+  "collected_at": "2026-09-30T00:00:09.407190+00:00",
+  "summary": "Dify 是面向生产环境的 LLM 应用开发平台，核心架构包含：自研的 Dify DSL（YAML 化的工作流与 Agent 编排描述）、可视化 DAG 编排画布、多模型路由与负载均衡（支持 OpenAI / Anthropic / 本地模型按策略切换）、变量与上下文工程系统（变量池 + 会话状态 + 知识库检索器）、以及内置的 RAG 管道（文档解析 → 分块 → Embedding → 召回）。平台提供从原型到生产的完整部署路径（云端 / VPC 私有化 / 自托管），并通过 API 反向暴露编排结果，可被外部 Agent 调用。技术差异化在于'可视化编排 + DSL 可导出 + 多模型路由'的组合，区别于纯代码框架（如 LangChain）与纯无代码工具（如 n8n）。",
+  "tags": [
+    "LLM-platform",
+    "agent-workflow",
+    "RAG",
+    "visual-orchestration",
+    "open-source-framework",
+    "BaaS",
+    "production-deployment",
+    "DSL",
+    "model-routing"
+  ],
+  "relevance_score": 0.95,
+  "category": "framework",
+  "key_insight": "Dify 的技术差异化是 Dify DSL（可导出的 YAML 工作流定义）+ 多模型路由 + 可视化编排的组合，使其同时具备无代码工具的易用性与代码框架的可移植性，弥合了 LangChain 类代码框架与 n8n 类无代码平台之间的工程断层。"
+}

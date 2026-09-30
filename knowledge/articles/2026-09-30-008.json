@@ -1,0 +1,20 @@
+{
+  "id": "2026-09-30-008",
+  "title": "OpenHands/OpenHands",
+  "source": "github",
+  "url": "https://github.com/OpenHands/OpenHands",
+  "collected_at": "2026-09-30T00:00:09.407250+00:00",
+  "summary": "OpenHands（原 OpenDevin）是开源 AI 软件工程师平台，核心架构包含：LLM 推理层（支持 Claude / GPT / 本地模型）、Agent Runtime（沙箱化的执行环境，支持终端、文件编辑器、浏览器）、事件驱动的 Agent Loop（观察→思考→工具调用→反思）、安全沙箱（Docker 隔离 + 资源限制）、Web UI 与 CLI 双交互入口，以及可观测的事件流（用于调试与评测）。技术上区别于 Copilot 类内联补全工具，OpenHands 实现了端到端的软件工程任务闭环（需求理解 → 代码编写 → 测试 → 部署）。是当前 AI 软件工程 Agent 领域最具代表性的开源方案。",
+  "tags": [
+    "AI Agent",
+    "code-generation",
+    "automated-development",
+    "open-source-framework",
+    "software-engineering",
+    "LLM-toolchain",
+    "sandbox-execution"
+  ],
+  "relevance_score": 0.95,
+  "category": "agent",
+  "key_insight": "OpenHands 首次将'LLM 推理 + 沙箱执行 + 事件驱动 Agent Loop + 软件工程工具链'融合为开源端到端平台，代表了 AI 从代码补全助手向全流程软件工程师演进的关键节点。"
+}

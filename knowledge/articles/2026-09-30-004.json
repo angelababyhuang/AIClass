@@ -1,0 +1,21 @@
+{
+  "id": "2026-09-30-004",
+  "title": "Shubhamsaboo/awesome-llm-apps",
+  "source": "github",
+  "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+  "collected_at": "2026-09-30T00:00:09.407216+00:00",
+  "summary": "Shubhamsaboo/awesome-llm-apps 是精选的开源 LLM 应用案例集合，收录 100+ 可直接运行的 AI Agent、Agent Skills 与 RAG 应用。项目的分类体系较为系统：按应用类型（Chatbot / Autonomous Agent / Multi-Agent / Code Agent / RAG Pipeline / Voice Agent 等）、按技术栈（OpenAI / Anthropic / 开源本地模型 / Streamlit / Gradio 等前端框架）、按难度分级（入门示例 → 进阶 RAG → 多 Agent 协作）组织。代表性项目涵盖：基于 OpenAI 的代码审查 Agent、LangGraph 多 Agent 协作示例、带记忆的客服 Chatbot、文档问答系统、多模态 RAG 应用等。所有项目均为独立可运行的工程代码，是初学者到中级开发者快速掌握 LLM 应用工程模式的实战资源库。",
+  "tags": [
+    "LLM",
+    "AI Agent",
+    "RAG",
+    "awesome-list",
+    "open-source",
+    "multi-agent",
+    "retrieval-augmented-generation",
+    "learning-resources"
+  ],
+  "relevance_score": 0.85,
+  "category": "agent",
+  "key_insight": "该项目以 awesome-list 形式构建了一套'应用类型 × 技术栈 × 难度'的三维分类体系，所有条目均为可运行的独立工程而非伪代码，是 LLM 应用开发实战案例的标准化资源库，降低了从示例到自研项目的迁移成本。"
+}

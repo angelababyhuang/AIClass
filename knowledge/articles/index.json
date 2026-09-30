@@ -778,5 +778,65 @@
     "title": "bytedance/deer-flow",
     "category": "agent",
     "relevance_score": 0.92
+  },
+  {
+    "id": "2026-09-30-000",
+    "title": "NousResearch/hermes-agent",
+    "category": "agent",
+    "relevance_score": 0.85
+  },
+  {
+    "id": "2026-09-30-001",
+    "title": "firecrawl/firecrawl",
+    "category": "tool",
+    "relevance_score": 0.85
+  },
+  {
+    "id": "2026-09-30-002",
+    "title": "langgenius/dify",
+    "category": "framework",
+    "relevance_score": 0.95
+  },
+  {
+    "id": "2026-09-30-003",
+    "title": "langchain-ai/langchain",
+    "category": "framework",
+    "relevance_score": 0.95
+  },
+  {
+    "id": "2026-09-30-004",
+    "title": "Shubhamsaboo/awesome-llm-apps",
+    "category": "agent",
+    "relevance_score": 0.85
+  },
+  {
+    "id": "2026-09-30-005",
+    "title": "earendil-works/pi",
+    "category": "agent",
+    "relevance_score": 0.82
+  },
+  {
+    "id": "2026-09-30-006",
+    "title": "JuliusBrussee/caveman",
+    "category": "tool",
+    "relevance_score": 0.85
+  },
+  {
+    "id": "2026-09-30-007",
+    "title": "infiniflow/ragflow",
+    "category": "rag",
+    "relevance_score": 0.92
+  },
+  {
+    "id": "2026-09-30-008",
+    "title": "OpenHands/OpenHands",
+    "category": "agent",
+    "relevance_score": 0.95
+  },
+  {
+    "id": "2026-09-30-009",
+    "title": "unclecode/crawl4ai",
+    "category": "tool",
+    "relevance_score": 0.88
   }
 ]

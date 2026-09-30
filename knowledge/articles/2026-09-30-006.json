@@ -1,0 +1,20 @@
+{
+  "id": "2026-09-30-006",
+  "title": "JuliusBrussee/caveman",
+  "source": "github",
+  "url": "https://github.com/JuliusBrussee/caveman",
+  "collected_at": "2026-09-30T00:00:09.407234+00:00",
+  "summary": "caveman 是一个面向 Claude Code 等编程 Agent 的提示词压缩代理（proxy），通过将自然语言指令改写为'穴居人式'极简表达（去除虚词、冗余修饰、礼貌用语），实测削减约 65% token 消耗且保持输出质量。其工程实现是一个轻量 Go 服务，作为代理层插入 Agent 与 LLM 之间，对系统提示与用户消息做规则化压缩，输出结果仍为 LLM 可理解的指令。设计上属于'透明 proxy'，无需改造上游 Agent 代码即可接入，是 token 成本优化领域极具杠杆效应的工具。",
+  "tags": [
+    "token-optimization",
+    "coding-agent",
+    "prompt-engineering",
+    "Claude Code",
+    "cost-reduction",
+    "efficiency-tool",
+    "proxy"
+  ],
+  "relevance_score": 0.85,
+  "category": "tool",
+  "key_insight": "caveman 揭示了编程 Agent 的成本瓶颈很大程度来自提示词冗余而非模型本身，通过规则化压缩代理可在零代码侵入的前提下削减 65% token，是典型的'薄层即杠杆'的工程优化思路。"
+}
