@@ -1,0 +1,18 @@
+{
+  "id": "2026-10-02-006",
+  "title": "JuliusBrussee/caveman",
+  "source": "github",
+  "url": "https://github.com/JuliusBrussee/caveman",
+  "collected_at": "2026-10-02T00:00:09.083722+00:00",
+  "summary": "caveman 是一个面向 LLM 编程代理（coding agent）的提示词优化工具，通过将自然语言简化为'穴居人式'简短表达（类似 'me want code, me no talk much'），在不影响代理理解能力的前提下削减约 65% 的 token 消耗。它作为代理调用链中的中间代理（proxy/skill），让上层指令更精简，同时仍能被 Claude、GPT 等模型正确解析。本质上是一种 prompt compression 思路：牺牲语法完整性换取 token 经济性，适合长链路、批量调用的 Agent 场景以降低成本。",
+  "tags": [
+    "prompt-compression",
+    "token-optimization",
+    "coding-agent",
+    "cost-reduction",
+    "llm-tooling"
+  ],
+  "relevance_score": 0.72,
+  "category": "tool",
+  "key_insight": "通过极简'穴居人语'式 prompt 替换冗长自然语言，可在 LLM coding agent 中实现约 65% 的 token 削减，本质是 prompt compression 在 Agent 成本优化场景的工程化落地。"
+}

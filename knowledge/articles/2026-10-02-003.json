@@ -1,0 +1,21 @@
+{
+  "id": "2026-10-02-003",
+  "title": "langchain-ai/langchain",
+  "source": "github",
+  "url": "https://github.com/langchain-ai/langchain",
+  "collected_at": "2026-10-02T00:00:09.083691+00:00",
+  "summary": "LangChain 是当前最流行的 LLM 应用开发框架之一，为开发者提供了构建基于大语言模型应用的完整工具链。核心能力包括：Prompt 模板管理与优化、Chain 组合实现多 LLM 协同调用、Agent 框架支持自主规划与工具调用、Retrieval 模块对接外部数据源实现 RAG、丰富的集成生态（向量库、文档加载器、工具等）。项目近期重新定位为'Agent Engineering Platform'，重点强化了 LangGraph（有状态 Agent 工作流编排）、LangSmith（可观测性与评估）等子项目，覆盖从原型开发到生产部署的全生命周期。",
+  "tags": [
+    "LLM框架",
+    "Agent开发",
+    "RAG",
+    "Prompt工程",
+    "工具链编排",
+    "开源项目",
+    "LangGraph",
+    "可观测性"
+  ],
+  "relevance_score": 0.95,
+  "category": "framework",
+  "key_insight": "LangChain 已从单纯的 LLM 调用库演进为以 Agent 为核心的端到端工程平台，其 LangGraph + LangSmith 组合标志着从快速原型走向生产级 Agent 系统的战略转型。"
+}
