@@ -1,0 +1,18 @@
+{
+  "id": "2026-10-06-007",
+  "title": "JuliusBrussee/caveman",
+  "source": "github",
+  "url": "https://github.com/JuliusBrussee/caveman",
+  "collected_at": "2026-10-06T00:00:04.714260+00:00",
+  "summary": "caveman 是一个面向 LLM 编程 Agent 的代理/技能工具，通过将提示词压缩为类似原始人说话的极简语言风格（精简词汇、去除冗余），减少约 65% 的 token 消耗。它作为中间层拦截 Agent 与 LLM 之间的通信，用最少的 token 表达完整编程意图，从而降低 API 成本并提升响应效率。",
+  "tags": [
+    "token压缩",
+    "成本削减",
+    "编程Agent",
+    "提示词工程",
+    "LLM优化"
+  ],
+  "relevance_score": 0.78,
+  "category": "tool",
+  "key_insight": "LLM 编程 Agent 中大量 token 浪费在冗余的自然语言表达上，通过将提示词简化为极简风格可削减 65% 成本，模型理解能力几乎不受影响。"
+}

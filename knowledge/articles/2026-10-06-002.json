@@ -1,0 +1,21 @@
+{
+  "id": "2026-10-06-002",
+  "title": "langgenius/dify",
+  "source": "github",
+  "url": "https://github.com/langgenius/dify",
+  "collected_at": "2026-10-06T00:00:04.714216+00:00",
+  "summary": "Dify 是一个开源的大语言模型应用开发平台，提供可视化的工作流编排、Agent 构建、RAG 管道和丰富的模型/工具集成能力。支持云端、VPC 及自托管多种部署方式，旨在帮助团队从原型快速落地到生产环境，无需重复搭建底层技术栈，是当前最流行的 LLMOps 平台之一。",
+  "tags": [
+    "LLMOps",
+    "Agent工作流",
+    "RAG",
+    "可视化编排",
+    "开源平台",
+    "企业级部署",
+    "多模型支持",
+    "VPC私有化"
+  ],
+  "relevance_score": 0.95,
+  "category": "framework",
+  "key_insight": "Dify 将 Agent、RAG、Workflow 和模型管理统一在一个可视化协作平台中，实现了从原型到生产的端到端 LLMOps 闭环，是企业落地 GenAI 应用的高效基础设施。"
+}
