@@ -1,0 +1,20 @@
+{
+  "id": "2026-10-07-003",
+  "title": "DietrichGebert/ponytail",
+  "source": "github",
+  "url": "https://github.com/DietrichGebert/ponytail",
+  "collected_at": "2026-10-07T00:00:05.451853+00:00",
+  "summary": "ponytail 是一个针对 AI 编码代理（coding agents）的提示词/规则项目，核心理念是让 AI 像'最懒的高级开发者'一样思考——能不写的代码就不写，强调最小化代码编写、复用现有实现、避免过度工程化。\n\n实现机制上，ponytail 主要以 system prompt / rules 文件（如 .cursorrules、CLAUDE.md、AGENTS.md 等 agent 约定的项目级规则文件）的形式提供，也可作为 Claude Code / Cursor / Aider 等编码 agent 的 skill 加载；其约束包括：禁止新增未使用的抽象、优先复用现有 utility、删除 dead code 而非注释、避免过早引入设计模式等。可作为 MCP server 或独立 rules repo 集成进现有编码工作流。\n\n与同类规则工具对比：相较于 Cursor 内置 rules（受限于 Cursor 自身），ponytail 是模型/编辑器无关的纯规则集合；相较于 Aider conventions（侧重 commit message 与文件引用规范），ponytail 更聚焦'编码行为本身的克制'；适用于维护期项目和大型代码库中的 AI 辅助重构，但在快速原型阶段可能反而抑制必要的探索性代码。",
+  "tags": [
+    "AI-Agent",
+    "prompt-engineering",
+    "code-generation",
+    "developer-productivity",
+    "minimalism",
+    "coding-rules",
+    "system-prompt"
+  ],
+  "relevance_score": 0.74,
+  "category": "agent",
+  "key_insight": "ponytail 把'少即是多'的工程哲学编码为可加载的 agent rules（兼容 Cursor / Claude Code / Aider），通过约束 AI 编码代理遵循'懒人原则'——优先复用、克制新增、主动删除——反而能显著减少 AI 生成冗余与过度设计代码的问题。"
+}

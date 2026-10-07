@@ -1,0 +1,21 @@
+{
+  "id": "2026-10-07-001",
+  "title": "firecrawl/firecrawl",
+  "source": "github",
+  "url": "https://github.com/firecrawl/firecrawl",
+  "collected_at": "2026-10-07T00:00:05.451830+00:00",
+  "summary": "Firecrawl 是一个开源的 Web 数据抓取与转换工具，专为 AI 应用设计。它能够将任意网站（包括需要 JavaScript 渲染的动态页面）转换为干净的 Markdown 或结构化数据格式，非常适合直接用于 LLM 的 RAG 流程或微调数据集构建。核心能力包括整站爬取（/crawl）、单页抓取（/scrape）、动态渲染处理、反爬绕过（代理池 + 浏览器指纹伪装）、批量 URL 处理（/batch-scrape）以及结构化抽取（/extract，基于 LLM 的 schema 抽取）。\n\n与同类工具对比：相较于 Scrapy（Python 通用爬虫框架，需自行处理 JS 渲染与反爬），Firecrawl 开箱即用地解决了动态渲染与反爬问题；相较于 Playwright（浏览器自动化底层库），Firecrawl 提供了更高层的 LLM 友好输出抽象；相较于 Browserless（托管浏览器服务），Firecrawl 更专注于'网页→结构化数据'这一垂直场景，并原生提供 REST API 与 SDK。已被 LangChain、LlamaIndex、CrewAI 等主流 AI Agent 框架作为官方推荐的数据源集成。",
+  "tags": [
+    "web-scraping",
+    "data-pipeline",
+    "RAG",
+    "AI-Agent",
+    "data-extraction",
+    "LLM-data",
+    "headless-browser",
+    "markdown"
+  ],
+  "relevance_score": 0.96,
+  "category": "tool",
+  "key_insight": "Firecrawl 是连接开放 Web 与 LLM 之间的关键基础设施——通过将网页清洗为高质量的结构化内容（含 LLM-based schema extraction），填补了 AI Agent 获取实时知识的核心缺口，已成为 LangChain/LlamaIndex 生态的默认数据源之一。"
+}

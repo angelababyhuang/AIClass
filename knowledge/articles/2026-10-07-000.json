@@ -1,0 +1,20 @@
+{
+  "id": "2026-10-07-000",
+  "title": "NousResearch/hermes-agent",
+  "source": "github",
+  "url": "https://github.com/NousResearch/hermes-agent",
+  "collected_at": "2026-10-07T00:00:05.451753+00:00",
+  "summary": "hermes-agent 是 Nous Research（开源 Hermes 系列 LLM 的研究团队）推出的智能体框架，定位为'与你共同成长的 Agent'。它以 Hermes 系列模型为核心推理引擎，内置完整的工具调用、长期记忆与多步规划循环，支持 agent 通过反馈与交互持续优化自身行为策略。其架构强调模型-工具-记忆的三层解耦，既可作为独立 CLI/SDK 运行，也能嵌入到现有 Python 应用中。与 LangChain、AutoGen 等通用框架相比，hermes-agent 更侧重'模型原生能力 + 自演化循环'的设计哲学，是 Hermes 生态的官方 agent 运行时。",
+  "tags": [
+    "AI-Agent",
+    "NousResearch",
+    "Hermes",
+    "agent-framework",
+    "long-term-memory",
+    "tool-use",
+    "self-improvement"
+  ],
+  "relevance_score": 0.9,
+  "category": "agent",
+  "key_insight": "hermes-agent 是 Nous Research 围绕自研 Hermes 模型构建的官方 agent 运行时，以'自演化'循环（agent that grows with you）为核心卖点，代表了'模型厂商自营 agent 框架'这一新兴赛道。"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "2026-10-07-004",
+  "title": "langchain-ai/langchain",
+  "source": "github",
+  "url": "https://github.com/langchain-ai/langchain",
+  "collected_at": "2026-10-07T00:00:05.451863+00:00",
+  "summary": "LangChain 是当前 LLM 应用开发领域最核心的开源框架，已从最初的'链式调用库'演化为完整的 agent engineering platform。核心模块包括：langchain-core（抽象接口 Runnable/LCEL）、langchain（chains/agents/retrieval/memory 核心能力）、langchain-community（第三方集成）、langgraph（有状态多 agent 编排，基于图的状态机）、langserve（REST 部署）、langsmith（观测/调试/评测平台）。\n\n技术架构上，LangChain Expression Language（LCEL）采用 `prompt | model | parser` 的 Runnable 协议统一所有组件，支持流式、批量、异步、fallback 等能力；Agent 层面提供 ReAct、OpenAI Functions、Structured Chat 等多种 agent executor 实现，并深度集成 tool calling、function schema、tracing；RAG 层面提供 Document Loader → Text Splitter → Embeddings → VectorStore → Retriever 的模块化管线，并支持 multi-vector、self-query、hybrid search 等高级模式。\n\n生态对比：相较于 LlamaIndex（更专注 RAG 与索引优化），LangChain 覆盖面更广，包含 agent、memory、callback 等更完整的应用层抽象；相较于 Haystack（更偏 production NLP pipeline），LangChain 紧贴前沿 LLM 能力演进（如 MCP、structured output、computer use）迭代更快。是构建复杂 LLM 应用的事实标准底层框架。",
+  "tags": [
+    "LLM-framework",
+    "Agent",
+    "RAG",
+    "LCEL",
+    "LangGraph",
+    "tool-calling",
+    "python",
+    "agent-engineering"
+  ],
+  "relevance_score": 0.99,
+  "category": "framework",
+  "key_insight": "LangChain 已从单纯的'链式调用库'演进为以 LCEL + LangGraph 为核心、覆盖 agent/RAG/observability 全链路的 agent engineering platform，是构建复杂 LLM 应用的事实标准与生态中枢。"
+}

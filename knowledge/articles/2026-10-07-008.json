@@ -1,0 +1,19 @@
+{
+  "id": "2026-10-07-008",
+  "title": "OpenHands/OpenHands",
+  "source": "github",
+  "url": "https://github.com/All-Hands-AI/OpenHands",
+  "collected_at": "2026-10-07T00:00:05.451902+00:00",
+  "summary": "OpenHands（原名 OpenDevin）是一个开源的 AI 驱动开发平台，通过 LLM Agent 自主执行软件开发任务，包括代码编写、命令执行、网页浏览、文件操作等。它模拟人类开发者的行为，提供容器化运行环境，支持多模型接入（Claude、GPT 等），旨在实现从需求到代码交付的全流程自动化，是当前最活跃的开源 AI 软件工程 Agent 项目之一。",
+  "tags": [
+    "AI-Agent",
+    "code-generation",
+    "software-automation",
+    "open-source",
+    "LLM",
+    "Devin-alternative"
+  ],
+  "relevance_score": 0.95,
+  "category": "agent",
+  "key_insight": "OpenHands 是首个达到 Devin 级别能力的开源 AI 软件工程 Agent，通过安全沙箱 + LLM 推理 + 工具调用的闭环架构，让 AI 能像人类工程师一样完成端到端开发任务。"
+}
