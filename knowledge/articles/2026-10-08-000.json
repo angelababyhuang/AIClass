@@ -1,0 +1,19 @@
+{
+  "id": "2026-10-08-000",
+  "title": "NousResearch/hermes-agent",
+  "source": "github",
+  "url": "https://github.com/NousResearch/hermes-agent",
+  "collected_at": "2026-10-08T00:00:05.459490+00:00",
+  "summary": "NousResearch开源的hermes-agent是一个能够随用户成长而持续学习的智能代理框架。该项目旨在构建一个具有自适应能力的AI Agent，能够通过与用户的持续交互不断进化和优化自身的表现，体现了从静态工具向动态学习系统转变的设计思路。",
+  "tags": [
+    "agent",
+    "NousResearch",
+    "open-source",
+    "self-improving",
+    "personal-assistant",
+    "LLM"
+  ],
+  "relevance_score": 0.85,
+  "category": "agent",
+  "key_insight": "hermes-agent代表Agent从固定功能工具向'与用户共同成长'的自适应学习系统演进的新方向。"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "2026-10-08-004",
+  "title": "langchain-ai/langchain",
+  "source": "github",
+  "url": "https://github.com/langchain-ai/langchain",
+  "collected_at": "2026-10-08T00:00:05.459583+00:00",
+  "summary": "LangChain 是一个用于构建大语言模型应用的开源框架，定位为\"Agent Engineering Platform\"（智能体工程平台）。它提供了 LLM 链式调用、Prompt 工程、外部数据集成（RAG）、记忆机制、工具调用（Tool Calling）、多智能体协作等核心能力，支持与多种 LLM（如 OpenAI、Anthropic、本地模型）和数据源无缝对接，是当前 LLM 应用开发领域最具影响力的基础设施之一。",
+  "tags": [
+    "LLM框架",
+    "Agent",
+    "RAG",
+    "Prompt工程",
+    "工具调用",
+    "链式推理",
+    "开源"
+  ],
+  "relevance_score": 0.95,
+  "category": "framework",
+  "key_insight": "LangChain 将 Agent 工程化作为核心定位，通过模块化设计将 LLM、工具、记忆、数据源等抽象为可组合组件，已成为构建生产级 AI Agent 应用的事实标准框架。"
+}
