@@ -1,0 +1,21 @@
+{
+  "id": "2026-10-10-004",
+  "title": "langchain-ai/langchain",
+  "source": "github",
+  "url": "https://github.com/langchain-ai/langchain",
+  "collected_at": "2026-10-10T00:00:05.614589+00:00",
+  "summary": "LangChain 已从早期的 LLM 应用开发库演进为完整的 Agent 工程平台（agent engineering platform），核心组件包括：LangChain（模型、提示、工具、Retrieval 等基础抽象）、LangGraph（基于图的状态化 Agent 编排框架，支持循环、人机协同与持久化）、LangSmith（可观测性、评估与调试平台）。在 AI Agent 生态中处于事实标准地位，几乎所有主流 Agent 框架（Dify、Flowise、CrewAI、AutoGen 等）都通过 LangChain 接口或受其抽象影响而设计。其优势在于成熟的工具生态与社区，劣势在于抽象层次较多带来的学习曲线与版本演进中的 API 稳定性挑战。",
+  "tags": [
+    "LangChain",
+    "LangGraph",
+    "LangSmith",
+    "Agent框架",
+    "工具调用",
+    "可观测性",
+    "Python",
+    "生态标准"
+  ],
+  "relevance_score": 0.97,
+  "category": "framework",
+  "key_insight": "LangChain 在 Agent 生态中的核心地位已从'开发库'升级为'编排+可观测性'双底座：LangGraph 把 Agent 行为建模为可调试的状态图，LangSmith 则解决了 Agent 生产化最痛的评估/追踪问题，二者共同构成了 Agent 工程化的参考实现。"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "2026-10-10-009",
+  "title": "unclecode/crawl4ai",
+  "source": "github",
+  "url": "https://github.com/unclecode/crawl4ai",
+  "collected_at": "2026-10-10T00:00:05.614611+00:00",
+  "summary": "Crawl4ai 是一个专为 LLM/Agent 场景设计的开源 Python 网页爬虫，核心定位是'AI 友好的 Web 阅读器'。功能上覆盖：JS 动态渲染、并发抓取、结构化内容提取（输出干净 Markdown）、可配置的浏览器指纹（应对部分反爬）。与 Firecrawl 相比，Crawl4ai 更强调 Python 原生使用与本地自托管体验（提供 Docker/CLI 直接运行），而 Firecrawl 在云服务与企业级特性（团队配额、SLA、Webhook）上更成熟。两者并非互斥，社区中常被组合使用：Crawl4ai 做轻量内网/批量抓取，Firecrawl 处理大规模生产爬取。",
+  "tags": [
+    "开源",
+    "网页爬虫",
+    "数据采集",
+    "LLM工具",
+    "AI Agent",
+    "Markdown",
+    "RAG",
+    "Python"
+  ],
+  "relevance_score": 0.88,
+  "category": "tool",
+  "key_insight": "Crawl4ai 与 Firecrawl 共同验证了'LLM-native 爬虫'这一细分品类的成立——以 Markdown 为最终产物而非原始 HTML，使爬虫输出可直接进入 embedding/检索流水线，绕开了传统爬虫与 LLM 之间的清洗鸿沟。"
+}

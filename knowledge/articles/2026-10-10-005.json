@@ -1,0 +1,20 @@
+{
+  "id": "2026-10-10-005",
+  "title": "earendil-works/pi",
+  "source": "github",
+  "url": "https://github.com/earendil-works/pi",
+  "collected_at": "2026-10-10T00:00:05.614594+00:00",
+  "summary": "earendil-works/pi 是一个面向开发者的 AI Agent 工具包，提供三层能力——上层为终端原生 TUI 与 CLI 入口（强调键盘流与可脚本化），中层为可配置的 Agent 执行循环（支持工具调用、上下文压缩、错误恢复），底层为统一的 LLM API 抽象层（兼容多家模型提供商并屏蔽协议差异）。定位上与 Aider、Claude Code、OpenHands CLI 等'终端优先'的编码 Agent 趋同，差异点主要在 API 抽象的简洁性与 Agent 循环的可定制程度。",
+  "tags": [
+    "AI Agent",
+    "LLM工具",
+    "CLI工具",
+    "TUI",
+    "编码助手",
+    "Agent循环",
+    "TypeScript"
+  ],
+  "relevance_score": 0.85,
+  "category": "tool",
+  "key_insight": "pi 的产品取舍是'终端优先 + 极简 API 层'：把 Agent 循环、模型抽象与 TUI 解耦，使开发者可以在不替换底层模型的前提下独立替换交互外壳，这与 Aider 等一体化 CLI 形成了清晰的差异化。"
+}

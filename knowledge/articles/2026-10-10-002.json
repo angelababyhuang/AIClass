@@ -1,0 +1,20 @@
+{
+  "id": "2026-10-10-002",
+  "title": "DietrichGebert/ponytail",
+  "source": "github",
+  "url": "https://github.com/DietrichGebert/ponytail",
+  "collected_at": "2026-10-10T00:00:05.614578+00:00",
+  "summary": "ponytail 是一个面向 AI 编码 Agent 的系统提示词/配置文件项目，以 Markdown/CLAUDE.md 类规范的形式注入 Agent 上下文，强制其遵循'最小新增代码'原则。结构上通常包含：触发条件（任务分类器判断是否需要新写代码）、行为约束清单（先查复用、再考虑重构、最后才允许新增）、反模式黑名单（不重复造轮子、不引入未使用依赖等）。与同类项目（如 'KISS principle' prompts、'.cursorrules'、'AGENTS.md' 模板）的差异在于：ponytail 把'偷懒'作为最高优先级目标而非通用编码规范，且更聚焦 PR 评审与 diff 层面的输出控制。",
+  "tags": [
+    "AI Agent",
+    "Prompt Engineering",
+    "最小化编码",
+    "代码复用",
+    "AGENTS.md",
+    "开发者工具",
+    "指令文件"
+  ],
+  "relevance_score": 0.62,
+  "category": "tool",
+  "key_insight": "ponytail 不同于泛泛的'编码风格 prompt'，它以'删减优先于新增'作为单一硬约束嵌入 Agent 的决策流程，在 diff 体积、依赖引入数等可量化指标上比通用编码规范类 prompt 更具确定性。"
+}

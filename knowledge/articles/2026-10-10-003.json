@@ -1,0 +1,21 @@
+{
+  "id": "2026-10-10-003",
+  "title": "langgenius/dify",
+  "source": "github",
+  "url": "https://github.com/langgenius/dify",
+  "collected_at": "2026-10-10T00:00:05.614584+00:00",
+  "summary": "Dify 是一个开源 LLM 应用全栈开发平台，提供可视化 DAG 工作流编排、内置 RAG 引擎、多模型适配层与工具/Agent 节点，并支持云端、VPC、本地三种部署形态。架构核心是基于节点的流水线（Node-based Pipeline）：每个节点封装模型调用、知识检索、工具执行或条件分支，由调度器按 DAG 拓扑执行。与 LangChain（代码优先、强可编程）相比，Dify 主打低代码可视化与团队协作，适合产品/运营参与；与 LlamaIndex（侧重检索/索引抽象）相比，Dify 的 RAG 只是其工作流中的一个节点而非全部；与同类的 Flowise、n8n 相比，Dify 在模型生态（RAG 引擎原生集成）与生产化部署上更为成熟。",
+  "tags": [
+    "LLMOps",
+    "Agent",
+    "RAG",
+    "可视化编排",
+    "DAG工作流",
+    "开源框架",
+    "多模型支持",
+    "低代码"
+  ],
+  "relevance_score": 0.95,
+  "category": "framework",
+  "key_insight": "Dify 的护城河在于把'编排层'做成可独立交付的产品——以 DAG 节点化抽象统一了 LangChain 的编程心智与 Flowise 的可视化体验，并把 RAG/Agent/工具调用收敛到同一个调度器，避免了 LangChain 栈常见的'组合碎片化'问题。"
+}

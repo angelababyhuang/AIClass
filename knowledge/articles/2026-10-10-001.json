@@ -1,0 +1,23 @@
+{
+  "id": "2026-10-10-001",
+  "title": "firecrawl/firecrawl",
+  "source": "github",
+  "url": "https://github.com/firecrawl/firecrawl",
+  "collected_at": "2026-10-10T00:00:05.614572+00:00",
+  "summary": "Firecrawl 是 Mendable.ai 团队开源的 LLM 友好型 Web 数据管道，核心能力是将任意网页（含 JS 动态内容）转换为干净的结构化 Markdown。工程实现上包含：基于队列的分布式 URL 调度器（支持并发抓取、断点续传、增量爬取以避免重复请求）、反爬处理模块（robots.txt 解析、速率限制、可选代理池与 headless 浏览器降级渲染）、以及 LLM/规则双轨内容提取器（兼顾成本与精度）。提供 REST API、Python/Node SDK 与自托管模式，已被多家 AI Agent 与 RAG 平台作为默认网页数据源。",
+  "tags": [
+    "web-scraping",
+    "data-extraction",
+    "llm-ready",
+    "rag",
+    "ai-agent",
+    "open-source",
+    "crawler",
+    "markdown",
+    "反爬处理",
+    "增量爬取"
+  ],
+  "relevance_score": 0.92,
+  "category": "tool",
+  "key_insight": "Firecrawl 的差异化不在于'爬取'本身，而在于把工程化难点——增量去重、JS 渲染降级、反爬与队列调度——封装为对 LLM 透明的数据管道，使 Agent 开发者无需自建爬虫基础设施即可获得生产级网页上下文。"
+}

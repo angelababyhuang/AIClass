@@ -1,0 +1,21 @@
+{
+  "id": "2026-10-10-006",
+  "title": "JuliusBrussee/caveman",
+  "source": "github",
+  "url": "https://github.com/JuliusBrussee/caveman",
+  "collected_at": "2026-10-10T00:00:05.614599+00:00",
+  "summary": "caveman 是一个面向编程 Agent 的 prompt 压缩代理层，部署位置介于 Agent 与 LLM API 之间（proxy 模式）。它通过规则化转换（去除冠词、助动词、连词等语法冗余）将自然语言请求与代码注释压缩为极简风格，官方宣称可削减约 65% 的 token 消耗。技术实现上以 Go 编写保证低延迟，对 Agent 透明（无需修改 Agent 代码），并支持作为 Skill 挂载到主流编码 Agent。适用边界明确：对于依赖语义完整性的复杂推理任务，压缩可能导致指令歧义，因此更适用于高频、可模板化的编码子任务（如单元测试生成、CRUD 样板代码）。",
+  "tags": [
+    "token优化",
+    "prompt工程",
+    "成本削减",
+    "coding-agent",
+    "LLM代理",
+    "prompt压缩",
+    "Go",
+    "Proxy模式"
+  ],
+  "relevance_score": 0.72,
+  "category": "tool",
+  "key_insight": "caveman 把 prompt 优化从'模型侧'转移到'网络代理侧'——以 0 模型改动、0 Agent 改动的纯文本压缩换取成本下降，这种'中间层优化'思路在 Agent 大规模部署场景下的复用价值高于其具体压缩规则。"
+}

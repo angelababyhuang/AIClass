@@ -1,0 +1,21 @@
+{
+  "id": "2026-10-10-000",
+  "title": "NousResearch/hermes-agent",
+  "source": "github",
+  "url": "https://github.com/NousResearch/hermes-agent",
+  "collected_at": "2026-10-10T00:00:05.614522+00:00",
+  "summary": "NousResearch/hermes-agent 是一个基于 Hermes LLM 系列构建的自进化智能体框架，核心理念是'The agent that grows with you'。架构上采用分层设计：底层为 Hermes 系列开源模型作为推理核心；中间层提供工具注册中心（支持函数调用、API 接入、本地脚本执行等可插拔工具）与状态管理模块（基于会话上下文与任务树追踪执行进度）；上层则引入持久化记忆机制——通过向量存储 + 结构化用户偏好档案记录交互反馈，使智能体在多轮使用中逐步形成个性化行为策略。'成长'机制主要体现在三个维度：基于反馈的偏好记忆更新、工具使用模式的自适应优化，以及基于任务结果的复杂推理。",
+  "tags": [
+    "agent",
+    "NousResearch",
+    "自进化智能体",
+    "工具调用",
+    "持久化记忆",
+    "偏好学习",
+    "Hermes系列",
+    "开源框架"
+  ],
+  "relevance_score": 0.82,
+  "category": "framework",
+  "key_insight": "不同于多数静态的 Agent 框架，hermes-agent 把'成长'工程化为可观测的反馈-记忆-策略闭环：通过持久化用户交互数据与工具调用轨迹，让 Agent 的行为随使用频次发生可测量的个性化偏移，而非仅依赖 prompt 微调。"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "2026-10-10-008",
+  "title": "OpenHands/OpenHands",
+  "source": "github",
+  "url": "https://github.com/OpenHands/OpenHands",
+  "collected_at": "2026-10-10T00:00:05.614606+00:00",
+  "summary": "OpenHands（原 OpenDevin）是开源的自主软件工程 Agent 平台，提供端到端的代码研发自动化能力。核心架构由四部分组成：安全沙箱执行环境（隔离的 Docker Runtime，支持任意代码执行与命令调用）、事件驱动的 Agent 运行时（基于 LLM 的规划-行动-观察循环）、多模态浏览器/编辑器接口（支持网页浏览、IDE 操作、Git 流程），以及可观测的事件流与轨迹回放。其代表性在于把'Agent 执行环境'工程化到生产可用级别，影响了后续 SWE-Bench 类基准的设计与同类 Agent 的实现参考。",
+  "tags": [
+    "AI Agent",
+    "代码生成",
+    "自动化开发",
+    "软件工程",
+    "LLM",
+    "沙箱执行",
+    "SWE-Agent",
+    "开源框架"
+  ],
+  "relevance_score": 0.95,
+  "category": "framework",
+  "key_insight": "OpenHands 真正开创的不是'AI 写代码'，而是'生产级 Agent 执行环境'范式——把沙箱、事件流、可观测性作为一等公民引入 Agent 框架，这套模式已成为 SWE-Agent、Aide 等同类项目的参考实现。"
+}
