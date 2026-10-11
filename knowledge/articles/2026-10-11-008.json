@@ -1,0 +1,20 @@
+{
+  "id": "2026-10-11-008",
+  "title": "OpenHands/OpenHands",
+  "source": "github",
+  "url": "https://github.com/OpenHands/OpenHands",
+  "collected_at": "2026-10-11T00:00:05.045995+00:00",
+  "summary": "OpenHands(原 OpenDevin)是开源的自主软件开发 Agent 平台,核心架构:1) Runtime 层(Docker 沙箱,模拟完整开发环境:终端、文件系统、浏览器);2) Agent 层(支持 CodeAct Agent——基于代码而非 JSON 的行动空间,以及多 Agent 协作:Planner/Programmer/Browser Agent 分工);3) Event Stream 协议解耦 UI 与核心;4) Workspace 抽象支持远程/本地执行。其与 Devin 的差异在于完全开源、模型无关(默认 Claude/GPT,可换开源模型)。",
+  "tags": [
+    "ai-agent",
+    "自动化开发",
+    "代码生成",
+    "开源框架",
+    "LLM",
+    "Devin替代",
+    "CodeAct"
+  ],
+  "relevance_score": 0.95,
+  "category": "agent",
+  "key_insight": "OpenHands 在 Devin 闭源收费的空白上,以 CodeAct 行动空间 + Docker 沙箱 + 多 Agent 协作树立了开源标杆——模型无关设计使其可接入本地 Ollama 但实际效果依赖强基座,真正落地仍需 GPT-4/Claude 级模型。"
+}

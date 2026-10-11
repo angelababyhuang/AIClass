@@ -1,0 +1,20 @@
+{
+  "id": "2026-10-11-009",
+  "title": "unclecode/crawl4ai",
+  "source": "github",
+  "url": "https://github.com/unclecode/crawl4ai",
+  "collected_at": "2026-10-11T00:00:05.045999+00:00",
+  "summary": "Crawl4AI 是 Python 原生的 AI 友好爬虫库,技术路线与 Firecrawl 形成对比:1) 异步优先(基于 asyncio + Playwright,单机并发性能优于传统 Scrapy);2) 内置智能分块(基于 DOM 树语义而非固定 token 数,适合直接喂给 LLM);3) 支持 Markdown/JSON/结构化提取的可插拔策略;4) 部署形态灵活:本地 CLI、Docker、Python SDK,另有托管 Cloud 服务。Python 生态友好,与 LangChain/LlamaIndex 直接集成。",
+  "tags": [
+    "web-crawler",
+    "scraper",
+    "LLM",
+    "ai-agent",
+    "data-pipeline",
+    "Markdown",
+    "rag"
+  ],
+  "relevance_score": 0.85,
+  "category": "tool",
+  "key_insight": "Crawl4AI 与 Firecrawl 形成'Python 开源自托管 vs TS 商业 SaaS'的清晰分工——前者更适合深度定制与本地化(科研/合规场景),后者更适合快速接入生产——二者在 LLM 数据预处理领域已成事实上的双寡头。"
+}

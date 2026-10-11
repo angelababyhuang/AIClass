@@ -1,0 +1,20 @@
+{
+  "id": "2026-10-11-000",
+  "title": "NousResearch/hermes-agent",
+  "source": "github",
+  "url": "https://github.com/NousResearch/hermes-agent",
+  "collected_at": "2026-10-11T00:00:05.045910+00:00",
+  "summary": "NousResearch/hermes-agent 是由 NousResearch 推出的代理框架,延续 Hermes 系列在语言模型微调(Fine-tuning)与对齐(RLHF/DPO)方面的积累。其'共同成长'理念具体落位于三层机制:1) 基于用户反馈的在线偏好记忆(类似 Conversation Memory + Feedback Buffer);2) 工具调用轨迹的回放与策略蒸馏(借鉴 RLHF 中的 reward shaping);3) Hermes 系列基座模型的持续微调 pipeline 而非依赖第三方 API。架构上采用 Planner-Executor 分离,支持动态任务分解、Tool Use 与上下文压缩。",
+  "tags": [
+    "agent",
+    "NousResearch",
+    "RLHF",
+    "在线学习",
+    "智能体框架",
+    "Hermes系列",
+    "持续微调"
+  ],
+  "relevance_score": 0.85,
+  "category": "agent",
+  "key_insight": "差异化在于把'持续学习'从模型训练阶段前移到推理阶段——通过反馈缓存+轨迹回放让 Agent 在使用中演化,代价是部署需要私有化基座模型,不适合纯 API 用户。"
+}

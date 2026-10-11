@@ -1,0 +1,19 @@
+{
+  "id": "2026-10-11-006",
+  "title": "JuliusBrussee/caveman",
+  "source": "github",
+  "url": "https://github.com/JuliusBrussee/caveman",
+  "collected_at": "2026-10-11T00:00:05.045985+00:00",
+  "summary": "caveman 是一个 LLM 编码 Agent 的 prompt 压缩代理/技能包,实现方式为:1) 词汇替换表(将英文单词映射到'穴居人'式简短同义词,如 'function' → 'thing-do');2) 语法简化(省略系词、助词、复数标记);3) 作为代理/中间层运行在 Anthropic Skills、Claude Code 等 Agent 与 LLM 之间,运行时改写 prompt 而非离线预处理。Go 实现保证了低延迟与单二进制部署,适合对 token 成本敏感的高频调用场景。",
+  "tags": [
+    "token优化",
+    "prompt压缩",
+    "编程agent",
+    "成本削减",
+    "代理工具",
+    "LLM效率"
+  ],
+  "relevance_score": 0.62,
+  "category": "tool",
+  "key_insight": "通过极端简化语法(穴居人式)证明了一个反直觉点:前沿 LLM 对输入'文雅程度'不敏感,而对冗余 token 高度敏感——65% 削减来自 token 数量下降而非语义损失,但会显著降低日志可读性,调试时需关掉。"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "2026-10-11-003",
+  "title": "langgenius/dify",
+  "source": "github",
+  "url": "https://github.com/langgenius/dify",
+  "collected_at": "2026-10-11T00:00:05.045969+00:00",
+  "summary": "Dify 是 LLM 领域的可视化 BaaS(Backend-as-a-Service),采用前后端分离架构:后端基于 Flask/Python + Celery 任务队列处理异步推理,前端为可视化工作流画布(类似 Node-RED 范式)。核心模块包括:模型网关(统一适配 OpenAI/Anthropic/本地模型)、RAG 引擎(文档解析+分块+检索)、Agent 编排(基于 Dify DSL 的图状编排,非 LangGraph 那样的代码编排)。定位上与 LangChain 互补:Dify 面向'不想写代码的产品/运营团队',LangChain 面向'需要深度定制的工程师';与 n8n、Coze 同属可视化 Agent 平台赛道。",
+  "tags": [
+    "LLM",
+    "agent",
+    "rag",
+    "工作流编排",
+    "低代码",
+    "BaaS",
+    "生产部署"
+  ],
+  "relevance_score": 0.95,
+  "category": "framework",
+  "key_insight": "Dify 在 LangChain 主导的代码框架赛道之外开辟了可视化 BaaS 赛道——牺牲灵活性换取团队协作与上线速度,适合企业 PoC 与中型生产场景,但面对强定制需求时会被 LangChain/直接编码替代。"
+}

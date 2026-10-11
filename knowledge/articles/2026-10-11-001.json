@@ -1,0 +1,19 @@
+{
+  "id": "2026-10-11-001",
+  "title": "firecrawl/firecrawl",
+  "source": "github",
+  "url": "https://github.com/firecrawl/firecrawl",
+  "collected_at": "2026-10-11T00:00:05.045954+00:00",
+  "summary": "Firecrawl 定位为 AI 时代的数据预处理层,核心技术包括:1) 基于队列(如 BullMQ)的分布式爬取调度,支持断点续爬与优先级控制;2) Headless Browser 池化(Puppeteer/Playwright)处理 JS 渲染页面;3) 反爬应对:指纹随机化、代理轮询、智能重试退避;4) 结构化提取通过 LLM 抽取或 CSS Selector/XPath 模式;5) 输出统一为 Markdown/JSON/结构化 Schema,便于直接喂给 RAG pipeline。相较纯爬虫库(Scrapy/Crawl4AI),其优势在于'为 LLM 而生'的清洗与分块策略。",
+  "tags": [
+    "web-scraping",
+    "ai-agent",
+    "rag",
+    "data-pipeline",
+    "llm-tool",
+    "反爬处理"
+  ],
+  "relevance_score": 0.92,
+  "category": "tool",
+  "key_insight": "Firecrawl 不是传统爬虫,而是 LLM 友好的数据预处理层——把'脏'网页在摄入 RAG 前就完成清洗与结构化,在数据质量敏感的 Agent 场景中是降低幻觉率的关键环节,但成本上高于自建 Crawl4AI。"
+}

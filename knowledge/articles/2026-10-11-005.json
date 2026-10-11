@@ -1,0 +1,20 @@
+{
+  "id": "2026-10-11-005",
+  "title": "earendil-works/pi",
+  "source": "github",
+  "url": "https://github.com/earendil-works/pi",
+  "collected_at": "2026-10-11T00:00:05.045980+00:00",
+  "summary": "Pi 是面向编码 Agent 的终端工具集,核心架构为三层:1) 统一 LLM API 适配层(Provider 抽象,支持 OpenAI/Anthropic/Ollama 等热插拔);2) Agent Loop——标准 ReAct/tool-use 循环,带上下文窗口管理与 token 计数;3) TUI(基于 Ink 或类似 React-for-CLI 框架)提供交互式调试界面,比纯 CLI 更适合观察 Agent 思考过程。设计取向接近'Bun for AI'——把分散在 LangChain/Claude Code SDK/Aider 中的能力浓缩到单二进制中,适合本地快速实验。",
+  "tags": [
+    "ai-agent",
+    "LLM工具链",
+    "CLI工具",
+    "终端UI",
+    "编码助手",
+    "Agent框架",
+    "TypeScript"
+  ],
+  "relevance_score": 0.82,
+  "category": "agent",
+  "key_insight": "通过'统一 API + Agent Loop + TUI'三层压缩,把编码 Agent 从原型到本地调试的链路折叠进单 CLI——比 LangChain CLI 轻量但不如 Claude Code SDK 功能完整,定位介于'玩具'与'生产工具'之间。"
+}

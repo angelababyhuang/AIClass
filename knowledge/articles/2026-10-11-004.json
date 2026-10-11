@@ -1,0 +1,20 @@
+{
+  "id": "2026-10-11-004",
+  "title": "langchain-ai/langchain",
+  "source": "github",
+  "url": "https://github.com/langchain-ai/langchain",
+  "collected_at": "2026-10-11T00:00:05.045975+00:00",
+  "summary": "LangChain 已从'LLM 链式调用库'演进为 Agent 工程平台,关键技术栈包括:1) LCEL(LangChain Expression Language)——以 | 运算符声明式的 Runnable 协议,统一 Chain/Agent/RAG 调用范式;2) LangGraph——基于状态图(StateGraph)的 Agent 编排框架,支持循环、人机协同、持久化,取代早期 AgentExecutor 的线性控制流;3) LangSmith——可观测性/调试/评估平台,构成商业护城河;4) 工具调用基于 Tool Calling 协议(OpenAI/Anthropic 统一接口)。在 Python LLM 生态是事实标准,但 TS 版本滞后、企业版已转向商用。",
+  "tags": [
+    "LangChain",
+    "LLM框架",
+    "agent",
+    "rag",
+    "智能体工程",
+    "LCEL",
+    "LangGraph"
+  ],
+  "relevance_score": 0.95,
+  "category": "framework",
+  "key_insight": "在 Python LLM 应用生态中是事实标准,但'标准'意味着抽象层级高、初学者友好而资深工程师受困——LangGraph 已吸收其 Agent 编排,LangSmith 构建商业闭环,生态锁定正成为双刃剑。"
+}

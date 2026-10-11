@@ -1,0 +1,19 @@
+{
+  "id": "2026-10-11-002",
+  "title": "DietrichGebert/ponytail",
+  "source": "github",
+  "url": "https://github.com/DietrichGebert/ponytail",
+  "collected_at": "2026-10-11T00:00:05.045963+00:00",
+  "summary": "Ponytail 本质是一套针对编码 Agent(如 Claude Code、Cursor)的 System Prompt 规则集,通过 .ponytailrc 或等价配置文件注入'懒惰工程师'的行为约束:禁止防御性编程、强制复用既有工具、优先 Refactor 而非新增、要求变更前先 Review。技术上不修改模型,只在 prompt 层做约束,因此兼容性极强但效果上限受限于底层模型对 system prompt 的遵循度。其反向'减法'思路与 GitHub Copilot 的'加法'训练形成对照。",
+  "tags": [
+    "agent",
+    "代码生成",
+    "prompt工程",
+    "极简主义",
+    "开发者工具",
+    "行为约束"
+  ],
+  "relevance_score": 0.55,
+  "category": "tool",
+  "key_insight": "在 prompt 层面给编码 Agent 注入'少即是多'的反过度工程约束,本质是行为塑形而非能力增强——效果依赖于底层模型对 system prompt 的服从度,适合已有强基座模型时的 prompt 层调味。"
+}
