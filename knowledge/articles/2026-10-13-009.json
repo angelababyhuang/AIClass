@@ -1,0 +1,22 @@
+{
+  "id": "2026-10-13-009",
+  "title": "unclecode/crawl4ai",
+  "source": "github",
+  "url": "https://github.com/unclecode/crawl4ai",
+  "collected_at": "2026-10-13T00:00:05.059600+00:00",
+  "summary": "Crawl4AI 是 Python 原生、为 LLM 与 AI Agent 重写的开源爬虫框架，集成异步抓取、Headless 渲染、LLM 感知的主内容提取与结构化 Markdown 输出。与同类工具对比：相对 Firecrawl（TypeScript 栈、商业云服务优先），Crawl4AI 走 Python 优先 + 完全自托管路线，更易集成进 LangChain/LlamaIndex 等 Python 生态；相对 Playwright 仅提供浏览器自动化、Scrapy 输出原始 HTML，Crawl4AI 把'爬取+清洗+LLM 友好化'封装为单一 API。提供本地与 Crawl4AI Cloud 双部署形态。",
+  "tags": [
+    "web-crawler",
+    "web-scraper",
+    "llm",
+    "rag",
+    "ai-agent",
+    "markdown",
+    "data-extraction",
+    "open-source",
+    "python"
+  ],
+  "relevance_score": 0.92,
+  "category": "tool",
+  "key_insight": "Crawl4AI 卡位的是'Python 生态的自托管 LLM 爬虫'这一细分——填补了 Firecrawl 商业化倾向与 Playwright 原始输出之间的工程空白，是 Python-side RAG 数据采集的优选基座。"
+}

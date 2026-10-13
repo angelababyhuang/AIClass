@@ -1,0 +1,21 @@
+{
+  "id": "2026-10-13-003",
+  "title": "langgenius/dify",
+  "source": "github",
+  "url": "https://github.com/langgenius/dify",
+  "collected_at": "2026-10-13T00:00:05.059547+00:00",
+  "summary": "Dify 是面向生产化团队的 LLM 应用 BaaS 平台，核心是其自研的 YAML-based DSL 工作流引擎（兼容可视化与代码两种编辑模式），支持 Agentic 工作流、RAG 管道、模型路由与工具集成的全流程编排。横向对比：相对 Coze 主打 C 端创作者生态、Dify 更偏 B 端工程团队；相对 n8n 通用自动化的广泛连接器覆盖、Dify 在 LLM 原生场景更深；相对 Langflow 的 LangChain 可视化前端、Dify 自成一套 DSL 体系并具备企业级部署能力（Dify 提供云端、VPC、自托管三档部署），是少数把'原型到生产'链路打通的开源平台。",
+  "tags": [
+    "LLM应用平台",
+    "Agent编排",
+    "RAG",
+    "可视化工作流",
+    "DSL",
+    "BaaS",
+    "自托管",
+    "企业级"
+  ],
+  "relevance_score": 0.95,
+  "category": "framework",
+  "key_insight": "Dify 的差异化不在编排能力本身，而在'生产级门槛'——通过自研 DSL 引擎和多形态部署方案填补了 LangChain/Coze 等竞品在'企业私有化合规部署'上的生态空白。"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "2026-10-13-002",
+  "title": "DietrichGebert/ponytail",
+  "source": "github",
+  "url": "https://github.com/DietrichGebert/ponytail",
+  "collected_at": "2026-10-13T00:00:05.059536+00:00",
+  "summary": "ponytail 是面向 AI 编程代理（如 Claude Code、Cursor）的极简主义 skill/代理层，核心实现机制是在系统提示词层注入'反过度工程'约束，引导代理在代码生成与重构场景中遵循 YAGNI 原则，优先复用而非新写、优先删除而非添加。它不涉及 AST 级代码裁剪或模型微调，纯 prompt 层面的工程治理工具，胜在零运行时开销与即插即用，填补了当前 AI 编程工具链中'代码膨胀抑制'这一被忽视的环节。",
+  "tags": [
+    "AI agent",
+    "代码生成",
+    "提示工程",
+    "代码优化",
+    "开发工具",
+    "极简主义"
+  ],
+  "relevance_score": 0.65,
+  "category": "agent",
+  "key_insight": "在 AI 编程工具普遍追求'生成更多代码'的竞赛中，ponytail 切入了一个被低估的痛点——'生成的代码越少越好'，是衡量 LLM 工程审慎度的高质量基线工具。"
+}

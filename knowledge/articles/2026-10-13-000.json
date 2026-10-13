@@ -1,0 +1,21 @@
+{
+  "id": "2026-10-13-000",
+  "title": "NousResearch/hermes-agent",
+  "source": "github",
+  "url": "https://github.com/NousResearch/hermes-agent",
+  "collected_at": "2026-10-13T00:00:05.059465+00:00",
+  "summary": "NousResearch/hermes-agent 是 Nous Research 开源的成长型 AI Agent 框架，与自家 Hermes 系列指令微调模型深度耦合。其个性化记忆与自适应学习机制来自两层叠加：模型层依托 Hermes 在指令遵循与角色一致性上的微调，框架层提供 Memory 模块（向量存储 + 偏好反馈通道）与增量学习循环，使 Agent 在多轮交互中持续累积用户上下文并更新行为策略。相较 LangChain Memory 偏被动检索、Mem0 主打可插拔记忆层的方案，hermes-agent 采用'模型原生能力 + 框架记忆闭环'双层耦合设计，在长期个性化保持与冷启动友好性上具有差异化定位，适用于长程个人助手、持续协作类 Agent 场景。",
+  "tags": [
+    "Agent",
+    "NousResearch",
+    "Hermes",
+    "LLM",
+    "自适应学习",
+    "智能体框架",
+    "任务自动化",
+    "个性化记忆"
+  ],
+  "relevance_score": 0.85,
+  "category": "agent",
+  "key_insight": "其生态价值在于打通'底层模型微调 + 上层 Memory 模块'的闭环：多数 Agent 框架只做应用层组件拼装，而 hermes-agent 把模型行为演化与记忆系统联动，是少数真正具备'共成长'工程范式的实现。"
+}

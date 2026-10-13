@@ -1,0 +1,21 @@
+{
+  "id": "2026-10-13-001",
+  "title": "firecrawl/firecrawl",
+  "source": "github",
+  "url": "https://github.com/firecrawl/firecrawl",
+  "collected_at": "2026-10-13T00:00:05.059522+00:00",
+  "summary": "Firecrawl 是一个为 AI 应用重写的网页爬取与数据转换框架，技术栈基于 TypeScript，集成 Headless 浏览器渲染、递归爬取、反爬策略处理与结构化抽取能力。其差异化定位在于 LLM 友好性：相比 Scrapy 输出原始 HTML 需自行清洗、Playwright 输出 DOM 仍含冗余标记，Firecrawl 直接产出经过去噪、主内容提取、Markdown/JSON 结构化的 LLM-ready 数据，省去下游预处理管线。该项目已成为连接开放 Web 与 RAG/Agent 应用的事实标准数据层基础设施之一。",
+  "tags": [
+    "web-scraping",
+    "data-pipeline",
+    "ai-tooling",
+    "markdown-converter",
+    "rag",
+    "agent",
+    "crawler",
+    "llm-data"
+  ],
+  "relevance_score": 0.92,
+  "category": "tool",
+  "key_insight": "它填补了'传统爬虫的脏数据'与'LLM 的干净输入'之间的工程鸿沟——把数据清洗从下游应用侧前置到采集层，是构建高质量 RAG/Agent 数据飞轮的关键基座。"
+}

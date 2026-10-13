@@ -1,0 +1,19 @@
+{
+  "id": "2026-10-13-006",
+  "title": "JuliusBrussee/caveman",
+  "source": "github",
+  "url": "https://github.com/JuliusBrussee/caveman",
+  "collected_at": "2026-10-13T00:00:05.059576+00:00",
+  "summary": "caveman 是一个运行在 AI 编程代理与 LLM 之间的 prompt 代理/重写层（类似 middleware proxy），通过预置的极简语言映射表把自然语言指令压缩为'穴居人式'短语，宣称可削减约 65% token 消耗。实现上不调用 LLM 改写 prompt，纯粹基于规则化的措辞替换与冗余短语裁剪，因此零 LLM 成本、零延迟开销。属于 prompt 压缩与 token 经济性方案中'轻量规则派'的典型代表。",
+  "tags": [
+    "prompt压缩",
+    "token优化",
+    "成本削减",
+    "编码代理",
+    "prompt工程",
+    "代理层"
+  ],
+  "relevance_score": 0.72,
+  "category": "tool",
+  "key_insight": "它揭示了一个常被忽略的事实：自然语言中相当比例的 token 是冗余修饰——通过规则化重写即可获得显著成本节省，无需任何模型介入，是 prompt 工程领域的高 ROI 实验。"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "2026-10-13-007",
+  "title": "infiniflow/ragflow",
+  "source": "github",
+  "url": "https://github.com/infiniflow/ragflow",
+  "collected_at": "2026-10-13T00:00:05.059584+00:00",
+  "summary": "RAGFlow 是面向生产场景的开源 RAG 引擎，采用 Go 语言后端，融合深度文档解析（OCR、表格、版面恢复）、混合检索（BM25 + 向量）、重排序与可配置分块策略，差异化定位在于把 Agent 能力深度融入检索上下文层（Agent 可在检索阶段做 query 改写、工具调用、多轮澄清）。横向对比 Haystack 偏传统 NLP pipeline、LlamaIndex 偏检索索引框架，RAGFlow 走'检索+推理一体化引擎'路线，强调复杂文档与多模态场景下的上下文质量，是企业级私域知识问答的主流选择之一。",
+  "tags": [
+    "RAG",
+    "Agent",
+    "LLM",
+    "开源",
+    "检索增强生成",
+    "知识库",
+    "上下文工程",
+    "文档解析"
+  ],
+  "relevance_score": 0.95,
+  "category": "rag",
+  "key_insight": "RAGFlow 的护城河是'复杂文档解析 + Agent 化检索'双轮驱动——把脏活累活（PDF/表格提取）做到极致的同时，把 Agent 能力下沉到检索层而非仅停留在生成层。"
+}

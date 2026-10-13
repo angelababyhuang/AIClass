@@ -1,0 +1,21 @@
+{
+  "id": "2026-10-13-004",
+  "title": "langchain-ai/langchain",
+  "source": "github",
+  "url": "https://github.com/langchain-ai/langchain",
+  "collected_at": "2026-10-13T00:00:05.059556+00:00",
+  "summary": "LangChain 经历了从单体仓库到 v0.1 架构拆分的关键演进：langchain-core 承载 LCEL（LangChain Expression Language）与 Runnable 协议等核心抽象，langchain-community 收容第三方集成，langchain 与 langchain-* 子包（如 langgraph、langsmith）分别提供高层用例与企业可观测性。其中 LangGraph 作为 LangChain 生态的状态化多 Agent 编排框架，弥补了原 Chain/Agent 抽象在循环、持久化、人机协作场景下的不足，使框架从'线性编排工具'升级为'工程化 Agent 平台'。当前 LangChain 仍是 LLM 应用工程化的事实标准接口层。",
+  "tags": [
+    "LLM",
+    "Agent",
+    "RAG",
+    "Framework",
+    "Orchestration",
+    "LCEL",
+    "LangGraph",
+    "Runnable"
+  ],
+  "relevance_score": 0.98,
+  "category": "framework",
+  "key_insight": "其生态位已从'LLM 编排框架'升维为'Agent 工程平台'——通过 LCEL 接口标准化 + LangGraph 状态化扩展，构建了其他框架难以撼动的上下游兼容护城河。"
+}

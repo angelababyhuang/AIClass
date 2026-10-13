@@ -1,0 +1,21 @@
+{
+  "id": "2026-10-13-005",
+  "title": "earendil-works/pi",
+  "source": "github",
+  "url": "https://github.com/earendil-works/pi",
+  "collected_at": "2026-10-13T00:00:05.059566+00:00",
+  "summary": "Pi 是面向终端开发者的 AI Agent 工具集，提供三层能力：统一 LLM API 抽象层（多模型路由）、ReAct-style Agent 循环执行引擎、原生 TUI 交互界面与 Coding Agent CLI。架构上走轻量级路线，相对 LangChain 的重型抽象更注重'开箱即用的开发体验'，相对 LiteLLM 单一聚焦于 API 网关、Pi 把 Agent runtime 与 CLI/TUI 协同打包。在追求终端原生 AI 工作流的开发者群体中具备明显体验优势。",
+  "tags": [
+    "AI Agent",
+    "LLM",
+    "CLI",
+    "TUI",
+    "Coding Agent",
+    "工具包",
+    "多模型抽象",
+    "终端原生"
+  ],
+  "relevance_score": 0.82,
+  "category": "agent",
+  "key_insight": "Pi 切中了'开发者用 AI 写作流的终端化'趋势——把 SDK 级别的 Agent 循环封装成可交互的命令行体验，降低了自建 AI 编码助手的门槛。"
+}
