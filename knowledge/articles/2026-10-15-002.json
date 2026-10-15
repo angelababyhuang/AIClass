@@ -1,0 +1,21 @@
+{
+  "id": "2026-10-15-002",
+  "title": "langgenius/dify",
+  "source": "github",
+  "url": "https://github.com/langgenius/dify",
+  "collected_at": "2026-10-15T00:00:04.896112+00:00",
+  "summary": "Dify 是一站式的 LLMOps 平台，以可视化 DAG 工作流编辑器为核心抽象（类似 LangFlow 但更偏生产），编排节点覆盖 Prompt 模板、知识库检索、HTTP/工具调用、代码执行、条件分支等，已可拼装 Agentic 循环（ReAct/Function Calling）。技术栈采用 TypeScript + Python 双端：前端 React + Next.js 编排层、后端基于 Flask + Celery 处理重型 RAG 任务，模型路由通过统一的 Model Provider 接口解耦，使 OpenAI、Anthropic、本地 Ollama 模型热切换无侵入。其差异化在于'工程化闭环'——内置日志、标注、评测、应用发布与 API 托管，避免 FastGPT/Langflow 等只能做 Demo 的局限。部署模式覆盖 SaaS、VPC 与自托管，满足合规要求。",
+  "tags": [
+    "LLM应用平台",
+    "Agent工作流",
+    "RAG",
+    "可视化编排",
+    "DAG",
+    "LLMOps",
+    "多模型支持",
+    "私有部署"
+  ],
+  "relevance_score": 0.95,
+  "category": "framework",
+  "key_insight": "Dify 真正的价值不在'低代码'而在'生产路径收口'：n8n/Zapier 也能串 LLM 调用，但缺乏评估、知识库版本化与提示词治理；Dify 把这些纳入同一控制面，使业务团队能在不写编排代码的同时仍保留可观测性。常见误区是把它当玩具平台——其实其 RAG Flow 在中型企业知识库场景足以替代自研方案，可作为自研 + LangChain 之间的中间路线。"
+}

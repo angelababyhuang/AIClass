@@ -1,0 +1,20 @@
+{
+  "id": "2026-10-15-000",
+  "title": "NousResearch/hermes-agent",
+  "source": "github",
+  "url": "https://github.com/NousResearch/hermes-agent",
+  "collected_at": "2026-10-15T00:00:04.896018+00:00",
+  "summary": "NousResearch/hermes-agent 是由知名 AI 研究机构 NousResearch 构建的自进化个人 AI Agent，基于其开源 Hermes 模型系列（如 Hermes 4）与函数调用能力形成完整闭环。项目核心设计包含三层：底层 Hermes 模型（注重推理与指令遵循）、Agent 运行时（任务分解、工具调用、记忆持久化），以及成长层（根据用户反馈在线微调或偏好对齐）。其差异化在于把'适应用户'作为一等公民——通过持续学习机制让 Agent 行为曲线随使用时长个性化，区别于多数一次性 prompt 工程的 Agent 范式。",
+  "tags": [
+    "agent",
+    "NousResearch",
+    "Hermes模型",
+    "自进化Agent",
+    "持续学习",
+    "函数调用",
+    "个性化AI助手"
+  ],
+  "relevance_score": 0.85,
+  "category": "agent",
+  "key_insight": "Hermes-agent 的真正创新点在于把'用户个性化'下沉到模型层而非仅靠上下文记忆：传统 Agent 依赖 prompt+vector 维持用户偏好，而它通过在线偏好信号让模型权重本身随交互迁移——这与 ChatGPT 'Memory' 的表层记忆、Letta 等的显式状态管理形成对比，适合做长期陪伴型 Agent 但需警惕灾难性遗忘与对齐漂移风险。"
+}

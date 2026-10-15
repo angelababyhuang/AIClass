@@ -1,0 +1,22 @@
+{
+  "id": "2026-10-15-007",
+  "title": "OpenHands/OpenHands",
+  "source": "github",
+  "url": "https://github.com/OpenHands/OpenHands",
+  "collected_at": "2026-10-15T00:00:04.896163+00:00",
+  "summary": "OpenHands（原 OpenDevin） 是开源社区最具影响力的自主软件工程 Agent 平台，架构上将 LLM Agent 与沙箱化运行时解耦：Runtime 层基于 Docker 沙箱暴露 bash、IPython、浏览器、编辑器等原子操作（每个操作为可审计的事件），Agent 层通过事件流驱动 LLM 完成 plan → act → observe → reflect 循环，类似 SWE-agent 但更强调多模型协作（CodeActAgent、BrowsingAgent、DelegatorAgent 分工）。其 RuntimeHub 允许挂载多种安全沙箱（本地 Docker、E2B、Modal、远端 SSH）并按权限分级，是其工程化程度高于纯学术 demo 的关键。v0.x 后已支持持久化记忆、技能库与人机协同审批流程，正逐步接近商业 GitHub Copilot Workspace / Devin 的能力范围。",
+  "tags": [
+    "AI Agent",
+    "代码生成",
+    "自主开发",
+    "Runtime",
+    "沙箱",
+    "AgentRuntime",
+    "多Agent协作",
+    "SWE-agent",
+    "LLM集成"
+  ],
+  "relevance_score": 0.95,
+  "category": "agent",
+  "key_insight": "OpenHands 的最大贡献是把 Agent 抽象成'事件流 + 沙箱'的可观测模型：每个 bash、read、edit 都成为可重放、可评估的事件，因此能衍生出 SWE-Bench 评测、轨迹回放、人机协同等能力——这是判断一个 Agent 框架能否从 PoC 走向生产的关键指标。选型上若重在自主性研究与数据采集优先选它，若重在 IDE 内体验则 Cline/Continue 更合适。"
+}

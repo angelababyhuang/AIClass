@@ -1,0 +1,22 @@
+{
+  "id": "2026-10-15-006",
+  "title": "infiniflow/ragflow",
+  "source": "github",
+  "url": "https://github.com/infiniflow/ragflow",
+  "collected_at": "2026-10-15T00:00:04.896156+00:00",
+  "summary": "RAGFlow 是 infiniflow 出品的开源 RAG 引擎，以深度文档解析与 Agentic 检索流程为核心差异点。其技术架构包括：解析层（基于 LayoutLM 等模型对 PDF/Word/表格/图像做版面识别与 OCR，远超传统 unstructured 库）、分块层（模板化 chunker 支持 QA、table、paper 等多场景）、检索层（稠密向量 + Elastic/Infinity 倒排混合搜索，可挂 GraphRAG、full-text reranking）。亮点是'Agent + RAG'融合——通过 DSL 让 LLM 自主选择检索策略（self-query、multi-hop、reflection），而非被动执行固定 pipeline。底层使用 Go 重型后端 + React 前端，整体部署比 Haystack/LlamaIndex 略重，但在企业级文档（合同、论文、表格密集）场景准确率领先。",
+  "tags": [
+    "RAG",
+    "Agentic RAG",
+    "文档解析",
+    "混合检索",
+    "开源",
+    "LLM",
+    "知识库",
+    "GraphRAG",
+    "Infinity"
+  ],
+  "relevance_score": 0.95,
+  "category": "rag",
+  "key_insight": "RAGFlow 的最强项是'脏文档进、干净 chunk 出'：在 PDF 表格、扫描件、多栏排版等传统 RAG 失效场景下，它的版面识别明显优于 Tika + RecursiveTextSplitter 组合；选型逻辑——如果文档质量好或可清洗，LlamaIndex 更灵活；如果文档复杂且不容妥协，选 RAGFlow 能省下至少 2-3 周解析工程。"
+}

@@ -1,0 +1,23 @@
+{
+  "id": "2026-10-15-003",
+  "title": "langchain-ai/langchain",
+  "source": "github",
+  "url": "https://github.com/langchain-ai/langchain",
+  "collected_at": "2026-10-15T00:00:04.896121+00:00",
+  "summary": "LangChain 已从最初的 Chain 编排库演进为一个完整的 Agent 工程平台，核心架构包含三大子项目：langchain-core（LCEL 表达式语言，统一的 Runnable/component 抽象使 Chain、Tool、Retriever 都可 `|` 组合流式执行）、langgraph（基于状态图的状态机引擎，支持循环、持久化、Human-in-the-loop，是构建复杂 Agent 的事实标准，取代了早期不稳定的 AgentExecutor）、langsmith（可观测性与评测平台，覆盖 trace、dataset、evaluator、prompt playground 闭环）。其核心 API 模式围绕 Runnable（batch/stream/async/invoke 统一）与 LCEL（声明式管道），并通过 langchain-hub 沉淀社区 Prompt 模板与 Tool 集成。版本上 v0.1 后已拆分为独立 PyPI 包（langchain、langchain-community、langchain-core）以解决早期单体包依赖膨胀问题。区别于 Dify 等低代码平台，LangChain 定位于代码优先的工程师群体，可与任意 RAG/Agent 架构深度耦合。",
+  "tags": [
+    "LLM",
+    "Agent",
+    "LangGraph",
+    "LangSmith",
+    "LCEL",
+    "状态图",
+    "RAG",
+    "框架",
+    "Python",
+    "TypeScript"
+  ],
+  "relevance_score": 0.98,
+  "category": "framework",
+  "key_insight": "LangChain 已度过'包揽一切'的争议期：当下的它更像是 Agent 时代的 Spring——LCEL 是 IoC 容器、LangGraph 是工作流引擎、LangSmith 是可观测性三件套，意味着复杂 Agent 工程的栈已基本定型；判断趋势时关注 LangGraph 状态原语（checkpoint、interrupt）即可，不用再纠结'用不用 Chain'的旧命题。"
+}

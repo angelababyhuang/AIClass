@@ -1,0 +1,21 @@
+{
+  "id": "2026-10-15-005",
+  "title": "earendil-works/pi",
+  "source": "github",
+  "url": "https://github.com/earendil-works/pi",
+  "collected_at": "2026-10-15T00:00:04.896139+00:00",
+  "summary": "earendil-works/pi 是一个面向开发者的 AI Agent 工具包，定位类似 Claude Code / Aider 的轻量化本地优先替代品。核心模块按分层组织：统一 LLM API 层（Provider 抽象屏蔽 OpenAI、Anthropic、Gemini、本地 Ollama 等差异，遵循类 LiteLLM 接口规范）、Agent Loop 层（实现 ReAct 风格工具调用循环，暴露 hook 用于扩展，如审批、日志、截断）、终端 TUI 层（基于 Ink/Ink 的交互面板，支持 stream、diff 预览、撤销）、Coding Agent CLI 层（提供代码生成、补丁应用、shell 执行原语，输出 unified diff 供人工确认）。整套工具以 TypeScript 编写，部署到 Node 后即可在终端完成从规划到落盘的完整编码任务。",
+  "tags": [
+    "AI Agent",
+    "LLM API 抽象",
+    "终端 UI",
+    "编程助手",
+    "CLI 工具",
+    "Agent Loop",
+    "LiteLLM风格",
+    "本地优先"
+  ],
+  "relevance_score": 0.82,
+  "category": "agent",
+  "key_insight": "pi 的产品哲学是'终端原住民的 Claude Code'：多数 Agent 工具默认 Web/IDE 入口，而它把 Coding Agent 核心能力（统一 API + Loop + TUI + Diff 应用）全部压缩进 CLI，便于 shell 化工作流与 CI 集成；适合熟悉 Vim/Tmux 的开发者，但不提供企业级 RBAC 与审计，定位与商业 Coding Agent 不重合。"
+}

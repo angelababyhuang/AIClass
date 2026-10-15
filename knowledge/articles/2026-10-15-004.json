@@ -1,0 +1,22 @@
+{
+  "id": "2026-10-15-004",
+  "title": "Shubhamsaboo/awesome-llm-apps",
+  "source": "github",
+  "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+  "collected_at": "2026-10-15T00:00:04.896130+00:00",
+  "summary": "Shubhamsaboo/awesome-llm-apps 是一个持续维护的端到端 LLM 应用案例库，覆盖三大主线：AI Agent（OpenAI Operator 风格浏览器 Agent、多 Agent 协作、医疗/金融垂直领域 Agent）、Agent Skills（带推理 + 工具调用的结构化输出）、RAG 应用（从基础 Naive RAG 到 GraphRAG、Agentic RAG、自适应检索）。技术栈以 Python 为主，每个项目都是可直接运行的 Streamlit/Gradio 前端 + OpenAI/Anthropic/Ollama 后端的最小完整实例，避免 awesome-list 类项目只列名字无可运行代码的通病。仓库本身采用模板化目录结构，便于社区贡献者按统一格式提交新应用，已成为学习 LLM 应用架构演进的参考资料。",
+  "tags": [
+    "LLM",
+    "AI Agent",
+    "RAG",
+    "GraphRAG",
+    "多智能体",
+    "深度研究",
+    "应用示例",
+    "awesome-list",
+    "Streamlit"
+  ],
+  "relevance_score": 0.95,
+  "category": "agent",
+  "key_insight": "比 awesome-list 更接近'LLM 应用模式的活文档'：每个目录条目都是一个最小可运行 demo，使抽象论文（如 GraphRAG、ReAct）的工程实现一眼可读；用于选型时建议用它做'横向协议侦察'——同一个目标（比如 deep research）通常有 3-5 个不同实现，能快速看出哪种架构在社区更受认可。"
+}

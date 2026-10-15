@@ -1,0 +1,22 @@
+{
+  "id": "2026-10-15-001",
+  "title": "firecrawl/firecrawl",
+  "source": "github",
+  "url": "https://github.com/firecrawl/firecrawl",
+  "collected_at": "2026-10-15T00:00:04.896081+00:00",
+  "summary": "Firecrawl 是一个面向 AI 系统的网页数据采集与结构化引擎，技术栈以 TypeScript + Playwright 构建，底层依赖 Chromium 无头浏览器执行真实 JavaScript 渲染，并实现了代理池轮换、TLS 指纹伪装与 CAPTCHA 启发式绕过，使爬取成功率显著高于传统 cheerio/puppeteer 方案。其核心 API 模型采用异步任务抽象（crawl/scrape/crawlStatus），返回 LLM 友好的 Markdown 或 JSON Schema，配合 Crawl/Extract 双模式可在分钟级别完成百万级页面召回。区别于 Scrapy/BeautifulSoup 等通用爬虫，Firecrawl 把'输出对模型可用'作为第一约束，例如内置按语义分块、内容去噪与 metadata 抽取，可直接灌入向量库。",
+  "tags": [
+    "web-scraping",
+    "data-pipeline",
+    "llm",
+    "ai-agent",
+    "rag",
+    "crawler",
+    "js-rendering",
+    "结构化提取",
+    "open-source"
+  ],
+  "relevance_score": 0.92,
+  "category": "tool",
+  "key_insight": "Firecrawl 的护城河在于'爬取 → 结构化 → 语义分块'一站式管道：对 RAG 场景而言，普通爬虫的脏数据通常要花 60% 工程量清洗，而 Firecrawl 把这层前置化让工程师能专注检索策略本身；常见误区是把它当作 cheeriol 替代品，忽略其反爬与代理成本在大规模场景下的显著开销。"
+}
