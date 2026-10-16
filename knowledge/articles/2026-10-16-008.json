@@ -1,0 +1,19 @@
+{
+  "id": "2026-10-16-008",
+  "title": "JuliusBrussee/caveman",
+  "source": "github",
+  "url": "https://github.com/JuliusBrussee/caveman",
+  "collected_at": "2026-10-16T00:00:04.587492+00:00",
+  "summary": "caveman 是一个面向 AI 编程代理（如 Claude Code）的极简提示词优化工具，通过将自然语言简化为类原始人表达的极简句式（如 'me want code' 替代 'I would like you to write code'），可在保持核心语义的前提下削减约 65% 的 token 消耗，从而显著降低 API 调用成本与延迟。",
+  "tags": [
+    "prompt-engineering",
+    "token-optimization",
+    "cost-reduction",
+    "claude-code",
+    "llm-tooling",
+    "agent-skill"
+  ],
+  "relevance_score": 0.72,
+  "category": "tool",
+  "key_insight": "在代码生成类任务中，冗余的自然语言修饰对模型理解几乎无贡献，激进压缩输入 token 可大幅降低成本而几乎不影响输出质量。"
+}
