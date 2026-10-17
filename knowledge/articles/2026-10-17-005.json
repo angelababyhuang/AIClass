@@ -1,0 +1,20 @@
+{
+  "id": "2026-10-17-005",
+  "title": "Shubhamsaboo/awesome-llm-apps",
+  "source": "github",
+  "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+  "collected_at": "2026-10-17T00:00:05.289318+00:00",
+  "summary": "Shubhamsaboo/awesome-llm-apps 是一个精选的AI应用集合项目，涵盖100多个AI Agent、Agent Skills和RAG应用，全部免费开源。项目整合了主流LLM（大语言模型）的实际应用案例，包括多智能体系统、检索增强生成（RAG）、自主Agent等前沿技术实现，为开发者提供了丰富的学习资源和实践参考。",
+  "tags": [
+    "LLM",
+    "AI Agent",
+    "RAG",
+    "开源项目",
+    "awesome列表",
+    "多智能体",
+    "检索增强生成"
+  ],
+  "relevance_score": 0.92,
+  "category": "agent",
+  "key_insight": "集合了100+开源LLM应用，覆盖AI Agent和RAG两大主流方向，是快速入门和构建AI应用的最佳实践资源库。"
+}
