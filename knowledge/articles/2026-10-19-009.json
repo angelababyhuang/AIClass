@@ -1,0 +1,21 @@
+{
+  "id": "2026-10-19-009",
+  "title": "infiniflow/ragflow",
+  "source": "github",
+  "url": "https://github.com/infiniflow/ragflow",
+  "collected_at": "2026-10-19T00:00:05.054955+00:00",
+  "summary": "RAGFlow 的差异点在 RAG 与 Agent 的耦合位置：传统做法先检索再一次性塞给 LLM，RAGFlow 把检索结果以'知识片段 + 来源坐标'结构暴露为 Agent 可调用的 tool，Agent 可以在多轮推理中按需触发深度检索、子查询拆分与跨片段逻辑组合。其底层基于 DeepDoc 的多模态文档解析能处理 PDF/表格/扫描件，使用 GraphRAG 风格的实体关系图增强跨文档推理。对比 LangChain 的 retriever 接口把检索当一次性函数，RAGFlow 把检索上升为一类带状态、可迭代的上下文供给机制。",
+  "tags": [
+    "RAG",
+    "Agent",
+    "GraphRAG",
+    "DeepDoc",
+    "多模态解析",
+    "LLM",
+    "上下文增强",
+    "可迭代检索"
+  ],
+  "relevance_score": 0.95,
+  "category": "rag",
+  "key_insight": "RAGFlow 把检索从'前置函数'重构为'Agent 可调用的工具'——核心反共识是承认单轮 retrieve-then-read 在复杂问答中的不足，让 Agent 在思考过程中能反复回到知识库补充上下文，这预示着 RAG 正从一次性增强走向与 reasoning loop 深度耦合。"
+}

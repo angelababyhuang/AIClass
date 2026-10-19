@@ -1,0 +1,21 @@
+{
+  "id": "2026-10-19-007",
+  "title": "earendil-works/pi",
+  "source": "github",
+  "url": "https://github.com/earendil-works/pi",
+  "collected_at": "2026-10-19T00:00:05.054939+00:00",
+  "summary": "earendil-works/pi 提供四件套：统一 LLM API 抽象层（屏蔽 OpenAI / Anthropic / 本地 Ollama 之间的 function-call schema 差异）、可复用的 Agent 循环（支持人机环回与工具结果回灌）、基于 Bubble Tea 的终端 TUI，以及编码 Agent CLI。设计上偏向'轻量终端优先'——放弃厚重的 Web IDE，转而把状态、diff、日志全部挤进 TUI 帧内。对于习惯 tmux 工作流的开发者，这种形态比 VS Code + 插件路线启动更快、与既有 CLI 工具链更易组合。",
+  "tags": [
+    "AI Agent",
+    "LLM API",
+    "终端工具",
+    "编码助手",
+    "CLI",
+    "BubbleTea",
+    "TUI",
+    "Agent框架"
+  ],
+  "relevance_score": 0.88,
+  "category": "agent",
+  "key_insight": "pi 选择 TUI 而非 GUI，是一次对'Agent 的默认工作面'的重新押注：当 Agent 主导的编码流程越来越不需要 IDE 的可视化辅助，终端反而能成为最低延迟、最易脚本化的交互形态，这是大多数 Agent 框架还没正视的'轻量化回归'趋势。"
+}

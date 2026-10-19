@@ -1,0 +1,21 @@
+{
+  "id": "2026-10-19-006",
+  "title": "browser-use/browser-use",
+  "source": "github",
+  "url": "https://github.com/browser-use/browser-use",
+  "collected_at": "2026-10-19T00:00:05.054931+00:00",
+  "summary": "browser-use 通过 Playwright 控制真实 Chromium，把页面 DOM、可交互元素（a/button/input 等）抽取成'元素索引'连同截图一起塞进 LLM 的多模态 prompt，由模型以 function-call 形式给出 click/type/scroll 等原子动作并循环执行；遇到元素位置变更或选择器失效，会回退到基于视觉模型的坐标点击。其差异化之处在于把'可访问性树 + 视觉坐标'两套交互范式同时暴露给 Agent，对比 Skyvern 偏向纯视觉路径，browser-use 在稳定性与 token 经济性之间取了更工程化的折中。Browser Use Cloud 则提供 stealth 反检测 profile 与并发浏览器池，把开源库难以独立解决的指纹问题托管化。",
+  "tags": [
+    "AI Agent",
+    "浏览器自动化",
+    "Playwright",
+    "DOM索引",
+    "Web Agent",
+    "多模态",
+    "反检测",
+    "LLM工具"
+  ],
+  "relevance_score": 0.92,
+  "category": "agent",
+  "key_insight": "浏览器 Agent 的真正瓶颈不是'能不能点'而是'元素位置随页面状态漂移'——browser-use 用 DOM 索引做首选、视觉坐标做兜底的双通道交互，把原本需要大量试错的定位问题收敛为一个可复现的 fallback 链，这也是其相较纯视觉派路线胜出的工程关键。"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "2026-10-19-000",
+  "title": "NousResearch/hermes-agent",
+  "source": "github",
+  "url": "https://github.com/NousResearch/hermes-agent",
+  "collected_at": "2026-10-19T00:00:05.054801+00:00",
+  "summary": "NousResearch/hermes-agent 是 Nous Research 基于其开源 Hermes 系列大模型推出的 Agent 框架，采用规划-执行-反思的循环结构：Planner 将用户目标拆解为子任务 DAG，Executor 通过函数调用调度工具，Reflexion 模块基于执行轨迹生成自批评并反馈给短期记忆（滑动窗口式 episodic buffer）。与 LangGraph 的图状态机和 AutoGen 的多角色对话不同，hermes-agent 强调单一 Agent 内部的迭代式自改进，不依赖多 Agent 对话编排，降低了 token 消耗与协调复杂度，但牺牲了对长链路协作任务的天然支持。",
+  "tags": [
+    "AI Agent",
+    "NousResearch",
+    "Hermes",
+    "Reflexion",
+    "任务规划",
+    "函数调用",
+    "持续学习",
+    "单Agent循环"
+  ],
+  "relevance_score": 0.88,
+  "category": "agent",
+  "key_insight": "反 AutoGen 式的'多 Agent 对话编排'主流路径，hermes-agent 把自批评反射回写进同一个 Agent 的 episodic memory，以单进程内省换取更低的协调成本，暴露了当前 Agent 框架在'协作深度 vs 推理纯度'之间尚未收敛的张力。"
+}

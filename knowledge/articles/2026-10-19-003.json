@@ -1,0 +1,21 @@
+{
+  "id": "2026-10-19-003",
+  "title": "langgenius/dify",
+  "source": "github",
+  "url": "https://github.com/langgenius/dify",
+  "collected_at": "2026-10-19T00:00:05.054904+00:00",
+  "summary": "Dify 后端使用基于 DAG 的 Workflow Engine，单个节点的输入输出、变量引用、异常分支都以 JSON Schema 形式描述，可被前端可视化编辑器直接渲染；Agent 节点内部封装 ReAct 风格的思考-工具调用循环，并支持把多轮工具结果回灌到 LLM context。RAG 管线做了从文档上传、分段（支持 parent-child 与 Q&A 模式）、Embedding、到检索重排序的全链路抽象，对比 LangChain 需要自行拼装，Dify 把这些能力沉淀为可配置节点；代价是自定义节点（如接入企业内部 SDK）需要走其插件协议。",
+  "tags": [
+    "LLM应用开发平台",
+    "Agent工作流",
+    "RAG",
+    "DAG编排",
+    "可视化",
+    "ReAct",
+    "插件协议",
+    "低代码"
+  ],
+  "relevance_score": 0.95,
+  "category": "framework",
+  "key_insight": "Dify 与 LangChain 的本质分歧在抽象层级：LangChain 给的是 Python 层可组合原语（chain/retriever/tool），Dify 给的是带 GUI 的运行时配置项。这使 Dify 把'应用'而非'库'作为交付物，但也使其核心改造空间受限于自身插件协议，难以像 LangChain 那样被嵌入到既有系统中。"
+}

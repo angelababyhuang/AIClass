@@ -1,0 +1,22 @@
+{
+  "id": "2026-10-19-004",
+  "title": "langchain-ai/langchain",
+  "source": "github",
+  "url": "https://github.com/langchain-ai/langchain",
+  "collected_at": "2026-10-19T00:00:05.054913+00:00",
+  "summary": "LangChain 是事实意义上的 LLM 应用编排标准库，提供三层抽象：底层是统一化的 Chat Model、Embeddings、Vector Store、Tool 接口，中层是 LCEL（LangChain Expression Language）——一种基于 Runnable 协议的声明式组合语法，可将 prompt、model、retriever、parser 用 | 算子串成可流式执行与批处理的链；上层是 LangGraph，把多步 Agent 工作流建模为带条件边的状态图，支持人机环回、持久化检查点和子图复用。生态上还配套 LangSmith 提供 trace 观测、prompt 版本管理与在线评测。区别于 Dify 等图形化平台，LangChain 保持代码优先定位，使其能嵌入到既有 Python 服务中，但抽象层迭代频繁也带来 API 稳定性痛点。",
+  "tags": [
+    "LangChain",
+    "LCEL",
+    "LangGraph",
+    "Agent",
+    "RAG",
+    "Runnable协议",
+    "状态图",
+    "框架",
+    "LangSmith"
+  ],
+  "relevance_score": 0.97,
+  "category": "framework",
+  "key_insight": "LangChain 把'组合性'作为最高优先级：LCEL 的 Runnable 协议让 prompt/model/retriever 对 |、invoke、stream、batch 等操作具备统一行为，这在工程上首次让 LLM 流水线能像 pandas 一样被切片调试；而 LangGraph 转向状态图则是一次自我纠偏——承认'纯链式组合'表达不了循环与人机交互，框架形态正从'链'迁移到'图'。"
+}

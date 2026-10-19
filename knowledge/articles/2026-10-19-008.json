@@ -1,0 +1,19 @@
+{
+  "id": "2026-10-19-008",
+  "title": "JuliusBrussee/caveman",
+  "source": "github",
+  "url": "https://github.com/JuliusBrussee/caveman",
+  "collected_at": "2026-10-19T00:00:05.054947+00:00",
+  "summary": "caveman 在 Agent 与 LLM 之间充当 prompt 代理：先用基于词典的规则把多音节词映射为短同义词（'documentation' → 'doc'、'implementation' → 'do'），再通过改写器维持语法可读性，最终输出保留语义但省下约 65% token（项目自报数据，未见独立基准）。它作为'技能'形态分发，意味着可以挂到任意编码 Agent 上而不侵入工具调用回路；潜在风险是压缩后的提示对下游模型的可解析性下降，特别是在长代码 diff 场景下，需配合 streaming 输出避免关键标识符被过度缩写。",
+  "tags": [
+    "token优化",
+    "编码Agent",
+    "成本压缩",
+    "LLM代理",
+    "提示压缩",
+    "提示工程"
+  ],
+  "relevance_score": 0.75,
+  "category": "tool",
+  "key_insight": "caveman 把'token 经济性'从模型内部 attention 优化问题外移到输入层——用极廉价的字符串改写换 token 节省，而非依赖昂贵的 speculative decoding 或蒸馏，揭示了一条'Agent 工具链成本结构正在向 prompt 侧迁移'的工程化路径。"
+}

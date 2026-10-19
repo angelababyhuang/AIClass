@@ -1,0 +1,21 @@
+{
+  "id": "2026-10-19-001",
+  "title": "firecrawl/firecrawl",
+  "source": "github",
+  "url": "https://github.com/firecrawl/firecrawl",
+  "collected_at": "2026-10-19T00:00:05.054881+00:00",
+  "summary": "Firecrawl 用无头浏览器池 + 分布式任务队列处理 JS 渲染页面，避免了传统爬虫对静态 HTML 的依赖；爬取后通过基于规则与启发式混合的清洗管线（提取正文、剔除导航/广告/页脚噪声）输出语义完整的 Markdown，并提供结构化元数据（标题、作者、发布时间）。与 Crawl4AI 偏向 LLM 抽取不同，Firecrawl 优先保证 Markdown 输出的确定性与低成本，再在数据上叠加可选的 LLM 结构化提取（extract API），适合作为 RAG 与 Agent 检索阶段的前置 ETL 层。",
+  "tags": [
+    "Web Scraper",
+    "RAG",
+    "AI Agent",
+    "无头浏览器",
+    "Markdown清洗",
+    "ETL",
+    "JS渲染",
+    "数据采集"
+  ],
+  "relevance_score": 0.92,
+  "category": "tool",
+  "key_insight": "区别于 Crawl4AI 让 LLM 直接做抽取的路线，Firecrawl 坚持把'净化后的 Markdown'作为契约输出，把结构化抽取后置到可选阶段，这一'前端确定性 + 后端灵活性'的分层让 RAG 检索阶段的 chunking 与 embedding 成本可预测，反爬与渲染稳定性也优于调用 LLM 解析整页。"
+}

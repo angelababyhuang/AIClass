@@ -1,0 +1,20 @@
+{
+  "id": "2026-10-19-005",
+  "title": "Shubhamsaboo/awesome-llm-apps",
+  "source": "github",
+  "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+  "collected_at": "2026-10-19T00:00:05.054922+00:00",
+  "summary": "Shubhamsaboo/awesome-llm-apps 收录 100+ 可一键运行的开源 LLM 应用，覆盖 AI Agents、Agent Skills 与 RAG 三大类别，每条都附有 notebook 与依赖说明。仓库维护者按技术栈（OpenAI / LlamaIndex / CrewAI 等）做了二级分组，使其同时承担了'趋势缩影'与'教程合集'两种角色：观察子目录名就能感知当月主流 Agent 框架的轮换节奏。",
+  "tags": [
+    "LLM",
+    "AI Agent",
+    "RAG",
+    "开源项目",
+    "Awesome List",
+    "多智能体",
+    "检索增强生成"
+  ],
+  "relevance_score": 0.92,
+  "category": "awesome-list",
+  "key_insight": "相比纯论文式 awesome-llm，该仓的目录结构本身就是一份 Agent 框架流行度快照——子目录命名与近期 commit 频率比 star 数更早反应'正在被生产采纳'的框架，是判断生态是否进入新阶段（如从单 Agent 进入 multi-agent 编排）的高频信号源。"
+}

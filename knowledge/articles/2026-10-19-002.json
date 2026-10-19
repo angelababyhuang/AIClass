@@ -1,0 +1,20 @@
+{
+  "id": "2026-10-19-002",
+  "title": "DietrichGebert/ponytail",
+  "source": "github",
+  "url": "https://github.com/DietrichGebert/ponytail",
+  "collected_at": "2026-10-19T00:00:05.054894+00:00",
+  "summary": "ponytail 通过在系统提示词前缀注入'惰性资深开发者'角色约束（强调 grep before write、读懂上下文再下手、复用已有 helper），抑制 LLM 编码 Agent 倾向于'重写而非复用'的过度工程化冲动。机制上属于 prompt-level wrapper，不需要修改 Agent 本身的工具调用回路，因此可与 Claude Code、Aider、Cline 等任意编码 Agent 即插即用，但效果高度依赖底层模型对角色扮演的服从度，没有对输出做程序化校验。",
+  "tags": [
+    "AI Agent",
+    "提示工程",
+    "极简编程",
+    "代码生成",
+    "反过度工程化",
+    "系统提示",
+    "编码Agent"
+  ],
+  "relevance_score": 0.72,
+  "category": "agent",
+  "key_insight": "ponytail 揭示了一个常被忽略的事实：编码 Agent 的代码冗余很大程度上是模型对'充分完成任务'的偏好带来的，而非工具能力问题——一条系统提示级别的'人设'注入即可压低冗余率，意味着 RAG/工具增强之外的'角色软约束'是性价比最高的 Agent 行为矫正杠杆。"
+}
