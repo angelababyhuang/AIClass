@@ -1,0 +1,18 @@
+{
+  "id": "2026-10-20-008",
+  "title": "JuliusBrussee/caveman",
+  "source": "github",
+  "url": "https://github.com/JuliusBrussee/caveman",
+  "collected_at": "2026-10-20T00:00:05.043769+00:00",
+  "summary": "caveman 是一个面向编码 Agent 的 Token 压缩代理，通过将自然语言提示改写为极简的'原始人风格'短句（类似 'me want fix code'），从而显著降低大模型推理时的 Token 消耗，官方宣称可削减约 65% 的 Token 用量。它作为代理层插入到 Coding Agent 与 LLM 之间，以极低的实现成本换取可观的经济性和响应速度提升。",
+  "tags": [
+    "Token优化",
+    "Prompt压缩",
+    "Coding Agent",
+    "LLM成本削减",
+    "代理层"
+  ],
+  "relevance_score": 0.78,
+  "category": "tool",
+  "key_insight": "通过对 Coding Agent 的文本进行极简语义压缩，可减少约 65% 的 LLM Token 消耗，本质是利用 LLM 的语义理解冗余来换取成本与速度。"
+}

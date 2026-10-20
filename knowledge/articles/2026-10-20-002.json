@@ -1,0 +1,21 @@
+{
+  "id": "2026-10-20-002",
+  "title": "DietrichGebert/ponytail",
+  "source": "github",
+  "url": "https://github.com/DietrichGebert/ponytail",
+  "collected_at": "2026-10-20T00:00:05.043707+00:00",
+  "summary": "ponytail 是一个面向 AI 编码代理（Coding Agent）的指导性提示框架，核心理念是模拟资深开发者的极简主义思维——'最佳代码就是不必写的代码'。它通过系统级提示词（System Prompt）或中间件约束层，引导 AI 代理遵循 DRY（Don't Repeat Yourself）原则：优先复用、重构已有代码而非盲目新增实现，强制审视每一次代码生成的必要性。该项目本质上是一套 prompt engineering 实践，将资深工程师的代码评审直觉编码为可执行的约束规则，从输出侧提升生成代码的可维护性与精简度。",
+  "tags": [
+    "AI代理",
+    "代码生成",
+    "极简主义",
+    "提示工程",
+    "代码质量",
+    "LLM工具",
+    "DRY原则",
+    "Coding Agent"
+  ],
+  "relevance_score": 0.72,
+  "category": "agent",
+  "key_insight": "ponytail 与 cavilla 走的是 Coding Agent 成本控制的两条不同路线：cavilla 从输入侧压缩 token（语义压缩），ponytail 从输出侧约束 token（减少冗余代码生成），二者结合可构成 Coding Agent 双重成本优化方案；这反映了 prompt 工程正从'让 AI 更聪明'走向'让 AI 更克制'的范式转变。"
+}

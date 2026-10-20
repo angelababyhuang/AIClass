@@ -1,0 +1,22 @@
+{
+  "id": "2026-10-20-001",
+  "title": "firecrawl/firecrawl",
+  "source": "github",
+  "url": "https://github.com/firecrawl/firecrawl",
+  "collected_at": "2026-10-20T00:00:05.043695+00:00",
+  "summary": "Firecrawl 是一个面向 AI 智能体和 LLM 应用的开源网络爬虫与数据提取工具，能够将任意网站转换为干净的 Markdown 或结构化数据。其核心优势在于支持 JavaScript 动态渲染页面处理（底层集成 Playwright/Puppeteer 渲染引擎）、智能反爬绕过（IP 轮换、指纹伪装、代理池）、内容清洗（去除广告/导航等噪声）和批量并发爬取，并以 REST API 形式提供统一接口。相比 BeautifulSoup（无 JS 渲染）与 Scrapy（反爬能力弱、输出非 LLM 友好），Firecrawl 的差异化在于专为 AI 消费场景设计——输出格式直接对齐 RAG 需求，可无缝集成到 LangChain、LlamaIndex 等主流 AI 框架中，是构建 AI 数据管道的重要基础设施层。",
+  "tags": [
+    "web-scraping",
+    "data-extraction",
+    "RAG",
+    "AI-agent",
+    "crawler",
+    "markdown",
+    "data-pipeline",
+    "Playwright",
+    "反爬绕过"
+  ],
+  "relevance_score": 0.95,
+  "category": "tool",
+  "key_insight": "Firecrawl 将脏乱的网页数据转化为 LLM 可直接消费的干净 Markdown，成为 AI Agent 联网获取实时数据的关键基础设施层；与 LangChain/RAGFlow 组合可形成完整的'网络→结构化→向量化→检索'数据流闭环。"
+}

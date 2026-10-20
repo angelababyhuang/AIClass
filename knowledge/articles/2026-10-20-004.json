@@ -1,0 +1,23 @@
+{
+  "id": "2026-10-20-004",
+  "title": "langchain-ai/langchain",
+  "source": "github",
+  "url": "https://github.com/langchain-ai/langchain",
+  "collected_at": "2026-10-20T00:00:05.043726+00:00",
+  "summary": "LangChain 是 AI Agent 工程领域的核心框架与平台，被官方定位为'The Agent Engineering Platform'。它提供了从 LLM 编排、链式调用（Chain）、Agent 循环、工具调用（Tool Use）、记忆管理（Memory）到检索增强生成（Retrievers/Vector Stores）的完整技术体系。作为事实上的行业标准，LangChain 定义了 Agent 开发的核心抽象接口（Chain、Agent、Tool、Memory、Retriever、Callback），并围绕生态构建了 LangSmith（可观测性/调试）、LangServe（部署服务）、LangGraph（有状态 Agent 编排）等配套产品，形成 Agent 开发生命周期的完整闭环。架构上采用模块化设计，支持 50+ 模型与 500+ 集成，是 Python 生态下 LLM 框架的标杆。与 Dify 的可视化平台定位互补，LangChain 面向需要深度定制的开发者场景。",
+  "tags": [
+    "AI Agent",
+    "LLM框架",
+    "Agent工程平台",
+    "Chain",
+    "Tool Use",
+    "RAG",
+    "Python",
+    "LangSmith",
+    "LangGraph",
+    "开源标准"
+  ],
+  "relevance_score": 0.98,
+  "category": "platform",
+  "key_insight": "LangChain 已从单一框架演化为完整的 Agent 工程平台（LangChain/LangSmith/LangGraph），其定义的 Chain-Agent-Tool-Memory 抽象已成为 Agent 开发的行业事实标准；与 firecrawl/RAGFlow 等垂直工具组合时，扮演'中枢调度层'角色——这正是构建完整 AI Agent 技术栈的关键拼图。"
+}
