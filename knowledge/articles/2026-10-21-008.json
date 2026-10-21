@@ -1,0 +1,16 @@
+{
+  "id": "2026-10-21-008",
+  "title": "JuliusBrussee/caveman",
+  "source": "github",
+  "url": "https://github.com/JuliusBrussee/caveman",
+  "collected_at": "2026-10-21T00:00:05.568567+00:00",
+  "summary": "Caveman 是面向编程智能体的提示词压缩技能与代理层，通过用更精简、类似“穴居人式”的表达替代冗长自然语言，降低模型通信及工具调用中的令牌消耗 reportedly 可减少约65%。",
+  "tags": [
+    "令牌优化",
+    "编程智能体",
+    "提示词压缩"
+  ],
+  "relevance_score": 0.92,
+  "category": "agent",
+  "key_insight": "在保持代理任务指令可执行性的前提下压缩文本表达，可显著降低 LLM 调用成本。"
+}
