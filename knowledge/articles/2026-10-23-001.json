@@ -1,0 +1,20 @@
+{
+  "id": "2026-10-23-001",
+  "title": "firecrawl/firecrawl",
+  "source": "github",
+  "url": "https://github.com/firecrawl/firecrawl",
+  "collected_at": "2026-10-23T00:00:05.032116+00:00",
+  "summary": "Firecrawl 是一个面向 AI 智能体的网页数据采集与处理工具，能够将任意网站批量抓取并转换为清洁的 Markdown 或结构化数据（如 JSON），输出格式天然适配 LLM 和 RAG 流程。支持动态渲染（JavaScript 页面）、代理轮换、自动重试与爬取队列管理，并提供 SDK（Python/Node）和 API 接口。可整站爬取、自动提取主内容、过滤广告与导航栏等噪声，是构建 AI 知识库和 Agent 数据源的热门基础设施。",
+  "tags": [
+    "web-scraping",
+    "data-pipeline",
+    "RAG",
+    "AI-agent",
+    "crawler",
+    "data-extraction",
+    "LLM-ready-data"
+  ],
+  "relevance_score": 0.85,
+  "category": "tool",
+  "key_insight": "Firecrawl 将复杂的网页爬取与清洗封装为开箱即用的 API，让开发者无需自建爬虫即可为 LLM/RAG 持续供给高质量、格式统一的结构化网页数据，是 AI 数据采集层（Data Layer）的关键基础设施。"
+}

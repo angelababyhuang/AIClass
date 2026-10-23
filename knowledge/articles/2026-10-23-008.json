@@ -1,0 +1,16 @@
+{
+  "id": "2026-10-23-008",
+  "title": "JuliusBrussee/caveman",
+  "source": "github",
+  "url": "https://github.com/JuliusBrussee/caveman",
+  "collected_at": "2026-10-23T00:00:05.032194+00:00",
+  "summary": "Caveman 是面向编程智能体的提示词压缩代理，将冗长指令转换为极简表达，在尽量保留原意的同时降低上下文 Token 消耗，并支持作为技能层接入现有编码 Agent。",
+  "tags": [
+    "编码智能体",
+    "Token优化",
+    "提示词压缩"
+  ],
+  "relevance_score": 0.9,
+  "category": "tool",
+  "key_insight": "通过代理层把自然语言提示词“穴居人化”，可用更少 Token 完成相同的编码智能体任务。"
+}
