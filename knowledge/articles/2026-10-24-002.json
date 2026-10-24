@@ -1,0 +1,16 @@
+{
+  "id": "2026-10-24-002",
+  "title": "DietrichGebert/ponytail",
+  "source": "github",
+  "url": "https://github.com/DietrichGebert/ponytail",
+  "collected_at": "2026-10-24T00:00:05.409300+00:00",
+  "summary": "Ponytail 面向 AI 编程代理提供“懒惰资深开发者”式约束：优先复用现有代码、避免过度设计，并以最少改动解决问题，目标是减少不必要代码与维护成本。",
+  "tags": [
+    "AI 编程",
+    "智能体",
+    "最小化设计"
+  ],
+  "relevance_score": 0.88,
+  "category": "agent",
+  "key_insight": "高质量 AI 编程不仅追求功能实现，还应通过复用、删减和避免过度工程来降低代码复杂度。"
+}
