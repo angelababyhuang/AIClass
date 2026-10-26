@@ -1,0 +1,92 @@
+[
+  {
+    "source": "github",
+    "title": "NousResearch/hermes-agent",
+    "url": "https://github.com/NousResearch/hermes-agent",
+    "description": "The agent that grows with you",
+    "stars": 257051,
+    "language": "Python",
+    "collected_at": "2026-10-26T00:00:04.947345+00:00"
+  },
+  {
+    "source": "github",
+    "title": "firecrawl/firecrawl",
+    "url": "https://github.com/firecrawl/firecrawl",
+    "description": "Supercharge your AI agents with data from the web and beyond. Building the library for superintelligence. 🔥",
+    "stars": 195328,
+    "language": "TypeScript",
+    "collected_at": "2026-10-26T00:00:04.947383+00:00"
+  },
+  {
+    "source": "github",
+    "title": "langgenius/dify",
+    "url": "https://github.com/langgenius/dify",
+    "description": "Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move from prototype to production without rebuilding the stack.",
+    "stars": 159524,
+    "language": "Python",
+    "collected_at": "2026-10-26T00:00:04.947390+00:00"
+  },
+  {
+    "source": "github",
+    "title": "langchain-ai/langchain",
+    "url": "https://github.com/langchain-ai/langchain",
+    "description": "The agent engineering platform.",
+    "stars": 148446,
+    "language": "Python",
+    "collected_at": "2026-10-26T00:00:04.947395+00:00"
+  },
+  {
+    "source": "github",
+    "title": "Shubhamsaboo/awesome-llm-apps",
+    "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+    "description": "100+ AI Agents, Agent Skills and RAG Apps - Free and Open Source.",
+    "stars": 143046,
+    "language": "Python",
+    "collected_at": "2026-10-26T00:00:04.947400+00:00"
+  },
+  {
+    "source": "github",
+    "title": "browser-use/browser-use",
+    "url": "https://github.com/browser-use/browser-use",
+    "description": "Open-source Python library for AI browser agents, plus Browser Use Cloud: stealth browsers and a hosted agent API.",
+    "stars": 119124,
+    "language": "Python",
+    "collected_at": "2026-10-26T00:00:04.947404+00:00"
+  },
+  {
+    "source": "github",
+    "title": "earendil-works/pi",
+    "url": "https://github.com/earendil-works/pi",
+    "description": "AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI",
+    "stars": 117780,
+    "language": "TypeScript",
+    "collected_at": "2026-10-26T00:00:04.947408+00:00"
+  },
+  {
+    "source": "github",
+    "title": "JuliusBrussee/caveman",
+    "url": "https://github.com/JuliusBrussee/caveman",
+    "description": "🪨 why use many token when few token do trick. Viral skill + proxy for coding agents that cuts 65% of tokens by talking like a caveman.",
+    "stars": 115042,
+    "language": "Go",
+    "collected_at": "2026-10-26T00:00:04.947411+00:00"
+  },
+  {
+    "source": "github",
+    "title": "infiniflow/ragflow",
+    "url": "https://github.com/infiniflow/ragflow",
+    "description": "RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine that fuses cutting-edge RAG with Agent capabilities to create a superior context layer for LLMs",
+    "stars": 92851,
+    "language": "Go",
+    "collected_at": "2026-10-26T00:00:04.947415+00:00"
+  },
+  {
+    "source": "github",
+    "title": "OpenHands/OpenHands",
+    "url": "https://github.com/OpenHands/OpenHands",
+    "description": "🙌 OpenHands: AI-Driven Development",
+    "stars": 91822,
+    "language": "TypeScript",
+    "collected_at": "2026-10-26T00:00:04.947418+00:00"
+  }
+]
