@@ -1,0 +1,16 @@
+{
+  "id": "2026-10-27-007",
+  "title": "JuliusBrussee/caveman",
+  "source": "github",
+  "url": "https://github.com/JuliusBrussee/caveman",
+  "collected_at": "2026-10-27T00:00:05.010310+00:00",
+  "summary": "Caveman 是面向编程智能体的提示词压缩工具兼代理层，通过将冗长上下文转换为简洁的“穴居人式”表达，减少代理通信与推理消耗。项目宣称可节省约 65% 的 Token，适合关注上下文成本和响应效率的编码 Agent 场景。",
+  "tags": [
+    "LLM Token 优化",
+    "Coding Agent",
+    "上下文压缩"
+  ],
+  "relevance_score": 0.9,
+  "category": "agent",
+  "key_insight": "在保持关键信息的前提下用极简表达压缩智能体上下文，可显著降低 Token 消耗和运行成本。"
+}

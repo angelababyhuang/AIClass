@@ -1,0 +1,16 @@
+{
+  "id": "2026-10-27-000",
+  "title": "NousResearch/hermes-agent",
+  "source": "github",
+  "url": "https://github.com/NousResearch/hermes-agent",
+  "collected_at": "2026-10-27T00:00:05.010208+00:00",
+  "summary": "NousResearch 开源的个性化 AI Agent，通过持久记忆、工具调用与技能沉淀持续积累用户上下文，支持命令行及多种聊天平台接入，并可灵活切换兼容模型，形成长期演化的个人助手。",
+  "tags": [
+    "智能体",
+    "持久记忆",
+    "技能进化"
+  ],
+  "relevance_score": 0.95,
+  "category": "agent",
+  "key_insight": "核心是将记忆、工具与可演化技能组合成持续学习的闭环，让智能体从静态助手成长为长期个性化伙伴。"
+}

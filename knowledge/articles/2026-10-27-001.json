@@ -1,0 +1,16 @@
+{
+  "id": "2026-10-27-001",
+  "title": "firecrawl/firecrawl",
+  "source": "github",
+  "url": "https://github.com/firecrawl/firecrawl",
+  "collected_at": "2026-10-27T00:00:05.010265+00:00",
+  "summary": "Firecrawl 是面向 AI 代理与 RAG 的网页数据平台，提供网站爬取、内容提取、搜索、站点映射及 Markdown/JSON 转换能力，并支持自托管与自动化工作流，帮助代理可靠获取实时网页上下文。",
+  "tags": [
+    "网页爬取",
+    "AI Agent",
+    "RAG"
+  ],
+  "relevance_score": 0.96,
+  "category": "tool",
+  "key_insight": "Firecrawl 将复杂网页标准化为适合大模型消费的数据接口，是 AI 代理连接实时外部信息的关键基础设施。"
+}
