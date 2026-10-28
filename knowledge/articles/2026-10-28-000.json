@@ -1,0 +1,16 @@
+{
+  "id": "2026-10-28-000",
+  "title": "NousResearch/hermes-agent",
+  "source": "github",
+  "url": "https://github.com/NousResearch/hermes-agent",
+  "collected_at": "2026-10-28T00:00:04.708672+00:00",
+  "summary": "NousResearch 开源的个人 AI 智能体项目，强调通过持久记忆、技能扩展、工具调用与自动化任务持续成长，可为个人助理及智能体应用提供可扩展底座。",
+  "tags": [
+    "个人智能体",
+    "长期记忆",
+    "工具调用"
+  ],
+  "relevance_score": 0.92,
+  "category": "agent",
+  "key_insight": "其核心价值在于让智能体通过记忆、技能与工具的持续积累形成长期个性化能力，而非仅完成单次任务。"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "2026-10-28-007",
+  "title": "JuliusBrussee/caveman",
+  "source": "github",
+  "url": "https://github.com/JuliusBrussee/caveman",
+  "collected_at": "2026-10-28T00:00:04.708743+00:00",
+  "summary": "JuliusBrussee/caveman 是面向编码代理的提示词压缩技能与代理层，通过“穴居人式”极简表达替代冗长文本，降低代理调用与通信的令牌消耗，项目宣称可节省约65%。",
+  "tags": [
+    "编码代理",
+    "提示词压缩",
+    "令牌优化"
+  ],
+  "relevance_score": 0.9,
+  "category": "agent",
+  "key_insight": "用高度压缩的低歧义提示词替代冗长自然语言，可显著降低编码代理的令牌成本。"
+}

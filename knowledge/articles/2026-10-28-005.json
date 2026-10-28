@@ -1,0 +1,16 @@
+{
+  "id": "2026-10-28-005",
+  "title": "browser-use/browser-use",
+  "source": "github",
+  "url": "https://github.com/browser-use/browser-use",
+  "collected_at": "2026-10-28T00:00:04.708734+00:00",
+  "summary": "browser-use 是面向 AI 智能体的开源 Python 库，可通过结构化接口驱动浏览器执行网页任务；同时提供具备反检测能力的隐身浏览器及托管智能体 API，便于快速构建和部署浏览器自动化应用。",
+  "tags": [
+    "浏览器智能体",
+    "网页自动化",
+    "云端浏览器"
+  ],
+  "relevance_score": 0.95,
+  "category": "agent",
+  "key_insight": "通过统一抽象连接 LLM 智能体与真实浏览器，并结合隐身浏览器和托管 API 降低网页自动化应用的开发与部署门槛。"
+}
