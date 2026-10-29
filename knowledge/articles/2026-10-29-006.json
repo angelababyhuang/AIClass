@@ -1,0 +1,16 @@
+{
+  "id": "2026-10-29-006",
+  "title": "JuliusBrussee/caveman",
+  "source": "github",
+  "url": "https://github.com/JuliusBrussee/caveman",
+  "collected_at": "2026-10-29T00:00:05.583908+00:00",
+  "summary": "Caveman 是面向编码代理的提示词压缩技能与代理工具，通过将冗长表达转换为更精简的“穴居人式”语言，在尽量保留任务意图的前提下减少 Token 消耗，项目宣称可节省约 65% 的上下文成本。",
+  "tags": [
+    "编码代理",
+    "提示词压缩",
+    "Token优化"
+  ],
+  "relevance_score": 0.92,
+  "category": "tool",
+  "key_insight": "通过极端精简提示词表达，可显著降低编码代理的上下文与推理 Token 成本。"
+}

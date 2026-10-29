@@ -1,0 +1,16 @@
+{
+  "id": "2026-10-29-001",
+  "title": "firecrawl/firecrawl",
+  "source": "github",
+  "url": "https://github.com/firecrawl/firecrawl",
+  "collected_at": "2026-10-29T00:00:05.583861+00:00",
+  "summary": "Firecrawl 是面向 AI 代理的开源网页抓取与数据提取平台，可将网页转换为适合 LLM 使用的 Markdown，并提供爬取、站点映射、结构化提取及自托管能力，为 RAG 和智能代理提供统一数据入口。",
+  "tags": [
+    "网页爬取",
+    "数据提取",
+    "AI代理"
+  ],
+  "relevance_score": 0.95,
+  "category": "tool",
+  "key_insight": "Firecrawl 通过将任意网站标准化为适合 AI 消费的结构化数据，显著降低 AI 代理获取和处理实时网页信息的门槛。"
+}

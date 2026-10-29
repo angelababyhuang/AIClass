@@ -1,0 +1,18 @@
+{
+  "id": "2026-10-29-000",
+  "title": "NousResearch/hermes-agent",
+  "source": "github",
+  "url": "https://github.com/NousResearch/hermes-agent",
+  "collected_at": "2026-10-29T00:00:05.583802+00:00",
+  "summary": "NousResearch 开源的常驻式个人 AI Agent，以 Hermes 模型为核心，提供持久记忆、技能沉淀、自我改进、工具调用及定时任务等能力，并可通过消息平台与终端持续交互协作。",
+  "tags": [
+    "Agent",
+    "自我改进",
+    "持久记忆",
+    "工具调用",
+    "多平台接入"
+  ],
+  "relevance_score": 0.93,
+  "category": "agent",
+  "key_insight": "通过将交互经验转化为长期记忆和可复用技能，让 Agent 在持续服务中实现能力累积与自我演化。"
+}
