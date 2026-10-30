@@ -1,0 +1,16 @@
+{
+  "id": "2026-10-30-002",
+  "title": "DietrichGebert/ponytail",
+  "source": "github",
+  "url": "https://github.com/DietrichGebert/ponytail",
+  "collected_at": "2026-10-30T00:00:04.894534+00:00",
+  "summary": "Ponytail 为 AI 编程代理引入“懒惰的资深开发者”思维模式，强调先理解现有代码、优先复用并避免过度设计，只完成满足需求的最少改动，以减少冗余代码和维护成本。",
+  "tags": [
+    "AI编程代理",
+    "最小化实现",
+    "代码复用"
+  ],
+  "relevance_score": 0.88,
+  "category": "agent",
+  "key_insight": "优秀的 AI 编程代理应以最少代码和最小改动可靠地解决问题，而非盲目生成更多实现。"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "2026-10-30-000",
+  "title": "NousResearch/hermes-agent",
+  "source": "github",
+  "url": "https://github.com/NousResearch/hermes-agent",
+  "collected_at": "2026-10-30T00:00:04.894478+00:00",
+  "summary": "Nous Research 开源的持续学习型 AI Agent，支持持久记忆、技能自动创建与迭代，并可通过多平台交互及工具扩展完成长期任务，核心目标是让智能体在使用中不断进化。",
+  "tags": [
+    "AI Agent",
+    "持续学习",
+    "技能进化"
+  ],
+  "relevance_score": 0.96,
+  "category": "agent",
+  "key_insight": "通过持久记忆与自生成技能闭环，让 Agent 在持续交互和任务执行中实现可积累的自主进化。"
+}
