@@ -1,0 +1,16 @@
+{
+  "id": "2026-10-31-002",
+  "title": "DietrichGebert/ponytail",
+  "source": "github",
+  "url": "https://github.com/DietrichGebert/ponytail",
+  "collected_at": "2026-10-31T00:00:05.323682+00:00",
+  "summary": "ponytail 是一套面向 AI 编程代理的轻量化提示与工程准则，引导模型以“懒惰但经验丰富的高级开发者”视角工作：优先复用现有代码，避免过度设计、冗余实现和不必要依赖，以最少改动解决需求。",
+  "tags": [
+    "AI Agent",
+    "代码生成",
+    "提示工程"
+  ],
+  "relevance_score": 0.88,
+  "category": "agent",
+  "key_insight": "高质量 AI 代理应先考虑复用、删减或零改动方案，而非直接生成更多代码。"
+}

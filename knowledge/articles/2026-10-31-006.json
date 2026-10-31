@@ -1,0 +1,18 @@
+{
+  "id": "2026-10-31-006",
+  "title": "earendil-works/pi",
+  "source": "github",
+  "url": "https://github.com/earendil-works/pi",
+  "collected_at": "2026-10-31T00:00:05.323716+00:00",
+  "summary": "面向 AI Agent 的一体化开发工具包，统一封装 LLM API，并提供 Agent Loop、终端用户界面（TUI）及编程代理 CLI，支持快速构建和运行自主代码任务代理。",
+  "tags": [
+    "LLM API",
+    "Agent",
+    "Coding Agent",
+    "TUI",
+    "CLI"
+  ],
+  "relevance_score": 0.92,
+  "category": "agent",
+  "key_insight": "通过统一模型调用、代理循环与终端交互入口，降低从通用 LLM 到可执行编程 Agent 的集成成本。"
+}

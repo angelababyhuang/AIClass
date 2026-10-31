@@ -1,0 +1,17 @@
+{
+  "id": "2026-10-31-009",
+  "title": "OpenHands/OpenHands",
+  "source": "github",
+  "url": "https://github.com/OpenHands/OpenHands",
+  "collected_at": "2026-10-31T00:00:05.323740+00:00",
+  "summary": "OpenHands 是面向软件开发的开源 AI 智能体平台，可通过代码编辑器、终端和浏览器等工具自主完成编程、调试、测试及复杂任务，并支持多模型接入与任务执行过程可视化。",
+  "tags": [
+    "AI Agent",
+    "软件工程",
+    "代码生成",
+    "开发工具"
+  ],
+  "relevance_score": 0.96,
+  "category": "agent",
+  "key_insight": "OpenHands 将大模型与真实开发工具链结合，使 AI 从代码补全升级为可执行、交互式软件开发的智能体。"
+}

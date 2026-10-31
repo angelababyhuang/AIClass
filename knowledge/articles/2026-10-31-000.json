@@ -1,0 +1,16 @@
+{
+  "id": "2026-10-31-000",
+  "title": "NousResearch/hermes-agent",
+  "source": "github",
+  "url": "https://github.com/NousResearch/hermes-agent",
+  "collected_at": "2026-10-31T00:00:05.323635+00:00",
+  "summary": "NousResearch/hermes-agent 是一个开源、自托管的个人智能体框架，支持多模型接入、工具调用、持久化记忆与技能积累，可通过实际任务和反馈持续进化，适合构建长期运行的个人 AI 助手及自动化工作流。",
+  "tags": [
+    "智能体",
+    "自托管",
+    "持续学习"
+  ],
+  "relevance_score": 0.95,
+  "category": "agent",
+  "key_insight": "通过沉淀记忆、可复用技能与任务反馈，让智能体在持续使用中不断扩展能力。"
+}
