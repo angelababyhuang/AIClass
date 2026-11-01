@@ -1,0 +1,16 @@
+{
+  "id": "2026-11-01-000",
+  "title": "NousResearch/hermes-agent",
+  "source": "github",
+  "url": "https://github.com/NousResearch/hermes-agent",
+  "collected_at": "2026-11-01T00:00:05.786589+00:00",
+  "summary": "Nous Research 开源的智能体项目，定位为可持续成长的个人 AI Agent。它通过持久化记忆、任务执行与工具调用积累经验，并沉淀可复用技能，支持在本地或对话渠道中持续完成研究、编码及自动化任务。",
+  "tags": [
+    "智能体",
+    "持久化记忆",
+    "技能进化"
+  ],
+  "relevance_score": 0.95,
+  "category": "agent",
+  "key_insight": "该项目的核心价值不是一次性任务执行，而是让智能体从交互和执行经验中持续积累记忆与能力。"
+}

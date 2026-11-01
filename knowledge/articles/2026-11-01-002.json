@@ -1,0 +1,16 @@
+{
+  "id": "2026-11-01-002",
+  "title": "DietrichGebert/ponytail",
+  "source": "github",
+  "url": "https://github.com/DietrichGebert/ponytail",
+  "collected_at": "2026-11-01T00:00:05.786691+00:00",
+  "summary": "Ponytail 是一种面向 AI 编程代理的克制型工作流与提示约束：先理解现有系统，优先寻找复用、配置或零代码方案，再实施最小必要改动，以减少过度抽象、无效依赖、代码量及 Token 消耗。",
+  "tags": [
+    "AI编程代理",
+    "提示工程",
+    "最小化实现"
+  ],
+  "relevance_score": 0.9,
+  "category": "agent",
+  "key_insight": "优秀的 AI 代理不仅追求把代码写对，更要判断何时根本不需要写代码。"
+}

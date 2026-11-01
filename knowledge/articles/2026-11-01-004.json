@@ -1,0 +1,16 @@
+{
+  "id": "2026-11-01-004",
+  "title": "langchain-ai/langchain",
+  "source": "github",
+  "url": "https://github.com/langchain-ai/langchain",
+  "collected_at": "2026-11-01T00:00:05.786712+00:00",
+  "summary": "LangChain 是面向大语言模型应用与智能体开发的开源框架，提供模型、提示词、工具、记忆、检索和执行编排等标准化组件，并可通过 LangGraph 构建可控、可扩展的有状态工作流。",
+  "tags": [
+    "智能体",
+    "LLM应用开发",
+    "工作流编排"
+  ],
+  "relevance_score": 0.96,
+  "category": "agent",
+  "key_insight": "LangChain 通过标准化组件与图式编排，将模型、工具和数据连接成可组合、可观测且可部署的智能体工作流。"
+}
