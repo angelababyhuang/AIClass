@@ -4,89 +4,89 @@
     "title": "NousResearch/hermes-agent",
     "url": "https://github.com/NousResearch/hermes-agent",
     "description": "The agent that grows with you",
-    "stars": 259179,
+    "stars": 259489,
     "language": "Python",
-    "collected_at": "2026-11-01T00:00:05.786589+00:00"
+    "collected_at": "2026-11-01T23:00:05.162246+00:00"
   },
   {
     "source": "github",
     "title": "firecrawl/firecrawl",
     "url": "https://github.com/firecrawl/firecrawl",
     "description": "Supercharge your AI agents with data from the web and beyond. Building the library for superintelligence. 🔥",
-    "stars": 197405,
+    "stars": 197666,
     "language": "TypeScript",
-    "collected_at": "2026-11-01T00:00:05.786675+00:00"
+    "collected_at": "2026-11-01T23:00:05.162308+00:00"
   },
   {
     "source": "github",
     "title": "DietrichGebert/ponytail",
     "url": "https://github.com/DietrichGebert/ponytail",
     "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
-    "stars": 181514,
+    "stars": 182085,
     "language": "JavaScript",
-    "collected_at": "2026-11-01T00:00:05.786691+00:00"
+    "collected_at": "2026-11-01T23:00:05.162320+00:00"
   },
   {
     "source": "github",
     "title": "langgenius/dify",
     "url": "https://github.com/langgenius/dify",
     "description": "Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move from prototype to production without rebuilding the stack.",
-    "stars": 160107,
+    "stars": 160171,
     "language": "Python",
-    "collected_at": "2026-11-01T00:00:05.786702+00:00"
+    "collected_at": "2026-11-01T23:00:05.162329+00:00"
   },
   {
     "source": "github",
     "title": "langchain-ai/langchain",
     "url": "https://github.com/langchain-ai/langchain",
     "description": "The agent engineering platform.",
-    "stars": 148780,
+    "stars": 148839,
     "language": "Python",
-    "collected_at": "2026-11-01T00:00:05.786712+00:00"
+    "collected_at": "2026-11-01T23:00:05.162339+00:00"
   },
   {
     "source": "github",
     "title": "browser-use/browser-use",
     "url": "https://github.com/browser-use/browser-use",
     "description": "Open-source Python library for AI browser agents, plus Browser Use Cloud: stealth browsers and a hosted agent API.",
-    "stars": 119677,
+    "stars": 119763,
     "language": "Python",
-    "collected_at": "2026-11-01T00:00:05.786721+00:00"
+    "collected_at": "2026-11-01T23:00:05.162348+00:00"
   },
   {
     "source": "github",
     "title": "earendil-works/pi",
     "url": "https://github.com/earendil-works/pi",
     "description": "AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI",
-    "stars": 119184,
+    "stars": 119344,
     "language": "TypeScript",
-    "collected_at": "2026-11-01T00:00:05.786730+00:00"
+    "collected_at": "2026-11-01T23:00:05.162356+00:00"
   },
   {
     "source": "github",
     "title": "JuliusBrussee/caveman",
     "url": "https://github.com/JuliusBrussee/caveman",
     "description": "🪨 why use many token when few token do trick. Viral skill + proxy for coding agents that cuts 65% of tokens by talking like a caveman.",
-    "stars": 116523,
+    "stars": 116691,
     "language": "Go",
-    "collected_at": "2026-11-01T00:00:05.786738+00:00"
+    "collected_at": "2026-11-01T23:00:05.162365+00:00"
   },
   {
     "source": "github",
     "title": "infiniflow/ragflow",
     "url": "https://github.com/infiniflow/ragflow",
     "description": "RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine that fuses cutting-edge RAG with Agent capabilities to create a superior context layer for LLMs",
-    "stars": 93266,
+    "stars": 93302,
     "language": "Go",
-    "collected_at": "2026-11-01T00:00:05.786747+00:00"
+    "collected_at": "2026-11-01T23:00:05.162373+00:00"
   },
   {
     "source": "github",
     "title": "OpenHands/OpenHands",
     "url": "https://github.com/OpenHands/OpenHands",
     "description": "🙌 OpenHands: AI-Driven Development",
-    "stars": 92367,
+    "stars": 92441,
     "language": "TypeScript",
-    "collected_at": "2026-11-01T00:00:05.786756+00:00"
+    "collected_at": "2026-11-01T23:00:05.162381+00:00"
   }
 ]
