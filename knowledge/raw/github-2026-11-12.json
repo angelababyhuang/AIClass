@@ -1,0 +1,92 @@
+[
+  {
+    "source": "github",
+    "title": "NousResearch/hermes-agent",
+    "url": "https://github.com/NousResearch/hermes-agent",
+    "description": "The agent that grows with you",
+    "stars": 262961,
+    "language": "Python",
+    "collected_at": "2026-11-12T23:00:05.484700+00:00"
+  },
+  {
+    "source": "github",
+    "title": "firecrawl/firecrawl",
+    "url": "https://github.com/firecrawl/firecrawl",
+    "description": "Supercharge your AI agents with data from the web and beyond. Building the library for superintelligence. 🔥",
+    "stars": 201275,
+    "language": "TypeScript",
+    "collected_at": "2026-11-12T23:00:05.484740+00:00"
+  },
+  {
+    "source": "github",
+    "title": "langgenius/dify",
+    "url": "https://github.com/langgenius/dify",
+    "description": "Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move from prototype to production without rebuilding the stack.",
+    "stars": 161057,
+    "language": "Python",
+    "collected_at": "2026-11-12T23:00:05.484795+00:00"
+  },
+  {
+    "source": "github",
+    "title": "langchain-ai/langchain",
+    "url": "https://github.com/langchain-ai/langchain",
+    "description": "The agent engineering platform.",
+    "stars": 149418,
+    "language": "Python",
+    "collected_at": "2026-11-12T23:00:05.484801+00:00"
+  },
+  {
+    "source": "github",
+    "title": "Shubhamsaboo/awesome-llm-apps",
+    "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+    "description": "100+ AI Agents, Agent Skills and RAG Apps - Free and Open Source.",
+    "stars": 144514,
+    "language": "Python",
+    "collected_at": "2026-11-12T23:00:05.484805+00:00"
+  },
+  {
+    "source": "github",
+    "title": "earendil-works/pi",
+    "url": "https://github.com/earendil-works/pi",
+    "description": "AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI",
+    "stars": 121665,
+    "language": "TypeScript",
+    "collected_at": "2026-11-12T23:00:05.484810+00:00"
+  },
+  {
+    "source": "github",
+    "title": "browser-use/browser-use",
+    "url": "https://github.com/browser-use/browser-use",
+    "description": "Open-source Python library for AI browser agents, plus Browser Use Cloud: stealth browsers and a hosted agent API.",
+    "stars": 120846,
+    "language": "Python",
+    "collected_at": "2026-11-12T23:00:05.484814+00:00"
+  },
+  {
+    "source": "github",
+    "title": "JuliusBrussee/caveman",
+    "url": "https://github.com/JuliusBrussee/caveman",
+    "description": "🪨 why use many token when few token do trick. Viral skill + proxy for coding agents that cuts 65% of tokens by talking like a caveman.",
+    "stars": 119411,
+    "language": "Go",
+    "collected_at": "2026-11-12T23:00:05.484818+00:00"
+  },
+  {
+    "source": "github",
+    "title": "OpenHands/OpenHands",
+    "url": "https://github.com/OpenHands/OpenHands",
+    "description": "🙌 OpenHands: AI-Driven Development",
+    "stars": 93342,
+    "language": "TypeScript",
+    "collected_at": "2026-11-12T23:00:05.484821+00:00"
+  },
+  {
+    "source": "github",
+    "title": "unclecode/crawl4ai",
+    "url": "https://github.com/unclecode/crawl4ai",
+    "description": "Official Crawl4AI Cloud: a hosted web scraping, extraction, and search API for AI agents. Free API key, 1,000 credits a month, no card. Fully open source: this repo is the Apache-2.0 crawler that powers it, and you can self-host it.",
+    "stars": 87282,
+    "language": "Python",
+    "collected_at": "2026-11-12T23:00:05.484825+00:00"
+  }
+]
