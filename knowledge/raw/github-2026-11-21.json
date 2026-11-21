@@ -1,0 +1,92 @@
+[
+  {
+    "source": "github",
+    "title": "NousResearch/hermes-agent",
+    "url": "https://github.com/NousResearch/hermes-agent",
+    "description": "The agent that grows with you",
+    "stars": 265192,
+    "language": "Python",
+    "collected_at": "2026-11-21T23:00:05.474291+00:00"
+  },
+  {
+    "source": "github",
+    "title": "firecrawl/firecrawl",
+    "url": "https://github.com/firecrawl/firecrawl",
+    "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API.",
+    "stars": 206135,
+    "language": "TypeScript",
+    "collected_at": "2026-11-21T23:00:05.474355+00:00"
+  },
+  {
+    "source": "github",
+    "title": "DietrichGebert/ponytail",
+    "url": "https://github.com/DietrichGebert/ponytail",
+    "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+    "stars": 196331,
+    "language": "JavaScript",
+    "collected_at": "2026-11-21T23:00:05.474369+00:00"
+  },
+  {
+    "source": "github",
+    "title": "langgenius/dify",
+    "url": "https://github.com/langgenius/dify",
+    "description": "Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move from prototype to production without rebuilding the stack.",
+    "stars": 161625,
+    "language": "Python",
+    "collected_at": "2026-11-21T23:00:05.474378+00:00"
+  },
+  {
+    "source": "github",
+    "title": "langchain-ai/langchain",
+    "url": "https://github.com/langchain-ai/langchain",
+    "description": "The agent engineering platform.",
+    "stars": 150011,
+    "language": "Python",
+    "collected_at": "2026-11-21T23:00:05.474388+00:00"
+  },
+  {
+    "source": "github",
+    "title": "Shubhamsaboo/awesome-llm-apps",
+    "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+    "description": "100+ AI Agents, Agent Skills and RAG Apps - Free and Open Source.",
+    "stars": 145310,
+    "language": "Python",
+    "collected_at": "2026-11-21T23:00:05.474397+00:00"
+  },
+  {
+    "source": "github",
+    "title": "earendil-works/pi",
+    "url": "https://github.com/earendil-works/pi",
+    "description": "AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI",
+    "stars": 123191,
+    "language": "TypeScript",
+    "collected_at": "2026-11-21T23:00:05.474406+00:00"
+  },
+  {
+    "source": "github",
+    "title": "JuliusBrussee/caveman",
+    "url": "https://github.com/JuliusBrussee/caveman",
+    "description": "why use many token when few token do trick. Skill + local proxy for coding agents: shorter answers, smaller tool output, every original recoverable.",
+    "stars": 121972,
+    "language": "Go",
+    "collected_at": "2026-11-21T23:00:05.474415+00:00"
+  },
+  {
+    "source": "github",
+    "title": "browser-use/browser-use",
+    "url": "https://github.com/browser-use/browser-use",
+    "description": "Open-source Python library for AI browser agents, plus Browser Use Cloud: stealth browsers and a hosted agent API.",
+    "stars": 121680,
+    "language": "Python",
+    "collected_at": "2026-11-21T23:00:05.474423+00:00"
+  },
+  {
+    "source": "github",
+    "title": "OpenHands/OpenHands",
+    "url": "https://github.com/OpenHands/OpenHands",
+    "description": "🙌 OpenHands: AI-Driven Development",
+    "stars": 93968,
+    "language": "TypeScript",
+    "collected_at": "2026-11-21T23:00:05.474432+00:00"
+  }
+]
